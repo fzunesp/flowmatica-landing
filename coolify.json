@@ -1,0 +1,5 @@
+{
+  "name": "flowmatica-landing",
+  "port": 80,
+  "dockerfile": "Dockerfile"
+}
