@@ -2,7 +2,7 @@
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <title>Flowmatica – Sovereignty-as-a-Service</title>
+  <title>Flowmatica – Zero-Cloud Forever</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -24,7 +24,6 @@
     };
   </script>
   <style>
-    /* subtle grain */
     body::before {
       content: '';
       position: fixed;
@@ -33,138 +32,240 @@
       opacity: .025;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
     }
-    /* mouse-parallax hero */
     .parallax-bg { transform: translate3d(0, 0, 0); transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1); }
   </style>
-<base target="_blank">
 </head>
 
-<body class="bg-black text-white font-sans overflow-x-hidden">
-  <!-- 1. HERO – full-bleed, parallax, no buttons until scroll -->
-  <section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
-    <div class="parallax-bg absolute inset-0 -z-10 bg-gradient-to-br from-purple-900 via-indigo-950 to-black"></div>
+<body class="bg-orange-50 text-slate-800 font-sans overflow-x-hidden dark:bg-stone-900 dark:text-stone-100">
+  <!-- 1. HERO – warm sunset gradient -->
+  <!--<section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
+    <div class="parallax-bg absolute inset-0 -z-10 bg-gradient-to-br from-amber-200 via-orange-300 to-rose-300 dark:from-amber-900 dark:via-orange-800 dark:to-rose-900"></div>
     <div class="relative z-10 text-center px-6 max-w-4xl">
-      <h1 class="text-6xl md:text-8xl font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white to-purple-300 animate-slide-up">
-        Own your data. <br><span class="text-yellow-300">Host it anywhere.</span>
+      <h1 class="text-6xl md:text-8xl font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-rose-500 to-amber-600 dark:from-amber-300 dark:to-rose-300 animate-slide-up">
+        Own Your Systems. <br><br><span class="text-amber-700 dark:text-amber-200">Zero-Cloud Forever.</span>
       </h1>
-      <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto animate-slide-up" style="animation-delay:.2s">
-        Pocket-sized apps that run on a dusty laptop, an office mini-PC, or an air-gapped server. No cloud keys, no monthly tithe—just a one-time licence and absolute sovereignty.
+      <p class="mt-6 text-lg md:text-xl text-slate-700 dark:text-stone-200 max-w-2xl mx-auto animate-slide-up" style="animation-delay:.2s">
+        Pocket-sized apps that run on a dusty laptop, an office mini-PC, or an air-gapped server.
+        No cloud keys, no monthly tithe—just a one-time licence and zero-cloud forever.
       </p>
       <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style="animation-delay:.4s">
-        <a href="#products" class="px-7 py-3 rounded-full bg-white text-black font-semibold hover:scale-105 transition">Browse sovereign apps</a>
-        <button onclick="scrollToSection('#offer')" class="px-7 py-3 rounded-full border border-white/20 text-white hover:bg-white/10 transition">Still unsure? →</button>
+        <a href="#products" class="px-7 py-3 rounded-full bg-amber-600 text-white font-semibold hover:scale-105 transition">Browse zero-cloud apps</a>
+        <button onclick="scrollToSection('#offer')" class="px-7 py-3 rounded-full border border-amber-400 text-amber-700 dark:text-amber-200 hover:bg-amber-100 dark:hover:bg-amber-900/30 transition">Still unsure? →</button>
       </div>
     </div>
     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-      <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
+      <svg class="w-6 h-6 text-amber-700 dark:text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
     </div>
+  </section>-->
+
+
+<section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
+  <div class="parallax-bg absolute inset-0 -z-10 bg-gradient-to-br from-amber-200 via-orange-300 to-rose-300 dark:from-amber-900 dark:via-orange-800 dark:to-rose-900"></div>
+
+  <div class="relative z-10 w-full px-6 text-center">
+    <h1 class="w-full text-6xl md:text-8xl font-black tracking-tight leading-[1.05]
+               bg-clip-text text-transparent bg-gradient-to-r
+               from-rose-500 to-amber-600 dark:from-amber-300 dark:to-rose-300
+               animate-slide-up">
+      Own Your Systems.
+      <br><br>
+      <span class="text-amber-700 dark:text-amber-200">Zero-Cloud Forever.</span>
+    </h1>
+
+    <p class="mt-8 text-lg md:text-xl text-slate-700 dark:text-stone-200 max-w-2xl mx-auto animate-slide-up" style="animation-delay:.2s">
+      <br>Pocket-sized apps that run on a dusty laptop, an office mini-PC, or an air-gapped server.
+      No cloud keys, no monthly tithe—just a one-time licence and zero-cloud forever.
+    </p>
+
+    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style="animation-delay:.4s">
+      <a href="#products"
+         class="px-7 py-3 rounded-full bg-amber-600 text-white font-semibold hover:scale-105 transition">
+        Browse zero-cloud apps
+      </a>
+      <button onclick="scrollToSection('#offer')"
+         class="px-7 py-3 rounded-full border border-amber-400 text-amber-700 dark:text-amber-200
+                hover:bg-amber-100 dark:hover:bg-amber-900/30 transition">
+        Still unsure? →
+      </button>
+    </div>
+  </div>
+
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <svg class="w-6 h-6 text-amber-700 dark:text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+    </svg>
+  </div>
+</section>
+
+
+
+  <!-- 2. GATE-CHECK – warm accents -->
+  <section class="py-16 px-6 max-w-4xl mx-auto text-center">
+    <h2 class="text-2xl md:text-4xl font-black text-amber-600 dark:text-amber-300">Stop before we begin…</h2>
+    <p class="mt-4 text-slate-700 dark:text-stone-200 text-lg">If you love any of these, you’re at the wrong place.</p>
+    <ul class="mt-6 space-y-3 text-left text-slate-600 dark:text-stone-300">
+      <li class="flex items-start gap-3"><span class="text-rose-500 text-xl">✗</span><span>Paying for software <strong>forever</strong>.</span></li>
+      <li class="flex items-start gap-3"><span class="text-rose-500 text-xl">✗</span><span>Storing your data in some <strong>foreign land</strong>.</span></li>
+      <li class="flex items-start gap-3"><span class="text-rose-500 text-xl">✗</span><span>Paying for <strong>additional users</strong> every month.</span></li>
+      <li class="flex items-start gap-3"><span class="text-rose-500 text-xl">✗</span><span>Paying for <strong>functionality you never use</strong>.</span></li>
+      <li class="flex items-start gap-3"><span class="text-rose-500 text-xl">✗</span><span><strong>Loving the Cloud</strong> — we love the <span class="text-amber-600">sun</span>.</span></li>
+    </ul>
+    <p class="mt-6 text-slate-700 dark:text-stone-200">Wrong place my friend, exit door is behind you. <br><br>Everyone else welcome — scroll on.</p>
   </section>
 
-  <!-- 2. MANIFESTO – numbered cards, stagger reveal -->
+  <!-- 3. MANIFESTO – warm cards -->
   <section id="pain" class="py-24 px-6 max-w-6xl mx-auto">
-    <h2 class="text-4xl md:text-5xl font-black text-center">Serfdom is expensive. <br>Sovereignty is not.</h2>
+    <h2 class="text-4xl md:text-5xl font-black text-center text-amber-700 dark:text-amber-300">Serfdom is Expensive. <br><br>Zero-Cloud Forever is not.</h2>
     <div class="mt-12 grid md:grid-cols-3 gap-6">
-      <div class="group relative p-8 rounded-3xl bg-white/10 backdrop-blur border border-white/10 hover:border-white/30 hover:-translate-y-1 transition animate-slide-up" style="animation-delay:.1s">
-        <div class="absolute -top-4 left-8 h-8 w-8 rounded-full bg-red-500 grid place-items-center text-white font-bold text-sm">1</div>
-        <p class="mt-4 font-bold text-red-400">Rented software</p>
-        <p class="mt-2 text-gray-300">Stop paying forever for the privilege of opening your own spreadsheets.</p>
+      <div class="group relative p-8 rounded-3xl bg-white/70 dark:bg-stone-800/70 border border-white/20 dark:border-stone-700 backdrop-blur hover:shadow-2xl hover:-translate-y-1 transition animate-slide-up" style="animation-delay:.1s">
+        <div class="absolute -top-4 left-8 h-8 w-8 rounded-full bg-rose-500 grid place-items-center text-white font-bold text-sm">1</div>
+        <p class="mt-4 font-bold text-rose-600 dark:text-rose-400">Rented software</p>
+        <p class="mt-2 text-slate-700 dark:text-stone-300">Stop paying forever for the privilege of working on your own data.</p>
       </div>
-      <div class="group relative p-8 rounded-3xl bg-white/10 backdrop-blur border border-white/10 hover:border-white/30 hover:-translate-y-1 transition animate-slide-up" style="animation-delay:.2s">
-        <div class="absolute -top-4 left-8 h-8 w-8 rounded-full bg-orange-500 grid place-items-center text-white font-bold text-sm">2</div>
-        <p class="mt-4 font-bold text-orange-400">Data colonialism</p>
-        <p class="mt-2 text-gray-300">Your payroll, invoices and client lists stored on someone else’s hard drive.</p>
+      <div class="group relative p-8 rounded-3xl bg-white/70 dark:bg-stone-800/70 border border-white/20 dark:border-stone-700 backdrop-blur hover:shadow-2xl hover:-translate-y-1 transition animate-slide-up" style="animation-delay:.2s">
+        <div class="absolute -top-4 left-8 h-8 w-8 rounded-full bg-amber-500 grid place-items-center text-white font-bold text-sm">2</div>
+        <p class="mt-4 font-bold text-amber-600 dark:text-amber-400">Data colonialism</p>
+        <p class="mt-2 text-slate-700 dark:text-stone-300">Your payroll, invoices and client lists stored on someone else’s hard drive.</p>
       </div>
-      <div class="group relative p-8 rounded-3xl bg-white/10 backdrop-blur border border-white/10 hover:border-white/30 hover:-translate-y-1 transition animate-slide-up" style="animation-delay:.3s">
-        <div class="absolute -top-4 left-8 h-8 w-8 rounded-full bg-purple-500 grid place-items-center text-white font-bold text-sm">3</div>
-        <p class="mt-4 font-bold text-purple-400">Compliance roulette</p>
-        <p class="mt-2 text-gray-300">GDPR fines, export bans, sudden ToS changes—sovereignty removes the dice.</p>
+      <div class="group relative p-8 rounded-3xl bg-white/70 dark:bg-stone-800/70 border border-white/20 dark:border-stone-700 backdrop-blur hover:shadow-2xl hover:-translate-y-1 transition animate-slide-up" style="animation-delay:.3s">
+        <div class="absolute -top-4 left-8 h-8 w-8 rounded-full bg-amber-600 grid place-items-center text-white font-bold text-sm">3</div>
+        <p class="mt-4 font-bold text-amber-700 dark:text-amber-400">Compliance roulette</p>
+        <p class="mt-2 text-slate-700 dark:text-stone-300">GDPR fines, export bans, sudden ToS changes—zero-cloud forever removes the dice.</p>
       </div>
     </div>
   </section>
 
-  <!-- 3. PROOF – big numbers -->
+  <!-- 4. PROOF – big numbers -->
   <section class="py-20 px-6 max-w-5xl mx-auto">
-    <p class="text-center text-xs uppercase tracking-widest text-purple-400">1 847 companies already declared independence</p>
+    <p class="text-center text-xs uppercase tracking-widest text-amber-600 dark:text-amber-300">1 847 companies already declared zero-cloud forever</p>
     <div class="mt-10 grid grid-cols-3 gap-8 text-center">
-      <div><div class="text-5xl md:text-7xl font-black text-purple-400">0</div><div class="mt-2 text-sm text-gray-400">External servers required</div></div>
-      <div><div class="text-5xl md:text-7xl font-black text-purple-400">∞</div><div class="mt-2 text-sm text-gray-400">Years you own it</div></div>
-      <div><div class="text-5xl md:text-7xl font-black text-purple-400">30 d</div><div class="mt-2 text-sm text-gray-400">Money-back sovereignty guarantee</div></div>
+      <div><div class="text-5xl md:text-7xl font-black text-amber-600 dark:text-amber-300">0</div><div class="mt-2 text-sm text-slate-600 dark:text-stone-400">External servers required</div></div>
+      <div><div class="text-5xl md:text-7xl font-black text-amber-600 dark:text-amber-300">∞</div><div class="mt-2 text-sm text-slate-600 dark:text-stone-400">Years you own it</div></div>
+      <div><div class="text-5xl md:text-7xl font-black text-amber-600 dark:text-amber-300">30 d</div><div class="mt-2 text-sm text-slate-600 dark:text-stone-400">Zero-cloud forever guarantee</div></div>
     </div>
-    <blockquote class="mt-14 max-w-2xl mx-auto text-center"><p class="text-xl italic text-gray-300">“We air-gapped an old ThinkPad in the basement—now our books, clients and HR live on our terms, not Silicon Valley’s.”</p><cite class="mt-4 block text-sm text-gray-500">— Dana R., 12-person agency</cite></blockquote>
+    <blockquote class="mt-14 max-w-2xl mx-auto text-center"><p class="text-xl italic text-slate-700 dark:text-stone-300">“We threw an old Thinkpad in the basement—now our books, clients and HR live on our terms, not Silicon Valley’s.”</p><cite class="mt-4 block text-sm text-slate-500 dark:text-stone-400">— Dana R., 12-person agency</cite></blockquote>
   </section>
 
-  <!-- 4. PRODUCTS – pricing cards that float -->
+  <!-- 5. PRODUCTS – 4 warm cards -->
   <section id="products" class="py-24 px-6 max-w-7xl mx-auto">
-    <h2 class="text-4xl md:text-5xl font-black text-center">Three sovereignty toolkits</h2>
-    <p class="mt-4 text-center text-gray-400">Single binary + SQLite. Runs on Windows, macOS, Linux, Raspberry Pi, or a Docker-less container.</p>
-    <div class="mt-14 grid md:grid-cols-3 gap-8">
+    <h2 class="text-4xl md:text-5xl font-black text-center text-amber-700 dark:text-amber-300">Four zero-cloud forever toolkits</h2>
+    <p class="mt-4 text-center text-slate-600 dark:text-stone-400"><br>One tiny installer. Runs on any dusty PC, Mac, or even a Raspberry Pi—no servers, no IT degree required.</p>
+    <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
       <!-- Invoice -->
-      <div class="group relative rounded-3xl p-8 bg-white/10 backdrop-blur border border-white/10 hover:border-white/30 hover:-translate-y-2 transition-all duration-300">
-        <div class="h-14 w-14 rounded-2xl bg-purple-100 dark:bg-purple-800 grid place-items-center text-3xl">📄</div>
-        <h3 class="mt-6 text-2xl font-bold text-purple-400">SovereignInvoice</h3>
-        <p class="mt-3 text-gray-300">Create, send, and store invoices on your own disk. Export to PDF, UBL, PEPPOL, or raw JSON for auditors.</p>
-        <ul class="mt-5 space-y-2 text-sm text-gray-400"><li>✓ Offline-first</li><li>✓ End-to-end encrypted vault</li><li>✓ One-click export (PDF, UBL, CSV)</li></ul>
-        <div class="mt-8 flex items-center justify-between"><span class="text-3xl font-black text-white">$1 199</span><a href="#" class="px-5 py-2.5 rounded-full bg-purple-600 text-white font-semibold hover:bg-purple-700 transition">Claim licence</a></div>
-      </div>
-      <!-- CRM -->
-      <div class="group relative rounded-3xl p-8 bg-white/10 backdrop-blur border border-white/10 hover:border-white/30 hover:-translate-y-2 transition-all duration-300">
-        <div class="h-14 w-14 rounded-2xl bg-purple-100 dark:bg-purple-800 grid place-items-center text-3xl">🧠</div>
-        <h3 class="mt-6 text-2xl font-bold text-purple-400">SovereignCRM</h3>
-        <p class="mt-3 text-gray-300">Pipeline, quotes, tasks, e-mail sequencing — all in a single SQLite file you can copy to a USB stick.</p>
-        <ul class="mt-5 space-y-2 text-sm text-gray-400"><li>✓ Roles & territories</li><li>✓ REST & GraphQL API</li><li>✓ One-file backup</li></ul>
-        <div class="mt-8 flex items-center justify-between"><span class="text-3xl font-black text-white">$1 899</span><a href="#" class="px-5 py-2.5 rounded-full bg-purple-600 text-white font-semibold hover:bg-purple-700 transition">Claim licence</a></div>
-      </div>
-      <!-- HR -->
-      <div class="group relative rounded-3xl p-8 bg-white/10 backdrop-blur border border-white/10 hover:border-white/30 hover:-translate-y-2 transition-all duration-300">
-        <div class="h-14 w-14 rounded-2xl bg-purple-100 dark:bg-purple-800 grid place-items-center text-3xl">⚖️</div>
-        <h3 class="mt-6 text-2xl font-bold text-purple-400">SovereignHR</h3>
-        <p class="mt-3 text-gray-300">Employee records, leave policy engine, asset tracking, e-sign — all GDPR & SOC-2 ready out of the box.</p>
-        <ul class="mt-5 space-y-2 text-sm text-gray-400"><li>✓ Leave & expense workflows</li><li>✓ Custom report builder</li><li>✓ Air-gap friendly</li></ul>
-        <div class="mt-8 flex items-center justify-between"><span class="text-3xl font-black text-white">$1 599</span><a href="#" class="px-5 py-2.5 rounded-full bg-purple-600 text-white font-semibold hover:bg-purple-700 transition">Claim licence</a></div>
-      </div>
+  <div class="group relative rounded-3xl p-8 bg-white/70 dark:bg-stone-800/70 border border-white/20 dark:border-stone-700 backdrop-blur hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+    <div class="h-14 w-14 rounded-2xl bg-amber-100 dark:bg-amber-800 grid place-items-center text-3xl">📄</div>
+    <h3 class="mt-6 text-2xl font-bold text-amber-600 dark:text-amber-300">ZeroCloudInvoice</h3>
+    <p class="mt-3 text-slate-700 dark:text-stone-300">
+      Create, send, and store invoices on your own disk. Export to PDF, UBL, PEPPOL, or raw JSON for auditors.
+    </p>
+    <ul class="mt-5 space-y-2 text-sm text-slate-600 dark:text-stone-400">
+      <li>✓ Offline-first</li>
+      <li>✓ End-to-end encrypted vault</li>
+      <li>✓ One-click export (PDF, UBL, CSV)</li>
+    </ul>
+    <div class="mt-8 flex items-center gap-3">
+      <span class="text-4xl font-black text-slate-800 dark:text-white">$1 199</span>
+      <a href="#" class="px-4 py-2 rounded-full bg-amber-600 text-white font-semibold hover:scale-105 transition">Claim licence</a>
     </div>
+  </div>
+      <!-- CRM -->
+  <div class="group relative rounded-3xl p-8 bg-white/70 dark:bg-stone-800/70 border border-white/20 dark:border-stone-700 backdrop-blur hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+    <div class="h-14 w-14 rounded-2xl bg-amber-100 dark:bg-amber-800 grid place-items-center text-3xl">🧠</div>
+    <h3 class="mt-6 text-2xl font-bold text-amber-600 dark:text-amber-300">ZeroCloudCRM</h3>
+    <p class="mt-3 text-slate-700 dark:text-stone-300">
+      Pipeline, quotes, tasks, e-mail sequencing — all in a single database file you can copy to a USB stick.
+    </p>
+    <ul class="mt-5 space-y-2 text-sm text-slate-600 dark:text-stone-400">
+      <li>✓ Roles & territories</li>
+      <li>✓ REST & GraphQL API</li>
+      <li>✓ One-file backup</li>
+    </ul>
+    <div class="mt-8 flex items-center gap-3">
+      <span class="text-4xl font-black text-slate-800 dark:text-white">$1 899</span>
+      <a href="#" class="px-4 py-2 rounded-full bg-amber-600 text-white font-semibold hover:scale-105 transition">Claim licence</a>
+    </div>
+  </div>
+      <!-- HR -->
+  <div class="group relative rounded-3xl p-8 bg-white/70 dark:bg-stone-800/70 border border-white/20 dark:border-stone-700 backdrop-blur hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+    <div class="h-14 w-14 rounded-2xl bg-amber-100 dark:bg-amber-800 grid place-items-center text-3xl">⚖️</div>
+    <h3 class="mt-6 text-2xl font-bold text-amber-600 dark:text-amber-300">ZeroCloudHR</h3>
+    <p class="mt-3 text-slate-700 dark:text-stone-300">
+      Employee records, leave policy engine, asset tracking, e-sign — all GDPR & SOC-2 ready out of the box.
+    </p>
+    <ul class="mt-5 space-y-2 text-sm text-slate-600 dark:text-stone-400">
+      <li>✓ Leave & expense workflows</li>
+      <li>✓ Custom report builder</li>
+      <li>✓ Air-gap friendly</li>
+    </ul>
+    <div class="mt-8 flex items-center gap-3">
+      <span class="text-4xl font-black text-slate-800 dark:text-white">$1 599</span>
+      <a href="#" class="px-4 py-2 rounded-full bg-amber-600 text-white font-semibold hover:scale-105 transition">Claim licence</a>
+    </div>
+  </div>
+
+  <!-- Books -->
+  <div class="group relative rounded-3xl p-8 bg-white/70 dark:bg-stone-800/70 border border-white/20 dark:border-stone-700 backdrop-blur hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+    <div class="h-14 w-14 rounded-2xl bg-amber-100 dark:bg-amber-800 grid place-items-center text-3xl">📚</div>
+    <h3 class="mt-6 text-2xl font-bold text-amber-600 dark:text-amber-300">ZeroCloudBooks</h3>
+    <p class="mt-3 text-slate-700 dark:text-stone-300">
+      Simple double-entry bookkeeping: chart of accounts, journal, trial balance, P&L, balance sheet — no accountant required.
+    </p>
+    <ul class="mt-5 space-y-2 text-sm text-slate-600 dark:text-stone-400">
+      <li>✓ Double-entry out of the box</li>
+      <li>✓ CSV import from any bank</li>
+      <li>✓ One-click IFRS / GAAP reports</li>
+    </ul>
+    <div class="mt-8 flex items-center gap-3">
+      <span class="text-4xl font-black text-slate-800 dark:text-white">$999</span>
+      <a href="#" class="px-4 py-2 rounded-full bg-amber-600 text-white font-semibold hover:scale-105 transition">Claim licence</a>
+    </div>
+  </div>
+
+</div>
+
 
     <!-- Bundle -->
-    <div class="mt-16 max-w-4xl mx-auto rounded-3xl bg-gradient-to-r from-yellow-400/20 to-purple-500/20 border-2 border-yellow-400 dark:border-yellow-400/50 p-8 text-center">
-      <p class="text-yellow-300 font-bold">Sovereignty bundle</p>
-      <p class="mt-2 text-gray-300">Own all three toolkits for <span class="line-through">$4 697</span> <span class="text-4xl font-black text-purple-400">$3 499</span> — perpetual.</p>
-      <a href="#" class="mt-6 inline-flex px-7 py-3 rounded-full bg-yellow-400 text-gray-900 font-bold hover:opacity-90 transition">Declare independence</a>
+    <div class="mt-16 max-w-4xl mx-auto rounded-3xl bg-gradient-to-r from-amber-200/30 to-rose-300/30 border-2 border-amber-400 dark:border-amber-400/50 p-8 text-center">
+      <p class="text-amber-700 dark:text-amber-300 font-bold">Zero-cloud forever bundle</p>
+      <p class="mt-2 text-slate-700 dark:text-stone-200">Own all four toolkits for <span class="line-through">$5 696</span> <span class="text-4xl font-black text-amber-600 dark:text-amber-300">$4 299</span> — perpetual.</p>
+      <a href="#" class="mt-6 inline-flex px-7 py-3 rounded-full bg-amber-600 text-white font-bold hover:opacity-90 transition">Declare independence</a>
     </div>
   </section>
 
-  <!-- 5. OFFER – guarantee -->
-  <section id="offer" class="py-24 px-6 bg-gray-900 text-white">
+  <!-- 6. OFFER – warm guarantee -->
+  <section id="offer" class="py-24 px-6 bg-amber-100 dark:bg-stone-900 text-slate-800 dark:text-stone-100">
     <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-4xl md:text-5xl font-black">30-day sovereignty guarantee</h2>
-      <p class="mt-6 text-lg text-gray-300 max-w-2xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-black text-amber-700 dark:text-amber-300">30-day zero-cloud forever guarantee</h2>
+      <p class="mt-6 text-lg text-slate-600 dark:text-stone-300 max-w-2xl mx-auto">
         Install on an air-gapped laptop. If you can’t migrate away from the cloud within 30 days, e-mail us. We’ll refund and you still keep the installer.
       </p>
-      <ul class="mt-10 inline-block text-left space-y-3 text-gray-300">
-        <li class="flex items-center gap-3"><span class="text-yellow-400">✓</span> Perpetual licence—no renewal traps</li>
-        <li class="flex items-center gap-3"><span class="text-yellow-400">✓</span> Lifetime security updates included</li>
-        <li class="flex items-center gap-3"><span class="text-yellow-400">✓</span> Transferable—sell or gift your copy</li>
-        <li class="flex items-center gap-3"><span class="text-yellow-400">✓</span> Runs on Windows, macOS, Linux, Pi</li>
+      <ul class="mt-10 inline-block text-left space-y-3 text-slate-600 dark:text-stone-300">
+        <li class="flex items-center gap-3"><span class="text-amber-600">✓</span> Perpetual licence—no renewal traps</li>
+        <li class="flex items-center gap-3"><span class="text-amber-600">✓</span> Lifetime security updates included</li>
+        <li class="flex items-center gap-3"><span class="text-amber-600">✓</span> Transferable—sell or gift your copy</li>
+        <li class="flex items-center gap-3"><span class="text-amber-600">✓</span> Runs on Windows, macOS, Linux, Pi</li>
       </ul>
-      <div class="mt-10"><a href="#products" class="px-8 py-4 rounded-full bg-yellow-400 text-gray-900 font-bold shadow-lg hover:shadow-yellow-400/40 hover:scale-105 transition">Download free trial</a></div>
+      <div class="mt-10"><a href="#products" class="px-8 py-4 rounded-full bg-amber-600 text-white font-bold shadow-lg hover:shadow-amber-500/40 hover:scale-105 transition">Download free trial</a></div>
     </div>
   </section>
 
-  <!-- 6. FAQ – accordion -->
+  <!-- 7. FAQ – warm accordion -->
   <section id="faq" class="py-24 px-6 max-w-3xl mx-auto">
-    <h2 class="text-3xl font-black text-center">Sovereignty questions?</h2>
+    <h2 class="text-3xl font-black text-center text-amber-700 dark:text-amber-300">Zero-cloud forever questions?</h2>
     <dl class="mt-10 space-y-4">
-      <div class="rounded-2xl border border-white/10"><dt><button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left font-semibold"><span>Can I host it on an intranet with no internet?</span><svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button></dt><dd class="hidden px-5 pb-5 text-gray-300">Yes. Everything is self-contained; even e-mail reminders can use your internal SMTP.</dd></div>
-      <div class="rounded-2xl border border-white/10"><dt><button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left font-semibold"><span>Do I get updates if I’m offline?</span><svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button></dt><dd class="hidden px-5 pb-5 text-gray-300">Download the update binary from any machine and copy it over. Zero phone-home required.</dd></div>
-      <div class="rounded-2xl border border-white/10"><dt><button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left font-semibold"><span>What if my server dies?</span><svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button></dt><dd class="hidden px-5 pb-5 text-gray-300">Re-install on a new machine, drop the SQLite file back in—sovereignty restored in 30 seconds.</dd></div>
+      <div class="rounded-2xl border border-amber-200 dark:border-amber-700/50"><dt><button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left font-semibold text-amber-800 dark:text-amber-200"><span>Can I host it on an intranet with no internet?</span><svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7m0 0l-7-7m7 7V3" /></svg></button></dt><dd class="hidden px-5 pb-5 text-slate-600 dark:text-stone-300">Yes. Everything is self-contained; even e-mail reminders can use your internal SMTP.</dd></div>
+      <div class="rounded-2xl border border-amber-200 dark:border-amber-700/50"><dt><button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left font-semibold text-amber-800 dark:text-amber-200"><span>Do I get updates if I’m offline?</span><svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7m0 0l-7-7m7 7V3" /></svg></button></dt><dd class="hidden px-5 pb-5 text-slate-600 dark:text-stone-300">Download the update binary from any machine and copy it over. Zero phone-home required.</dd></div>
+      <div class="rounded-2xl border border-amber-200 dark:border-amber-700/50"><dt><button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left font-semibold text-amber-800 dark:text-amber-200"><span>What if my server dies?</span><svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7m0 0l-7-7m7 7V3" /></svg></button></dt><dd class="hidden px-5 pb-5 text-slate-600 dark:text-stone-300">Re-install on a new machine, drop the SQLite file back in—zero-cloud forever restored in 30 seconds.</dd></div>
     </dl>
   </section>
 
-  <!-- 7. FOOTER -->
-  <footer class="py-10 px-6 bg-black border-t border-white/10">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
-      <a href="#" class="flex items-center gap-2 font-bold text-white">🏴 Flowmatica</a>
-      <div class="flex gap-6"><a class="hover:text-purple-400" href="#">Support</a><a class="hover:text-purple-400" href="#">Licence</a><a class="hover:text-purple-400" href="#">Roadmap</a><a class="hover:text-purple-400" href="mailto:hello@flowmatica.com">Contact</a></div>
-      <p>© 2025 Flowmatica OÜ — Hosted nowhere, seen everywhere.</p>
+  <!-- 8. FOOTER -->
+  <footer class="py-10 px-6 bg-amber-50 dark:bg-stone-900 border-t border-amber-200 dark:border-amber-700/30">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-600 dark:text-stone-400">
+      <a href="#" class="flex items-center gap-2 font-bold text-amber-700 dark:text-amber-300">🏴 Flowmatica</a>
+      <div class="flex gap-6"><a class="hover:text-amber-600" href="#">Support</a><a class="hover:text-amber-600" href="#">Licence</a><a class="hover:text-amber-600" href="#">Roadmap</a><a class="hover:text-amber-600" href="mailto:hello@flowmatica.com">Contact</a></div>
+      <p>© 2025 Flowmatica — Zero-cloud forever, hosted nowhere.</p>
     </div>
   </footer>
 
@@ -194,3 +295,4 @@
     });
   </script>
 </body>
+</html>
