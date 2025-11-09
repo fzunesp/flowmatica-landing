@@ -1,298 +1,1741 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Flowmatica – Zero-Cloud Forever</title>
+  <title>Flowmatica — Zero-Cloud Forever</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Inter', 'sans-serif'] },
-          animation: {
-            'fade-in': 'fade-in .8s cubic-bezier(0.16, 1, 0.3, 1) both',
-            'slide-up': 'slide-up .8s cubic-bezier(0.16, 1, 0.3, 1) both',
-          },
-          keyframes: {
-            'fade-in': { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
-            'slide-up': { '0%': { opacity: '0', transform: 'translateY(40px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
-          },
-        },
-      },
-    };
-  </script>
+  <meta name="description" content="Own your business software. Pay once, keep forever. No subscriptions, no cloud, no vendor lock-in.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
   <style>
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      opacity: .025;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    .parallax-bg { transform: translate3d(0, 0, 0); transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1); }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #020617;
+      color: #f1f5f9;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    .container-sm {
+      max-width: 768px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    .container-md {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(2, 6, 23, 0.9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid #1e293b;
+      z-index: 1000;
+      transition: box-shadow 0.3s;
+    }
+    
+    nav.scrolled {
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #f59e0b 0%, #dc2626 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .nav-links a {
+      color: #f1f5f9;
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: #f59e0b;
+    }
+    
+    .btn {
+      padding: 0.5rem 1.25rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.875rem;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+    .btn-primary {
+      background: #d97706;
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background: #f59e0b;
+      transform: scale(1.05);
+    }
+    
+    .btn-secondary {
+      background: #1e293b;
+      color: white;
+      border: 1px solid #334155;
+    }
+    
+    .btn-secondary:hover {
+      background: #334155;
+    }
+    
+    .btn-large {
+      padding: 1rem 2rem;
+      font-size: 1.125rem;
+    }
+    
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #334155;
+      color: white;
+    }
+    
+    .btn-outline:hover {
+      border-color: #f59e0b;
+    }
+    
+    .btn-success {
+      background: #059669;
+    }
+    
+    .btn-success:hover {
+      background: #10b981;
+    }
+    
+    /* Mobile Menu */
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #cbd5e1;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    .mobile-menu {
+      display: none;
+      background: #0f172a;
+      border-top: 1px solid #1e293b;
+      padding: 1rem;
+    }
+    
+    .mobile-menu.active {
+      display: block;
+    }
+    
+    .mobile-menu a {
+      display: block;
+      padding: 0.75rem;
+      color: #f1f5f9;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .mobile-menu a:hover {
+      color: #f59e0b;
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .mobile-toggle {
+        display: block;
+      }
+    }
+    
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 1.5rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.1), transparent 50%);
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    
+    .badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: rgba(217, 119, 6, 0.1);
+      border: 1px solid rgba(217, 119, 6, 0.2);
+      border-radius: 9999px;
+      color: #f59e0b;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    
+    h1 {
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #f59e0b 0%, #dc2626 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .hero-subtitle {
+      font-size: clamp(1.125rem, 3vw, 1.5rem);
+      color: #94a3b8;
+      margin-bottom: 3rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .hero-subtitle strong {
+      color: #e2e8f0;
+    }
+    
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 4rem;
+    }
+    
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .stat-item {
+      text-align: center;
+    }
+    
+    .stat-value {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 900;
+      background: linear-gradient(135deg, #f59e0b 0%, #dc2626 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .stat-label {
+      font-size: 0.875rem;
+      color: #64748b;
+      margin-top: 0.5rem;
+    }
+    
+    /* Sections */
+    section {
+      padding: 4rem 1.5rem;
+    }
+    
+    @media (min-width: 768px) {
+      section {
+        padding: 6rem 1.5rem;
+      }
+    }
+    
+    h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    h3 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+    
+    .section-subtitle {
+      font-size: clamp(1.125rem, 2vw, 1.25rem);
+      color: #94a3b8;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 3rem;
+    }
+    
+    /* Cards */
+    .card {
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid #334155;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      transition: all 0.3s;
+    }
+    
+    .card:hover {
+      border-color: #f59e0b;
+      transform: translateY(-4px);
+    }
+    
+    .card-grid {
+      display: grid;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    @media (min-width: 768px) {
+      .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    /* Manifesto / Not For Everyone */
+    .manifesto-card {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid #334155;
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .manifesto-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+    
+    .manifesto-title {
+      font-weight: 700;
+      color: #e2e8f0;
+      margin-bottom: 0.25rem;
+    }
+    
+    .manifesto-desc {
+      color: #94a3b8;
+      font-size: 0.875rem;
+    }
+    
+    .welcome-box {
+      background: rgba(217, 119, 6, 0.1);
+      border: 2px solid rgba(217, 119, 6, 0.3);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    
+    .welcome-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #f59e0b;
+      margin-bottom: 0.75rem;
+    }
+    
+    /* Progress Cards */
+    .progress-card {
+      background: rgba(30, 41, 59, 0.5);
+      border: 2px solid #334155;
+      border-radius: 1.5rem;
+      padding: 2rem;
+    }
+    
+    .progress-card.complete {
+      background: rgba(5, 150, 105, 0.1);
+      border-color: rgba(5, 150, 105, 0.3);
+    }
+    
+    .progress-card.in-progress {
+      background: rgba(217, 119, 6, 0.1);
+      border-color: rgba(217, 119, 6, 0.3);
+    }
+    
+    .progress-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .progress-icon {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    
+    .progress-icon.complete {
+      background: #059669;
+    }
+    
+    .progress-icon.in-progress {
+      background: #d97706;
+    }
+    
+    .progress-icon.planned {
+      background: #334155;
+    }
+    
+    .spinner {
+      width: 1.5rem;
+      height: 1.5rem;
+      border: 4px solid white;
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    .progress-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    
+    .progress-title.complete {
+      color: #10b981;
+    }
+    
+    .progress-title.in-progress {
+      color: #fbbf24;
+    }
+    
+    .progress-title.planned {
+      color: #94a3b8;
+    }
+    
+    .progress-list {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .progress-list li {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      align-items: flex-start;
+    }
+    
+    .progress-list li span:first-child {
+      flex-shrink: 0;
+      margin-top: 0.25rem;
+    }
+    
+    /* App Cards */
+    .app-card {
+      position: relative;
+      background: rgba(30, 41, 59, 0.5);
+      border: 2px solid #334155;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      transition: all 0.3s;
+    }
+    
+    .app-card:hover {
+      transform: scale(1.02);
+    }
+    
+    .app-card.available {
+      border-color: rgba(5, 150, 105, 0.3);
+    }
+    
+    .app-card.coming-soon {
+      border-color: rgba(217, 119, 6, 0.3);
+    }
+    
+    .app-status {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    
+    .app-status.available {
+      background: #059669;
+      color: white;
+    }
+    
+    .app-status.coming {
+      background: #d97706;
+      color: white;
+    }
+    
+    .app-status.planned {
+      background: #334155;
+      color: #94a3b8;
+    }
+    
+    .app-icon {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .app-icon.green {
+      background: rgba(5, 150, 105, 0.2);
+    }
+    
+    .app-icon.orange {
+      background: rgba(217, 119, 6, 0.2);
+    }
+    
+    .app-icon.gray {
+      background: #334155;
+    }
+    
+    .app-pricing {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      margin: 1.5rem 0;
+    }
+    
+    .app-price {
+      font-size: 2.5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #f59e0b 0%, #dc2626 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .app-price.muted {
+      color: #94a3b8;
+      background: none;
+      -webkit-text-fill-color: #94a3b8;
+    }
+    
+    .old-price {
+      text-decoration: line-through;
+      color: #64748b;
+    }
+    
+    .sale-badge {
+      padding: 0.25rem 0.5rem;
+      background: rgba(217, 119, 6, 0.2);
+      color: #fbbf24;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-radius: 0.25rem;
+    }
+    
+    /* Bundle Card */
+    .bundle-card {
+      background: linear-gradient(135deg, rgba(217, 119, 6, 0.2) 0%, rgba(220, 38, 38, 0.2) 100%);
+      border: 2px solid #d97706;
+      border-radius: 1.5rem;
+      padding: 3rem 2rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+    
+    .bundle-badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: #d97706;
+      color: white;
+      font-size: 0.875rem;
+      font-weight: 700;
+      border-radius: 9999px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .bundle-pricing {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    
+    .bundle-price {
+      font-size: clamp(3rem, 8vw, 4rem);
+      font-weight: 900;
+      background: linear-gradient(135deg, #f59e0b 0%, #dc2626 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    /* ROI Calculator */
+    .roi-card {
+      background: rgba(30, 41, 59, 0.5);
+      border: 2px solid #334155;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .roi-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background: rgba(15, 23, 42, 0.5);
+      border-radius: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    
+    .roi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+    
+    .roi-box {
+      padding: 1rem;
+      border-radius: 0.75rem;
+    }
+    
+    .roi-box.bad {
+      background: rgba(220, 38, 38, 0.2);
+      border: 1px solid rgba(220, 38, 38, 0.3);
+    }
+    
+    .roi-box.good {
+      background: rgba(5, 150, 105, 0.2);
+      border: 1px solid rgba(5, 150, 105, 0.3);
+    }
+    
+    .roi-value {
+      font-size: 2rem;
+      font-weight: 900;
+    }
+    
+    .roi-value.bad {
+      color: #f87171;
+    }
+    
+    .roi-value.good {
+      color: #10b981;
+    }
+    
+    .roi-label {
+      font-size: 0.875rem;
+      color: #94a3b8;
+      margin-top: 0.25rem;
+    }
+    
+    /* Comparison Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+    }
+    
+    th {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 2px solid #334155;
+      font-weight: 600;
+    }
+    
+    td {
+      padding: 1rem;
+      border-bottom: 1px solid #1e293b;
+    }
+    
+    th:first-child, td:first-child {
+      text-align: left;
+    }
+    
+    th:not(:first-child), td:not(:first-child) {
+      text-align: center;
+    }
+    
+    .table-good {
+      color: #10b981;
+    }
+    
+    .table-neutral {
+      color: #94a3b8;
+    }
+    
+    /* FAQ */
+    details {
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid #334155;
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      cursor: pointer;
+    }
+    
+    summary {
+      font-weight: 700;
+      font-size: 1.125rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    summary::after {
+      content: '▼';
+      color: #f59e0b;
+      transition: transform 0.3s;
+    }
+    
+    details[open] summary::after {
+      transform: rotate(180deg);
+    }
+    
+    details p {
+      margin-top: 1rem;
+      color: #94a3b8;
+      line-height: 1.7;
+    }
+    
+    /* Email Signup */
+    .signup-form {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .email-input {
+      flex: 1;
+      min-width: 250px;
+      padding: 1rem 1.5rem;
+      background: #1e293b;
+      border: 2px solid #334155;
+      border-radius: 9999px;
+      color: #f1f5f9;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    
+    .email-input:focus {
+      border-color: #f59e0b;
+    }
+    
+    .email-input::placeholder {
+      color: #64748b;
+    }
+    
+    .signup-benefits {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      font-size: 0.875rem;
+      color: #64748b;
+    }
+    
+    .benefit-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .success-message {
+      display: none;
+      background: rgba(5, 150, 105, 0.2);
+      border: 1px solid rgba(5, 150, 105, 0.5);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    
+    .success-message.show {
+      display: block;
+    }
+    
+    /* Tech Stack */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .tech-item {
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid #334155;
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      text-align: center;
+      transition: border-color 0.3s;
+    }
+    
+    .tech-item:hover {
+      border-color: #f59e0b;
+    }
+    
+    .tech-icon {
+      font-size: 3rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    .tech-name {
+      font-weight: 700;
+      color: #cbd5e1;
+      margin-bottom: 0.25rem;
+    }
+    
+    .tech-desc {
+      font-size: 0.875rem;
+      color: #64748b;
+    }
+    
+    /* Screenshot Placeholders */
+    .screenshot-grid {
+      display: grid;
+      gap: 2rem;
+    }
+    
+    @media (min-width: 768px) {
+      .screenshot-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    .screenshot-placeholder {
+      aspect-ratio: 16/9;
+      background: #1e293b;
+      border: 2px solid #334155;
+      border-radius: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.3s;
+    }
+    
+    .screenshot-placeholder:hover {
+      border-color: #f59e0b;
+    }
+    
+    .placeholder-content {
+      text-align: center;
+      padding: 2rem;
+    }
+    
+    .placeholder-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    
+    .placeholder-title {
+      color: #94a3b8;
+      margin-bottom: 0.5rem;
+    }
+    
+    .placeholder-label {
+      font-size: 0.875rem;
+      color: #475569;
+    }
+    
+    /* Footer */
+    footer {
+      background: #020617;
+      border-top: 1px solid #1e293b;
+      padding: 3rem 1.5rem;
+    }
+    
+    .footer-content {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .footer-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.3s;
+    }
+    
+    .footer-links a:hover {
+      color: #f59e0b;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid #1e293b;
+      color: #475569;
+      font-size: 0.875rem;
+    }
+    
+    .footer-bottom p {
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Utility Classes */
+    .text-center {
+      text-align: center;
+    }
+    
+    .mt-4 {
+      margin-top: 1rem;
+    }
+    
+    .mb-4 {
+      margin-bottom: 1rem;
+    }
+    
+    .hidden {
+      display: none;
+    }
+    
+    /* Backgrounds */
+    .bg-dark {
+      background: #0f172a;
+    }
+    
+    .bg-darker {
+      background: #020617;
+    }
+    
+    .bg-gradient-1 {
+      background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
+    }
+    
+    .bg-gradient-2 {
+      background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+    }
+    
+    .bg-gradient-hero {
+      background: linear-gradient(135deg, rgba(120, 53, 15, 0.3) 0%, rgba(220, 38, 38, 0.3) 100%);
+    }
   </style>
 </head>
 
-<body class="bg-orange-50 text-slate-800 font-sans overflow-x-hidden dark:bg-stone-900 dark:text-stone-100">
-  <!-- 1. HERO – warm sunset gradient -->
-  <!--<section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
-    <div class="parallax-bg absolute inset-0 -z-10 bg-gradient-to-br from-amber-200 via-orange-300 to-rose-300 dark:from-amber-900 dark:via-orange-800 dark:to-rose-900"></div>
-    <div class="relative z-10 text-center px-6 max-w-4xl">
-      <h1 class="text-6xl md:text-8xl font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-rose-500 to-amber-600 dark:from-amber-300 dark:to-rose-300 animate-slide-up">
-        Own Your Systems. <br><br><span class="text-amber-700 dark:text-amber-200">Zero-Cloud Forever.</span>
+<body>
+  <!-- Navigation -->
+  <nav id="nav">
+    <div class="nav-content">
+      <a href="#" class="logo">FLOWMATICA</a>
+      <div class="nav-links">
+        <a href="#progress">Progress</a>
+        <a href="#apps">Apps</a>
+        <a href="#why">Why</a>
+        <a href="#faq">FAQ</a>
+        <button class="btn btn-primary" onclick="scrollToSignup()">Get Early Access</button>
+      </div>
+      <button class="mobile-toggle" onclick="toggleMobile()">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#progress" onclick="toggleMobile()">Progress</a>
+      <a href="#apps" onclick="toggleMobile()">Apps</a>
+      <a href="#why" onclick="toggleMobile()">Why</a>
+      <a href="#faq" onclick="toggleMobile()">FAQ</a>
+      <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;" onclick="scrollToSignup(); toggleMobile();">Get Early Access</button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="badge">🚀 Currently in Development — Invoice App Complete</div>
+      <h1>
+        <span class="gradient-text">Own Your Software.</span><br>
+        <span style="color: #94a3b8;">Pay Once. Keep Forever.</span>
       </h1>
-      <p class="mt-6 text-lg md:text-xl text-slate-700 dark:text-stone-200 max-w-2xl mx-auto animate-slide-up" style="animation-delay:.2s">
-        Pocket-sized apps that run on a dusty laptop, an office mini-PC, or an air-gapped server.
-        No cloud keys, no monthly tithe—just a one-time licence and zero-cloud forever.
+      <p class="hero-subtitle">
+        Business software that runs on <strong>your hardware</strong>. 
+        No subscriptions. No cloud. No vendor lock-in. 
+        Just a one-time payment and lifetime ownership.
       </p>
-      <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style="animation-delay:.4s">
-        <a href="#products" class="px-7 py-3 rounded-full bg-amber-600 text-white font-semibold hover:scale-105 transition">Browse zero-cloud apps</a>
-        <button onclick="scrollToSection('#offer')" class="px-7 py-3 rounded-full border border-amber-400 text-amber-700 dark:text-amber-200 hover:bg-amber-100 dark:hover:bg-amber-900/30 transition">Still unsure? →</button>
+      <div class="hero-cta">
+        <button class="btn btn-primary btn-large" onclick="scrollToSignup()">Reserve Early Bird Pricing</button>
+        <a href="#manifesto" class="btn btn-outline btn-large">Why Zero-Cloud?</a>
       </div>
-    </div>
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-      <svg class="w-6 h-6 text-amber-700 dark:text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
-    </div>
-  </section>-->
-
-
-<section id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
-  <div class="parallax-bg absolute inset-0 -z-10 bg-gradient-to-br from-amber-200 via-orange-300 to-rose-300 dark:from-amber-900 dark:via-orange-800 dark:to-rose-900"></div>
-
-  <div class="relative z-10 w-full px-6 text-center">
-    <h1 class="w-full text-6xl md:text-8xl font-black tracking-tight leading-[1.05]
-               bg-clip-text text-transparent bg-gradient-to-r
-               from-rose-500 to-amber-600 dark:from-amber-300 dark:to-rose-300
-               animate-slide-up">
-      Own Your Systems.
-      <br><br>
-      <span class="text-amber-700 dark:text-amber-200">Zero-Cloud Forever.</span>
-    </h1>
-
-    <p class="mt-8 text-lg md:text-xl text-slate-700 dark:text-stone-200 max-w-2xl mx-auto animate-slide-up" style="animation-delay:.2s">
-      <br>Pocket-sized apps that run on a dusty laptop, an office mini-PC, or an air-gapped server.
-      No cloud keys, no monthly tithe—just a one-time licence and zero-cloud forever.
-    </p>
-
-    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style="animation-delay:.4s">
-      <a href="#products"
-         class="px-7 py-3 rounded-full bg-amber-600 text-white font-semibold hover:scale-105 transition">
-        Browse zero-cloud apps
-      </a>
-      <button onclick="scrollToSection('#offer')"
-         class="px-7 py-3 rounded-full border border-amber-400 text-amber-700 dark:text-amber-200
-                hover:bg-amber-100 dark:hover:bg-amber-900/30 transition">
-        Still unsure? →
-      </button>
-    </div>
-  </div>
-
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-    <svg class="w-6 h-6 text-amber-700 dark:text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-    </svg>
-  </div>
-</section>
-
-
-
-  <!-- 2. GATE-CHECK – warm accents -->
-  <section class="py-16 px-6 max-w-4xl mx-auto text-center">
-    <h2 class="text-2xl md:text-4xl font-black text-amber-600 dark:text-amber-300">Stop before we begin…</h2>
-    <p class="mt-4 text-slate-700 dark:text-stone-200 text-lg">If you love any of these, you’re at the wrong place.</p>
-    <ul class="mt-6 space-y-3 text-left text-slate-600 dark:text-stone-300">
-      <li class="flex items-start gap-3"><span class="text-rose-500 text-xl">✗</span><span>Paying for software <strong>forever</strong>.</span></li>
-      <li class="flex items-start gap-3"><span class="text-rose-500 text-xl">✗</span><span>Storing your data in some <strong>foreign land</strong>.</span></li>
-      <li class="flex items-start gap-3"><span class="text-rose-500 text-xl">✗</span><span>Paying for <strong>additional users</strong> every month.</span></li>
-      <li class="flex items-start gap-3"><span class="text-rose-500 text-xl">✗</span><span>Paying for <strong>functionality you never use</strong>.</span></li>
-      <li class="flex items-start gap-3"><span class="text-rose-500 text-xl">✗</span><span><strong>Loving the Cloud</strong> — we love the <span class="text-amber-600">sun</span>.</span></li>
-    </ul>
-    <p class="mt-6 text-slate-700 dark:text-stone-200">Wrong place my friend, exit door is behind you. <br><br>Everyone else welcome — scroll on.</p>
-  </section>
-
-  <!-- 3. MANIFESTO – warm cards -->
-  <section id="pain" class="py-24 px-6 max-w-6xl mx-auto">
-    <h2 class="text-4xl md:text-5xl font-black text-center text-amber-700 dark:text-amber-300">Serfdom is Expensive. <br><br>Zero-Cloud Forever is not.</h2>
-    <div class="mt-12 grid md:grid-cols-3 gap-6">
-      <div class="group relative p-8 rounded-3xl bg-white/70 dark:bg-stone-800/70 border border-white/20 dark:border-stone-700 backdrop-blur hover:shadow-2xl hover:-translate-y-1 transition animate-slide-up" style="animation-delay:.1s">
-        <div class="absolute -top-4 left-8 h-8 w-8 rounded-full bg-rose-500 grid place-items-center text-white font-bold text-sm">1</div>
-        <p class="mt-4 font-bold text-rose-600 dark:text-rose-400">Rented software</p>
-        <p class="mt-2 text-slate-700 dark:text-stone-300">Stop paying forever for the privilege of working on your own data.</p>
-      </div>
-      <div class="group relative p-8 rounded-3xl bg-white/70 dark:bg-stone-800/70 border border-white/20 dark:border-stone-700 backdrop-blur hover:shadow-2xl hover:-translate-y-1 transition animate-slide-up" style="animation-delay:.2s">
-        <div class="absolute -top-4 left-8 h-8 w-8 rounded-full bg-amber-500 grid place-items-center text-white font-bold text-sm">2</div>
-        <p class="mt-4 font-bold text-amber-600 dark:text-amber-400">Data colonialism</p>
-        <p class="mt-2 text-slate-700 dark:text-stone-300">Your payroll, invoices and client lists stored on someone else’s hard drive.</p>
-      </div>
-      <div class="group relative p-8 rounded-3xl bg-white/70 dark:bg-stone-800/70 border border-white/20 dark:border-stone-700 backdrop-blur hover:shadow-2xl hover:-translate-y-1 transition animate-slide-up" style="animation-delay:.3s">
-        <div class="absolute -top-4 left-8 h-8 w-8 rounded-full bg-amber-600 grid place-items-center text-white font-bold text-sm">3</div>
-        <p class="mt-4 font-bold text-amber-700 dark:text-amber-400">Compliance roulette</p>
-        <p class="mt-2 text-slate-700 dark:text-stone-300">GDPR fines, export bans, sudden ToS changes—zero-cloud forever removes the dice.</p>
+      <div class="stats">
+        <div class="stat-item">
+          <div class="stat-value">$0</div>
+          <div class="stat-label">Monthly fees</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">∞</div>
+          <div class="stat-label">Years of ownership</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">1×</div>
+          <div class="stat-label">Payment required</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 4. PROOF – big numbers -->
-  <section class="py-20 px-6 max-w-5xl mx-auto">
-    <p class="text-center text-xs uppercase tracking-widest text-amber-600 dark:text-amber-300">1 847 companies already declared zero-cloud forever</p>
-    <div class="mt-10 grid grid-cols-3 gap-8 text-center">
-      <div><div class="text-5xl md:text-7xl font-black text-amber-600 dark:text-amber-300">0</div><div class="mt-2 text-sm text-slate-600 dark:text-stone-400">External servers required</div></div>
-      <div><div class="text-5xl md:text-7xl font-black text-amber-600 dark:text-amber-300">∞</div><div class="mt-2 text-sm text-slate-600 dark:text-stone-400">Years you own it</div></div>
-      <div><div class="text-5xl md:text-7xl font-black text-amber-600 dark:text-amber-300">30 d</div><div class="mt-2 text-sm text-slate-600 dark:text-stone-400">Zero-cloud forever guarantee</div></div>
-    </div>
-    <blockquote class="mt-14 max-w-2xl mx-auto text-center"><p class="text-xl italic text-slate-700 dark:text-stone-300">“We threw an old Thinkpad in the basement—now our books, clients and HR live on our terms, not Silicon Valley’s.”</p><cite class="mt-4 block text-sm text-slate-500 dark:text-stone-400">— Dana R., 12-person agency</cite></blockquote>
-  </section>
+  <!-- Manifesto -->
+  <section id="manifesto" class="bg-gradient-1">
+    <div class="container-md">
+      <h2><span class="gradient-text">Not For Everyone</span></h2>
+      <p class="section-subtitle">If you love these things, this isn't for you:</p>
+      
+      <div style="margin-bottom: 1rem;">
+        <div class="manifesto-card">
+          <span class="manifesto-icon">❌</span>
+          <div>
+            <div class="manifesto-title">Paying rent to use your own data</div>
+            <div class="manifesto-desc">Monthly subscriptions that never end</div>
+          </div>
+        </div>
+        
+        <div class="manifesto-card">
+          <span class="manifesto-icon">❌</span>
+          <div>
+            <div class="manifesto-title">Someone else holding your business hostage</div>
+            <div class="manifesto-desc">Cancel payment = lose all your data</div>
+          </div>
+        </div>
+        
+        <div class="manifesto-card">
+          <span class="manifesto-icon">❌</span>
+          <div>
+            <div class="manifesto-title">Paying per user, per feature, per breath</div>
+            <div class="manifesto-desc">Additional fees for things that should be included</div>
+          </div>
+        </div>
+        
+        <div class="manifesto-card">
+          <span class="manifesto-icon">❌</span>
+          <div>
+            <div class="manifesto-title">Trusting "the cloud" with sensitive data</div>
+            <div class="manifesto-desc">Your invoices, payroll, and client lists on someone else's servers</div>
+          </div>
+        </div>
+      </div>
 
-  <!-- 5. PRODUCTS – 4 warm cards -->
-  <section id="products" class="py-24 px-6 max-w-7xl mx-auto">
-    <h2 class="text-4xl md:text-5xl font-black text-center text-amber-700 dark:text-amber-300">Four zero-cloud forever toolkits</h2>
-    <p class="mt-4 text-center text-slate-600 dark:text-stone-400"><br>One tiny installer. Runs on any dusty PC, Mac, or even a Raspberry Pi—no servers, no IT degree required.</p>
-    <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-      <!-- Invoice -->
-  <div class="group relative rounded-3xl p-8 bg-white/70 dark:bg-stone-800/70 border border-white/20 dark:border-stone-700 backdrop-blur hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-    <div class="h-14 w-14 rounded-2xl bg-amber-100 dark:bg-amber-800 grid place-items-center text-3xl">📄</div>
-    <h3 class="mt-6 text-2xl font-bold text-amber-600 dark:text-amber-300">ZeroCloudInvoice</h3>
-    <p class="mt-3 text-slate-700 dark:text-stone-300">
-      Create, send, and store invoices on your own disk. Export to PDF, UBL, PEPPOL, or raw JSON for auditors.
-    </p>
-    <ul class="mt-5 space-y-2 text-sm text-slate-600 dark:text-stone-400">
-      <li>✓ Offline-first</li>
-      <li>✓ End-to-end encrypted vault</li>
-      <li>✓ One-click export (PDF, UBL, CSV)</li>
-    </ul>
-    <div class="mt-8 flex items-center gap-3">
-      <span class="text-4xl font-black text-slate-800 dark:text-white">$1 199</span>
-      <a href="#" class="px-4 py-2 rounded-full bg-amber-600 text-white font-semibold hover:scale-105 transition">Claim licence</a>
-    </div>
-  </div>
-      <!-- CRM -->
-  <div class="group relative rounded-3xl p-8 bg-white/70 dark:bg-stone-800/70 border border-white/20 dark:border-stone-700 backdrop-blur hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-    <div class="h-14 w-14 rounded-2xl bg-amber-100 dark:bg-amber-800 grid place-items-center text-3xl">🧠</div>
-    <h3 class="mt-6 text-2xl font-bold text-amber-600 dark:text-amber-300">ZeroCloudCRM</h3>
-    <p class="mt-3 text-slate-700 dark:text-stone-300">
-      Pipeline, quotes, tasks, e-mail sequencing — all in a single database file you can copy to a USB stick.
-    </p>
-    <ul class="mt-5 space-y-2 text-sm text-slate-600 dark:text-stone-400">
-      <li>✓ Roles & territories</li>
-      <li>✓ REST & GraphQL API</li>
-      <li>✓ One-file backup</li>
-    </ul>
-    <div class="mt-8 flex items-center gap-3">
-      <span class="text-4xl font-black text-slate-800 dark:text-white">$1 899</span>
-      <a href="#" class="px-4 py-2 rounded-full bg-amber-600 text-white font-semibold hover:scale-105 transition">Claim licence</a>
-    </div>
-  </div>
-      <!-- HR -->
-  <div class="group relative rounded-3xl p-8 bg-white/70 dark:bg-stone-800/70 border border-white/20 dark:border-stone-700 backdrop-blur hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-    <div class="h-14 w-14 rounded-2xl bg-amber-100 dark:bg-amber-800 grid place-items-center text-3xl">⚖️</div>
-    <h3 class="mt-6 text-2xl font-bold text-amber-600 dark:text-amber-300">ZeroCloudHR</h3>
-    <p class="mt-3 text-slate-700 dark:text-stone-300">
-      Employee records, leave policy engine, asset tracking, e-sign — all GDPR & SOC-2 ready out of the box.
-    </p>
-    <ul class="mt-5 space-y-2 text-sm text-slate-600 dark:text-stone-400">
-      <li>✓ Leave & expense workflows</li>
-      <li>✓ Custom report builder</li>
-      <li>✓ Air-gap friendly</li>
-    </ul>
-    <div class="mt-8 flex items-center gap-3">
-      <span class="text-4xl font-black text-slate-800 dark:text-white">$1 599</span>
-      <a href="#" class="px-4 py-2 rounded-full bg-amber-600 text-white font-semibold hover:scale-105 transition">Claim licence</a>
-    </div>
-  </div>
-
-  <!-- Books -->
-  <div class="group relative rounded-3xl p-8 bg-white/70 dark:bg-stone-800/70 border border-white/20 dark:border-stone-700 backdrop-blur hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-    <div class="h-14 w-14 rounded-2xl bg-amber-100 dark:bg-amber-800 grid place-items-center text-3xl">📚</div>
-    <h3 class="mt-6 text-2xl font-bold text-amber-600 dark:text-amber-300">ZeroCloudBooks</h3>
-    <p class="mt-3 text-slate-700 dark:text-stone-300">
-      Simple double-entry bookkeeping: chart of accounts, journal, trial balance, P&L, balance sheet — no accountant required.
-    </p>
-    <ul class="mt-5 space-y-2 text-sm text-slate-600 dark:text-stone-400">
-      <li>✓ Double-entry out of the box</li>
-      <li>✓ CSV import from any bank</li>
-      <li>✓ One-click IFRS / GAAP reports</li>
-    </ul>
-    <div class="mt-8 flex items-center gap-3">
-      <span class="text-4xl font-black text-slate-800 dark:text-white">$999</span>
-      <a href="#" class="px-4 py-2 rounded-full bg-amber-600 text-white font-semibold hover:scale-105 transition">Claim licence</a>
-    </div>
-  </div>
-
-</div>
-
-
-    <!-- Bundle -->
-    <div class="mt-16 max-w-4xl mx-auto rounded-3xl bg-gradient-to-r from-amber-200/30 to-rose-300/30 border-2 border-amber-400 dark:border-amber-400/50 p-8 text-center">
-      <p class="text-amber-700 dark:text-amber-300 font-bold">Zero-cloud forever bundle</p>
-      <p class="mt-2 text-slate-700 dark:text-stone-200">Own all four toolkits for <span class="line-through">$5 696</span> <span class="text-4xl font-black text-amber-600 dark:text-amber-300">$4 299</span> — perpetual.</p>
-      <a href="#" class="mt-6 inline-flex px-7 py-3 rounded-full bg-amber-600 text-white font-bold hover:opacity-90 transition">Declare independence</a>
+      <div class="welcome-box">
+        <div class="welcome-title">Still here? Welcome.</div>
+        <div style="color: #cbd5e1;">You're part of the zero-cloud revolution.</div>
+      </div>
     </div>
   </section>
 
-  <!-- 6. OFFER – warm guarantee -->
-  <section id="offer" class="py-24 px-6 bg-amber-100 dark:bg-stone-900 text-slate-800 dark:text-stone-100">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-4xl md:text-5xl font-black text-amber-700 dark:text-amber-300">30-day zero-cloud forever guarantee</h2>
-      <p class="mt-6 text-lg text-slate-600 dark:text-stone-300 max-w-2xl mx-auto">
-        Install on an air-gapped laptop. If you can’t migrate away from the cloud within 30 days, e-mail us. We’ll refund and you still keep the installer.
+  <!-- Progress -->
+  <section id="progress" class="bg-dark">
+    <div class="container">
+      <h2><span class="gradient-text">Built In Public</span></h2>
+      <p class="section-subtitle">We're not hiding behind vaporware. Here's exactly where we are and where we're going.</p>
+      
+      <div class="card-grid">
+        <div class="progress-card complete">
+          <div class="progress-header">
+            <div class="progress-icon complete">✓</div>
+            <h3 class="progress-title complete">Invoice App — Complete</h3>
+          </div>
+          <ul class="progress-list">
+            <li><span style="color: #10b981;">✓</span> <span style="color: #cbd5e1;">Create, edit, and send invoices</span></li>
+            <li><span style="color: #10b981;">✓</span> <span style="color: #cbd5e1;">Export to PDF, CSV, JSON</span></li>
+            <li><span style="color: #10b981;">✓</span> <span style="color: #cbd5e1;">Runs locally with PocketBase backend</span></li>
+            <li><span style="color: #10b981;">✓</span> <span style="color: #cbd5e1;">Docker Compose deployment</span></li>
+          </ul>
+        </div>
+
+        <div class="progress-card in-progress">
+          <div class="progress-header">
+            <div class="progress-icon in-progress">
+              <div class="spinner"></div>
+            </div>
+            <h3 class="progress-title in-progress">CRM App — In Progress</h3>
+          </div>
+          <p style="color: #94a3b8; margin-bottom: 1rem;">Expected completion: <strong style="color: #fbbf24;">December 2025</strong></p>
+          <ul class="progress-list">
+            <li><span style="color: #fbbf24;">⟳</span> <span style="color: #cbd5e1;">Contact management & pipeline</span></li>
+            <li><span style="color: #fbbf24;">⟳</span> <span style="color: #cbd5e1;">Task tracking & quotes</span></li>
+            <li><span style="color: #475569;">○</span> <span style="color: #64748b;">Email sequencing (planned)</span></li>
+          </ul>
+        </div>
+
+        <div class="progress-card">
+          <div class="progress-header">
+            <div class="progress-icon planned">📋</div>
+            <h3 class="progress-title planned">HR Management — Planned</h3>
+          </div>
+          <p style="color: #64748b; margin-bottom: 1rem;">Expected: <strong>January 2026</strong></p>
+          <ul class="progress-list" style="color: #64748b;">
+            <li><span>•</span> <span>Employee records & onboarding</span></li>
+            <li><span>•</span> <span>Leave management & approvals</span></li>
+            <li><span>•</span> <span>Asset tracking</span></li>
+          </ul>
+        </div>
+
+        <div class="progress-card">
+          <div class="progress-header">
+            <div class="progress-icon planned">📊</div>
+            <h3 class="progress-title planned">Bookkeeping — Planned</h3>
+          </div>
+          <p style="color: #64748b; margin-bottom: 1rem;">Expected: <strong>Q1 2026</strong></p>
+          <ul class="progress-list" style="color: #64748b;">
+            <li><span>•</span> <span>Double-entry accounting</span></li>
+            <li><span>•</span> <span>P&L, balance sheet, trial balance</span></li>
+            <li><span>•</span> <span>Bank reconciliation</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <p style="color: #94a3b8; margin-bottom: 1rem;">Want to follow along?</p>
+        <button class="btn btn-secondary btn-large" onclick="scrollToSignup()">Get Development Updates</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apps -->
+  <section id="apps" class="bg-gradient-2">
+    <div class="container">
+      <h2><span class="gradient-text">Four Apps. One Philosophy.</span></h2>
+      <p class="section-subtitle">Each app runs independently or together. One Docker Compose file. Your hardware. Your rules.</p>
+      
+      <div class="card-grid">
+        <div class="app-card available">
+          <div class="app-status available">AVAILABLE NOW</div>
+          <div class="app-icon green">📄</div>
+          <h3>Invoice</h3>
+          <p style="color: #94a3b8; margin-bottom: 1.5rem;">Create, send, and manage invoices. Export to PDF, CSV, or JSON. All stored locally on your disk.</p>
+          <div class="app-pricing">
+            <span class="app-price">$499</span>
+            <span class="old-price">$799</span>
+            <span class="sale-badge">EARLY BIRD</span>
+          </div>
+          <button class="btn btn-success" style="width: 100%;" onclick="scrollToSignup()">Reserve License</button>
+        </div>
+
+        <div class="app-card coming-soon">
+          <div class="app-status coming">DEC 2025</div>
+          <div class="app-icon orange">🧠</div>
+          <h3>CRM</h3>
+          <p style="color: #94a3b8; margin-bottom: 1.5rem;">Manage contacts, pipeline, tasks, and quotes. Everything in a single database file you can backup to a USB stick.</p>
+          <div class="app-pricing">
+            <span class="app-price">$999</span>
+            <span class="old-price">$1,499</span>
+            <span class="sale-badge">EARLY BIRD</span>
+          </div>
+          <button class="btn btn-secondary" style="width: 100%;" onclick="scrollToSignup()">Pre-Order</button>
+        </div>
+
+        <div class="app-card">
+          <div class="app-status planned">Q1 2026</div>
+          <div class="app-icon gray">⚖️</div>
+          <h3>HR Management</h3>
+          <p style="color: #94a3b8; margin-bottom: 1.5rem;">Employee records, leave tracking, asset management. GDPR-ready out of the box. Air-gap friendly.</p>
+          <div class="app-pricing">
+            <span class="app-price muted">$799</span>
+            <span class="sale-badge" style="background: #334155; color: #64748b;">PLANNED</span>
+          </div>
+          <button class="btn btn-secondary" style="width: 100%;" onclick="scrollToSignup()">Get Notified</button>
+        </div>
+
+        <div class="app-card">
+          <div class="app-status planned">Q1 2026</div>
+          <div class="app-icon gray">📚</div>
+          <h3>Bookkeeping</h3>
+          <p style="color: #94a3b8; margin-bottom: 1.5rem;">Double-entry accounting, chart of accounts, P&L, balance sheet. No accountant required.</p>
+          <div class="app-pricing">
+            <span class="app-price muted">$699</span>
+            <span class="sale-badge" style="background: #334155; color: #64748b;">PLANNED</span>
+          </div>
+          <button class="btn btn-secondary" style="width: 100%;" onclick="scrollToSignup()">Get Notified</button>
+        </div>
+      </div>
+
+      <!-- Bundle -->
+      <div class="bundle-card">
+        <div class="bundle-badge">🔥 FOUNDING MEMBER BUNDLE</div>
+        <h3>Own All Four Apps</h3>
+        <div class="bundle-pricing">
+          <span class="bundle-price">$2,499</span>
+          <span class="old-price" style="font-size: 1.5rem;">$2,997</span>
+        </div>
+        <p style="color: #94a3b8; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+          Lock in lifetime access to all four apps. Get the Invoice app immediately. Receive CRM, HR, and Bookkeeping as they launch. One-time payment. Forever yours.
+        </p>
+        <button class="btn btn-primary btn-large" onclick="scrollToSignup()">Reserve Founding Spot</button>
+        <p style="margin-top: 1.5rem; font-size: 0.875rem; color: #64748b;">30-day money-back guarantee • Keep the software even if you refund</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots -->
+  <section class="bg-dark">
+    <div class="container">
+      <h2><span class="gradient-text">See It In Action</span></h2>
+      <p class="section-subtitle">Real screenshots from our Invoice app (screenshots coming soon!)</p>
+      
+      <div class="screenshot-grid">
+        <div class="screenshot-placeholder">
+          <div class="placeholder-content">
+            <div class="placeholder-icon">📸</div>
+            <div class="placeholder-title">Invoice Dashboard</div>
+            <div class="placeholder-label">Coming Soon</div>
+          </div>
+        </div>
+        
+        <div class="screenshot-placeholder">
+          <div class="placeholder-content">
+            <div class="placeholder-icon">📸</div>
+            <div class="placeholder-title">Create New Invoice</div>
+            <div class="placeholder-label">Coming Soon</div>
+          </div>
+        </div>
+        
+        <div class="screenshot-placeholder">
+          <div class="placeholder-content">
+            <div class="placeholder-icon">📸</div>
+            <div class="placeholder-title">Export Options</div>
+            <div class="placeholder-label">Coming Soon</div>
+          </div>
+        </div>
+        
+        <div class="screenshot-placeholder">
+          <div class="placeholder-content">
+            <div class="placeholder-icon">📸</div>
+            <div class="placeholder-title">Invoice Preview</div>
+            <div class="placeholder-label">Coming Soon</div>
+          </div>
+        </div>
+      </div>
+      
+      <p class="text-center" style="margin-top: 2rem; color: #64748b;">
+        Want to see a demo? <button onclick="scrollToSignup()" style="background: none; border: none; color: #f59e0b; text-decoration: underline; cursor: pointer;">Join our email list</button> for early access
       </p>
-      <ul class="mt-10 inline-block text-left space-y-3 text-slate-600 dark:text-stone-300">
-        <li class="flex items-center gap-3"><span class="text-amber-600">✓</span> Perpetual licence—no renewal traps</li>
-        <li class="flex items-center gap-3"><span class="text-amber-600">✓</span> Lifetime security updates included</li>
-        <li class="flex items-center gap-3"><span class="text-amber-600">✓</span> Transferable—sell or gift your copy</li>
-        <li class="flex items-center gap-3"><span class="text-amber-600">✓</span> Runs on Windows, macOS, Linux, Pi</li>
-      </ul>
-      <div class="mt-10"><a href="#products" class="px-8 py-4 rounded-full bg-amber-600 text-white font-bold shadow-lg hover:shadow-amber-500/40 hover:scale-105 transition">Download free trial</a></div>
     </div>
   </section>
 
-  <!-- 7. FAQ – warm accordion -->
-  <section id="faq" class="py-24 px-6 max-w-3xl mx-auto">
-    <h2 class="text-3xl font-black text-center text-amber-700 dark:text-amber-300">Zero-cloud forever questions?</h2>
-    <dl class="mt-10 space-y-4">
-      <div class="rounded-2xl border border-amber-200 dark:border-amber-700/50"><dt><button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left font-semibold text-amber-800 dark:text-amber-200"><span>Can I host it on an intranet with no internet?</span><svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7m0 0l-7-7m7 7V3" /></svg></button></dt><dd class="hidden px-5 pb-5 text-slate-600 dark:text-stone-300">Yes. Everything is self-contained; even e-mail reminders can use your internal SMTP.</dd></div>
-      <div class="rounded-2xl border border-amber-200 dark:border-amber-700/50"><dt><button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left font-semibold text-amber-800 dark:text-amber-200"><span>Do I get updates if I’m offline?</span><svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7m0 0l-7-7m7 7V3" /></svg></button></dt><dd class="hidden px-5 pb-5 text-slate-600 dark:text-stone-300">Download the update binary from any machine and copy it over. Zero phone-home required.</dd></div>
-      <div class="rounded-2xl border border-amber-200 dark:border-amber-700/50"><dt><button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left font-semibold text-amber-800 dark:text-amber-200"><span>What if my server dies?</span><svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7m0 0l-7-7m7 7V3" /></svg></button></dt><dd class="hidden px-5 pb-5 text-slate-600 dark:text-stone-300">Re-install on a new machine, drop the SQLite file back in—zero-cloud forever restored in 30 seconds.</dd></div>
-    </dl>
+  <!-- ROI Calculator -->
+  <section class="bg-gradient-1">
+    <div class="container-md">
+      <h2><span class="gradient-text">Do The Math</span></h2>
+      <p class="section-subtitle">See how much you'll save by owning instead of renting</p>
+      
+      <div class="roi-card">
+        <h3 style="text-align: center; margin-bottom: 2rem;">Typical SaaS Costs (10 Users)</h3>
+        
+        <div class="roi-row">
+          <span style="color: #cbd5e1;">CRM Software</span>
+          <span style="font-weight: 700; color: #e2e8f0;">$50/user × 10 = $500/mo</span>
+        </div>
+        <div class="roi-row">
+          <span style="color: #cbd5e1;">Invoicing Tool</span>
+          <span style="font-weight: 700; color: #e2e8f0;">$30/user × 10 = $300/mo</span>
+        </div>
+        <div class="roi-row">
+          <span style="color: #cbd5e1;">HR Management</span>
+          <span style="font-weight: 700; color: #e2e8f0;">$8/user × 10 = $80/mo</span>
+        </div>
+        <div class="roi-row">
+          <span style="color: #cbd5e1;">Accounting Software</span>
+          <span style="font-weight: 700; color: #e2e8f0;">$40/user × 10 = $400/mo</span>
+        </div>
+        
+        <div style="border-top: 2px solid rgba(217, 119, 6, 0.3); padding-top: 1.5rem; margin-top: 1.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+            <span style="font-size: 1.5rem; font-weight: 700; color: #e2e8f0;">Total Monthly Cost:</span>
+            <span style="font-size: 2.5rem; font-weight: 900;" class="gradient-text">$1,280</span>
+          </div>
+          
+          <div class="roi-grid">
+            <div class="roi-box bad">
+              <div class="roi-value bad">$15,360</div>
+              <div class="roi-label">Year 1</div>
+            </div>
+            <div class="roi-box bad">
+              <div class="roi-value bad">$38,400</div>
+              <div class="roi-label">3 Years</div>
+            </div>
+            <div class="roi-box bad">
+              <div class="roi-value bad">$76,800</div>
+              <div class="roi-label">5 Years</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div style="background: linear-gradient(135deg, rgba(5, 150, 105, 0.2) 0%, rgba(217, 119, 6, 0.2) 100%); border: 2px solid rgba(5, 150, 105, 0.5); border-radius: 1.5rem; padding: 2rem;">
+        <h3 style="text-align: center; margin-bottom: 2rem; color: #10b981;">Flowmatica Bundle</h3>
+        
+        <div class="text-center" style="margin-bottom: 2rem;">
+          <div style="font-size: 3.5rem; font-weight: 900; margin-bottom: 0.5rem;" class="gradient-text">$2,499</div>
+          <p style="color: #94a3b8;">One-time payment • Unlimited users • Forever</p>
+        </div>
+        
+        <div class="roi-grid">
+          <div class="roi-box good">
+            <div class="roi-value good">$12,861</div>
+            <div class="roi-label">Saved in Year 1</div>
+          </div>
+          <div class="roi-box good">
+            <div class="roi-value good">$35,901</div>
+            <div class="roi-label">Saved in 3 Years</div>
+          </div>
+          <div class="roi-box good">
+            <div class="roi-value good">$74,301</div>
+            <div class="roi-label">Saved in 5 Years</div>
+          </div>
+        </div>
+        
+        <div class="text-center" style="margin-top: 2rem;">
+          <p style="color: #10b981; font-weight: 700; font-size: 1.25rem; margin-bottom: 1rem;">ROI after just 2 months! 🎉</p>
+          <button class="btn btn-success btn-large" onclick="scrollToSignup()">Lock In This Price</button>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- 8. FOOTER -->
-  <footer class="py-10 px-6 bg-amber-50 dark:bg-stone-900 border-t border-amber-200 dark:border-amber-700/30">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-600 dark:text-stone-400">
-      <a href="#" class="flex items-center gap-2 font-bold text-amber-700 dark:text-amber-300">🏴 Flowmatica</a>
-      <div class="flex gap-6"><a class="hover:text-amber-600" href="#">Support</a><a class="hover:text-amber-600" href="#">Licence</a><a class="hover:text-amber-600" href="#">Roadmap</a><a class="hover:text-amber-600" href="mailto:hello@flowmatica.com">Contact</a></div>
-      <p>© 2025 Flowmatica — Zero-cloud forever, hosted nowhere.</p>
+  <!-- Why Zero-Cloud -->
+  <section id="why" class="bg-dark">
+    <div class="container-md">
+      <h2><span class="gradient-text">Why Zero-Cloud?</span></h2>
+      
+      <div style="display: grid; gap: 2rem;">
+        <div class="card">
+          <h3 style="color: #fbbf24;">💰 Economics</h3>
+          <p style="color: #cbd5e1;">Stop paying rent. Typical CRM costs $50/user/month. For 10 users, that's $6,000/year, every year. Our bundle? $2,499 once. You save money by month 5.</p>
+        </div>
+        
+        <div class="card">
+          <h3 style="color: #fbbf24;">🔒 Privacy</h3>
+          <p style="color: #cbd5e1;">Your client list, invoices, and payroll live on YOUR hardware. No third-party servers. No data mining. No "oops, we got hacked" emails.</p>
+        </div>
+        
+        <div class="card">
+          <h3 style="color: #fbbf24;">🎯 Control</h3>
+          <p style="color: #cbd5e1;">Install on an air-gapped machine. Run it in your basement. Host it on a Raspberry Pi. Update when YOU want. Export your data anytime. No vendor can hold you hostage.</p>
+        </div>
+        
+        <div class="card">
+          <h3 style="color: #fbbf24;">⚡ Simplicity</h3>
+          <p style="color: #cbd5e1;">One Docker Compose command and you're running. No IT degree required. No complex cloud configurations. No surprise bills.</p>
+        </div>
+        
+        <div class="card">
+          <h3 style="color: #fbbf24;">🌍 Compliance</h3>
+          <p style="color: #cbd5e1;">GDPR, SOC-2, or industry-specific regulations? When data never leaves your premises, compliance becomes trivial. No data processing agreements. No sub-processors to track.</p>
+        </div>
+        
+        <div class="card">
+          <h3 style="color: #fbbf24;">🔓 Freedom</h3>
+          <p style="color: #cbd5e1;">Your business. Your data. Your timeline. Cancel nothing. Export everything. Switch anytime. This is how software should be.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="bg-darker">
+    <div class="container">
+      <h2><span class="gradient-text">Flowmatica vs. Traditional SaaS</span></h2>
+      <p class="section-subtitle">See the difference for yourself</p>
+      
+      <div style="overflow-x: auto;">
+        <table>
+          <thead>
+            <tr>
+              <th style="color: #94a3b8;">Feature</th>
+              <th class="table-good">Flowmatica</th>
+              <th style="color: #f87171;">Traditional SaaS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="color: #cbd5e1;">Pricing Model</td>
+              <td class="table-good">One-time $2,499</td>
+              <td class="table-neutral">$1,280/month forever</td>
+            </tr>
+            <tr>
+              <td style="color: #cbd5e1;">Data Location</td>
+              <td class="table-good">Your hardware</td>
+              <td class="table-neutral">Their servers</td>
+            </tr>
+            <tr>
+              <td style="color: #cbd5e1;">User Limits</td>
+              <td class="table-good">Unlimited</td>
+              <td class="table-neutral">Pay per user</td>
+            </tr>
+            <tr>
+              <td style="color: #cbd5e1;">Internet Required</td>
+              <td class="table-good">No</td>
+              <td class="table-neutral">Yes</td>
+            </tr>
+            <tr>
+              <td style="color: #cbd5e1;">Data Ownership</td>
+              <td class="table-good">100% yours</td>
+              <td class="table-neutral">Licensed to vendor</td>
+            </tr>
+            <tr>
+              <td style="color: #cbd5e1;">Vendor Lock-in</td>
+              <td class="table-good">None</td>
+              <td class="table-neutral">Total</td>
+            </tr>
+            <tr>
+              <td style="color: #cbd5e1;">Forced Updates</td>
+              <td class="table-good">Never</td>
+              <td class="table-neutral">Always</td>
+            </tr>
+            <tr>
+              <td style="color: #cbd5e1;">Price Increases</td>
+              <td class="table-good">Impossible</td>
+              <td class="table-neutral">Yearly</td>
+            </tr>
+            <tr>
+              <td style="color: #cbd5e1;">Export Data</td>
+              <td class="table-good">Anytime</td>
+              <td class="table-neutral">Limited formats</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Email Signup -->
+  <section id="signup" class="bg-gradient-hero">
+    <div class="container-sm">
+      <h2><span class="gradient-text">Join The Revolution</span></h2>
+      <p class="section-subtitle">Get early bird pricing, development updates, and be first to know when new apps launch.</p>
+      
+      <form class="signup-form" onsubmit="handleSignup(event)">
+        <input type="email" class="email-input" placeholder="your@email.com" required>
+        <button type="submit" class="btn btn-primary btn-large">Reserve Early Access</button>
+      </form>
+      
+      <div class="signup-benefits">
+        <div class="benefit-item">
+          <span style="color: #10b981;">✓</span> No spam, ever
+        </div>
+        <div class="benefit-item">
+          <span style="color: #10b981;">✓</span> Unsubscribe anytime
+        </div>
+        <div class="benefit-item">
+          <span style="color: #10b981;">✓</span> Early bird discounts
+        </div>
+      </div>
+      
+      <div class="success-message" id="success-message">
+        <p style="color: #10b981; font-weight: 700; margin-bottom: 0.5rem;">🎉 You're on the list!</p>
+        <p style="color: #cbd5e1;">Check your email for confirmation and your early bird discount code.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="bg-dark">
+    <div class="container-sm">
+      <h2><span class="gradient-text">Frequently Asked Questions</span></h2>
+      
+      <details>
+        <summary>What's the 30-day guarantee?</summary>
+        <p>If you're not satisfied within 30 days, email us for a full refund. You keep the software installer anyway. No questions asked.</p>
+      </details>
+      
+      <details>
+        <summary>Can I really run this on my own hardware?</summary>
+        <p>Yes! Each app is packaged with Docker Compose. Run it on any machine with Docker installed: Windows, Mac, Linux, or even a Raspberry Pi. No cloud accounts required.</p>
+      </details>
+      
+      <details>
+        <summary>Can multiple users access it?</summary>
+        <p>Yes! Install it on a server on your network and everyone connects to it. No per-user fees. Ever. Add 5 users or 500 users - same price.</p>
+      </details>
+      
+      <details>
+        <summary>What if I need updates or support?</summary>
+        <p>Lifetime security updates are included. Download new versions and run them when YOU'RE ready. Email support for the first year included. Community forum forever.</p>
+      </details>
+      
+      <details>
+        <summary>Can I migrate from my current SaaS tools?</summary>
+        <p>Yes! Each app includes CSV import tools. We'll add migration guides for popular platforms as we go. Plus you can export from our apps anytime to CSV, JSON, or PDF.</p>
+      </details>
+      
+      <details>
+        <summary>What if my server crashes?</summary>
+        <p>Everything is stored in a PocketBase SQLite database file. Back it up to anywhere (USB drive, NAS, cloud if you want). Restore takes 30 seconds. It's just a file.</p>
+      </details>
+      
+      <details>
+        <summary>This sounds too good to be true. What's the catch?</summary>
+        <p>No catch. We're building a sustainable business by selling software once, not renting it forever. You pay for value, not recurring access. It's how software used to work before SaaS took over.</p>
+      </details>
+      
+      <details>
+        <summary>What are the minimum system requirements?</summary>
+        <p>Any machine that can run Docker: 2GB RAM minimum (4GB recommended), 500MB disk space per app, any modern CPU. Yes, even a Raspberry Pi 4 works great.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section class="bg-darker">
+    <div class="container-md text-center">
+      <h2><span class="gradient-text">Built With Modern Tech</span></h2>
+      <p class="section-subtitle">React frontend (Refine) + PocketBase backend = Fast, reliable, and runs anywhere</p>
+      
+      <div class="tech-grid">
+        <div class="tech-item">
+          <div class="tech-icon">⚛️</div>
+          <div class="tech-name">React</div>
+          <div class="tech-desc">Modern UI</div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon">🗄️</div>
+          <div class="tech-name">PocketBase</div>
+          <div class="tech-desc">SQLite backend</div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon">🐳</div>
+          <div class="tech-name">Docker</div>
+          <div class="tech-desc">Easy deployment</div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-icon">🔒</div>
+          <div class="tech-name">Self-hosted</div>
+          <div class="tech-desc">Your hardware</div>
+        </div>
+      </div>
+      
+      <div class="card" style="margin-top: 3rem; text-align: left;">
+        <h3 style="margin-bottom: 1.5rem;">Technical Details</h3>
+        <div style="display: grid; gap: 1.5rem;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+            <div>
+              <p style="color: #94a3b8; margin-bottom: 0.5rem;"><strong style="color: #cbd5e1;">Multi-user:</strong> Built-in</p>
+              <p style="color: #94a3b8; margin-bottom: 0.5rem;"><strong style="color: #cbd5e1;">Backup:</strong> Single file copy</p>
+              <p style="color: #94a3b8;"><strong style="color: #cbd5e1;">Updates:</strong> Docker pull</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="bg-gradient-hero">
+    <div class="container-md text-center">
+      <h2 style="font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1.5rem;">
+        <span class="gradient-text">Stop Renting.<br>Start Owning.</span>
+      </h2>
+      <p style="font-size: clamp(1.25rem, 3vw, 1.5rem); color: #94a3b8; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+        Join the zero-cloud revolution. Pay once. Own forever.
+      </p>
+      
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem;">
+        <button class="btn btn-primary btn-large" onclick="scrollToSignup()">Get Early Bird Pricing</button>
+        <a href="#apps" class="btn btn-outline btn-large">Browse Apps</a>
+      </div>
+      
+      <div style="color: #94a3b8;">
+        <p style="margin-bottom: 0.75rem;">
+          Questions? Email <a href="mailto:hello@flowmatica.ca" style="color: #f59e0b; text-decoration: underline;">hello@flowmatica.ca</a>
+        </p>
+        <p style="font-size: 0.875rem; color: #64748b;">
+          Built by developers who are tired of subscription fatigue
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span class="logo">FLOWMATICA</span>
+        <span style="color: #475569; display: none;">•</span>
+        <span style="color: #64748b; font-size: 0.875rem; display: none;">Zero-Cloud Forever</span>
+      </div>
+      
+      <div class="footer-links">
+        <a href="#progress">Progress</a>
+        <a href="#apps">Apps</a>
+        <a href="#why">Why</a>
+        <a href="#faq">FAQ</a>
+        <a href="mailto:hello@flowmatica.ca">Contact</a>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>© 2025 Flowmatica. Built with honesty. Hosted on your terms.</p>
+      <p style="color: #334155;">Currently in development • Invoice app complete • CRM coming December 2025</p>
     </div>
   </footer>
 
   <script>
-    const html = document.documentElement;
-    function toggleMode(){
-      html.classList.toggle('dark');
-      document.getElementById('modeIcon').textContent = html.classList.contains('dark') ? '☀️' : '🌙';
+    // Mobile menu toggle
+    function toggleMobile() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('active');
     }
-    function scrollToSection(selector){
-      document.querySelector(selector).scrollIntoView({behavior:'smooth'});
+
+    // Scroll to signup
+    function scrollToSignup() {
+      document.getElementById('signup').scrollIntoView({ behavior: 'smooth' });
     }
-    function toggleFaq(btn){
-      const svg = btn.querySelector('svg');
-      const dd = btn.parentElement.nextElementSibling;
-      const isOpen = !dd.classList.contains('hidden');
-      dd.classList.toggle('hidden', isOpen);
-      svg.classList.toggle('rotate-180', !isOpen);
+
+    // Email signup handler
+    function handleSignup(e) {
+      e.preventDefault();
+      const form = e.target;
+      const email = form.querySelector('input[type="email"]').value;
+      
+      // In production, send this to your email service (Mailchimp, ConvertKit, etc.)
+      console.log('Email signup:', email);
+      
+      // Show success message
+      document.getElementById('success-message').classList.add('show');
+      form.reset();
+      
+      // Hide success after 5 seconds
+      setTimeout(() => {
+        document.getElementById('success-message').classList.remove('show');
+      }, 5000);
     }
-    // parallax hero
-    addEventListener('mousemove', e => {
-      const {clientX, clientY} = e;
-      const {innerWidth, innerHeight} = window;
-      const x = (clientX - innerWidth / 2) / (innerWidth / 2);
-      const y = (clientY - innerHeight / 2) / (innerHeight / 2);
-      document.querySelector('.parallax-bg').style.transform = `translate3d(${x * 30}px, ${y * 30}px, 0)`;
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#') {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+            // Close mobile menu if open
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('active')) {
+              menu.classList.remove('active');
+            }
+          }
+        }
+      });
     });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+      const menu = document.getElementById('mobile-menu');
+      const nav = document.getElementById('nav');
+      const toggle = nav.querySelector('.mobile-toggle');
+      
+      if (menu.classList.contains('active') && !nav.contains(e.target)) {
+        menu.classList.remove('active');
+      }
+    });
+
+    // Add scroll effect to header
+    let lastScroll = 0;
+    const nav = document.getElementById('nav');
+    
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      
+      if (currentScroll > 100) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+      
+      lastScroll = currentScroll;
+    });
+
+    // Show desktop links on wider screens
+    function handleResize() {
+      if (window.innerWidth > 768) {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.remove('active');
+      }
+    }
+
+    window.addEventListener('resize', handleResize);
   </script>
 </body>
-</html>
+<!--  
+</html> #94a3b8; margin-bottom: 0.5rem;"><strong style="color: #cbd5e1;">Database:</strong> SQLite (via PocketBase)</p>
+              <p style="color: #94a3b8; margin-bottom: 0.5rem;"><strong style="color: #cbd5e1;">Deployment:</strong> Docker Compose</p>
+              <p style="color: #94a3b8;"><strong style="color: #cbd5e1;">Frontend:</strong> React + Refine</p>
+            </div>
+            <div>
+              <p style="color:
+
+-->
