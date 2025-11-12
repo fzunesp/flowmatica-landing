@@ -857,7 +857,8 @@
       color: #64748b;
     }
     
-    /* Screenshot Placeholders */
+    <!--
+	/* Screenshot Placeholders */
     .screenshot-grid {
       display: grid;
       gap: 2rem;
@@ -903,6 +904,71 @@
       font-size: 0.875rem;
       color: #475569;
     }
+	
+	-->
+	
+	/* Screenshots */
+	
+.screenshot-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.screenshot-item {
+  background: #1e293b;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  width: 100%;
+  max-width: 900px; /* controls width of screenshots */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.screenshot-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.screenshot-item img {
+  width: 100%;
+  height: 500px; /* force consistent size */
+  object-fit: cover; /* ensures images fill the box evenly */
+  display: block;
+}
+
+.caption {
+  text-align: center;
+  padding: 0.75rem;
+  font-size: 1rem;
+  color: #cbd5e1;
+  background: rgba(15, 23, 42, 0.9);
+}
+
+/* Lightbox overlay */
+#lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+#lightbox-overlay img {
+  max-width: 95%;
+  max-height: 90vh;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 25px rgba(0,0,0,0.8);
+  cursor: zoom-out;
+}
+
     
     /* Footer */
     footer {
@@ -1150,9 +1216,9 @@
           </div>
           <p style="color: #64748b; margin-bottom: 1rem;">Expected: <strong>Q1 2026</strong></p>
           <ul class="progress-list" style="color: #64748b;">
-            <li><span>•</span> <span>Double-entry accounting</span></li>
+            <li><span>•</span> <span>GST reporting ready</span></li>
             <li><span>•</span> <span>P&L, balance sheet, trial balance</span></li>
-            <li><span>•</span> <span>Bank reconciliation</span></li>
+            <li><span>•</span> <span>Home office calculation</span></li>
           </ul>
         </div>
       </div>
@@ -1239,7 +1305,7 @@
     </div>
   </section>
 
-  <!-- Screenshots -->
+  <!-- Screenshots 
   <section class="bg-dark">
     <div class="container">
       <h2><span class="gradient-text">See It In Action</span></h2>
@@ -1283,7 +1349,39 @@
         Want to see a demo? <button onclick="scrollToSignup()" style="background: none; border: none; color: #f59e0b; text-decoration: underline; cursor: pointer;">Join our email list</button> for early access
       </p>
     </div>
-  </section>
+  </section> -->
+  
+  <div class="screenshot-grid">
+  <div class="screenshot-item">
+    <a href="images/invoice-dashboard.png" class="lightbox">
+      <img src="images/invoice-dashboard.png" alt="Invoice Dashboard">
+    </a>
+    <div class="caption">Invoice Dashboard</div>
+  </div>
+
+  <div class="screenshot-item">
+    <a href="images/create-invoice.png" class="lightbox">
+      <img src="images/create-invoice.png" alt="Create New Invoice">
+    </a>
+    <div class="caption">Create New Invoice</div>
+  </div>
+
+  <div class="screenshot-item">
+    <a href="images/export-options.png" class="lightbox">
+      <img src="images/export-options.png" alt="Export Options">
+    </a>
+    <div class="caption">Export Options</div>
+  </div>
+
+  <div class="screenshot-item">
+    <a href="images/invoice-preview.png" class="lightbox">
+      <img src="images/invoice-preview.png" alt="Invoice Preview">
+    </a>
+    <div class="caption">Invoice Preview</div>
+  </div>
+</div>
+
+
 
   <!-- ROI Calculator -->
   <section class="bg-gradient-1">
@@ -1728,7 +1826,38 @@
     }
 
     window.addEventListener('resize', handleResize);
+	
+	
+	
+	// Create the lightbox element
+  const overlay = document.createElement('div');
+  overlay.id = 'lightbox-overlay';
+  const overlayImg = document.createElement('img');
+  overlay.appendChild(overlayImg);
+  document.body.appendChild(overlay);
+
+  // Add click listeners to each lightbox link
+  document.querySelectorAll('.lightbox').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      overlayImg.src = link.href;
+      overlay.style.display = 'flex';
+    });
+  });
+
+  // Click anywhere to close
+  overlay.addEventListener('click', () => {
+    overlay.style.display = 'none';
+  });
+	
+	
+	
+	
   </script>
+  
+  
+  
+  
 </body>
 <!--  
 </html> #94a3b8; margin-bottom: 0.5rem;"><strong style="color: #cbd5e1;">Database:</strong> SQLite (via PocketBase)</p>
