@@ -1753,14 +1753,33 @@
     }
 
     // Email signup handler
-    function handleSignup(e) {
-      e.preventDefault();
-      const form = e.target;
-      const email = form.querySelector('input[type="email"]').value;
-      
-      // In production, send this to your email service (Mailchimp, ConvertKit, etc.)
-      console.log('Email signup:', email);
-      
+async function handleSignup(e) {
+  e.preventDefault();
+  const form = e.target;
+  const emailInput = form.querySelector('input[type="email"]');
+  const email = emailInput.value;
+  const submitButton = form.querySelector('button[type="submit"]');
+  
+  // Disable button and show loading state
+  const originalButtonText = submitButton.textContent;
+  submitButton.disabled = true;
+  submitButton.textContent = 'Submitting...';
+  
+  try {
+    // Send to n8n webhook
+    const response = await fetch('https://n8n.flowmatica.ca/webhook/flowmatica-signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: email,
+        timestamp: new Date().toISOString(),
+        source: 'flowmatica-landing-page'
+      })
+    });
+    
+    if (response.ok) {
       // Show success message
       document.getElementById('success-message').classList.add('show');
       form.reset();
@@ -1769,7 +1788,18 @@
       setTimeout(() => {
         document.getElementById('success-message').classList.remove('show');
       }, 5000);
+    } else {
+      throw new Error('Submission failed');
     }
+  } catch (error) {
+    console.error('Error submitting email:', error);
+    alert('Oops! Something went wrong. Please try again or email us directly at hello@flowmatica.ca');
+  } finally {
+    // Re-enable button
+    submitButton.disabled = false;
+    submitButton.textContent = originalButtonText;
+  }
+}
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
