@@ -5,7 +5,13 @@
   <title>NovaStack by Flowmatica — Business Operating System</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="NovaStack: Business software that runs on your own computer — CRM, invoicing, HR, tasks, and more. One payment. Own forever.">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <meta property="og:title" content="NovaStack — Own Your Software, Pay Once, Keep Forever">
+  <meta property="og:description" content="All-in-one business software. CRM, invoicing, HR, tasks, and more. Runs on your hardware. No subscriptions. Early Bird pricing $999.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://flowmatica.ca/novastack/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23020617'/><text x='50' y='72' font-size='60' font-weight='900' text-anchor='middle' fill='%233b82f6'>N</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
@@ -37,7 +43,7 @@
       <div class="shape shape-5"></div>
     </div>
     <div class="hero-content">
-      <div class="badge reveal">Runs on Your Hardware — No Cloud, No Subscriptions</div>
+      <div class="badge reveal">Early Bird Pricing — $999 Limited Time</div>
       <h1 class="reveal reveal-delay-1">
         <span class="gradient-text">Own Your Software.</span><br>
         <span style="color: #94a3b8;">Pay Once. Keep Forever.</span>
@@ -53,16 +59,16 @@
       </div>
       <div class="stats reveal reveal-delay-4">
         <div class="stat-item">
-          <div class="stat-value">$0</div>
-          <div class="stat-label">Monthly fees</div>
+          <div class="stat-value">$0/mo</div>
+          <div class="stat-label">No Monthly Fees</div>
         </div>
         <div class="stat-item">
-          <div class="stat-value">&#x221e;</div>
-          <div class="stat-label">Years of ownership</div>
+          <div class="stat-value">Forever</div>
+          <div class="stat-label">Own Your Software</div>
         </div>
         <div class="stat-item">
-          <div class="stat-value">1&times;</div>
-          <div class="stat-label">Payment required</div>
+          <div class="stat-value">Once</div>
+          <div class="stat-label">Pay Once, Keep Forever</div>
         </div>
       </div>
     </div>
@@ -196,7 +202,7 @@
       <div style="display: grid; gap: 2rem;">
         <div class="card card-glow reveal reveal-delay-1">
           <h3 style="color: var(--pillar, #fbbf24);">&#x1f4b0; Economics</h3>
-          <p style="color: #cbd5e1;">Stop paying rent. Typical CRM costs $50/user/month. For 10 users, that's $6,000/year. NovaStack is one payment. You save money by month 5.</p>
+          <p style="color: #cbd5e1;">Stop paying rent. Typical CRM costs $50/user/month. For 10 users, that's $6,000/year. NovaStack is one payment. Pays for itself in under 2 months<br><small style="color: #64748b; font-style: italic;">Based on Early Bird pricing</small></p>
         </div>
         <div class="card card-glow reveal reveal-delay-2">
           <h3 style="color: var(--pillar, #fbbf24);">&#x1f512; Privacy</h3>
@@ -204,7 +210,7 @@
         </div>
         <div class="card card-glow reveal reveal-delay-3">
           <h3 style="color: var(--pillar, #fbbf24);">&#x1f3af; Control</h3>
-          <p style="color: #cbd5e1;">Install on an air-gapped machine. Run it on a Raspberry Pi. Update when YOU want. Export your data anytime. No vendor can hold you hostage.</p>
+          <p style="color: #cbd5e1;">Install on a machine with no internet connection. Run it on any spare computer, even an old laptop. Update when YOU want. Export your data anytime. No vendor can hold you hostage.</p>
         </div>
         <div class="card card-glow reveal reveal-delay-4">
           <h3 style="color: var(--pillar, #fbbf24);">&#x26a1; Simplicity</h3>
@@ -252,8 +258,8 @@
     </div>
   </section>
 
-  <section class="bg-gradient-hero">
-    <div class="container-sm text-center">
+<section class="bg-darker">
+    <div class="container-md">
       <h2><span class="gradient-text reveal">Early Bird Pricing</span></h2>
       <p class="section-subtitle reveal reveal-delay-1">Lock in lifetime ownership before the price goes up.</p>
 
@@ -275,32 +281,37 @@
       <h2><span class="gradient-text reveal">See It In Action</span></h2>
       <p class="section-subtitle reveal reveal-delay-1">Real screenshots from the running NovaStack application.</p>
 
-      <div class="screenshot-grid">
-        <div class="screenshot-item reveal">
-          <a href="../images/companies-page.png" class="lightbox"><img src="../images/companies-page.png" alt="Companies Hub"></a>
-          <div class="caption">Companies Hub</div>
+      <div class="carousel-container reveal reveal-delay-2">
+        <div class="carousel-track" id="carousel-track">
+          <div class="carousel-slide">
+            <a href="../images/companies-page.png" class="lightbox"><img src="../images/companies-page.png" alt="Companies Hub"></a>
+            <div class="carousel-caption">Companies Hub</div>
+          </div>
+          <div class="carousel-slide">
+            <a href="../images/crm-contacts.png" class="lightbox"><img src="../images/crm-contacts.png" alt="CRM Contacts"></a>
+            <div class="carousel-caption">CRM Contacts</div>
+          </div>
+          <div class="carousel-slide">
+            <a href="../images/crm-deals.png" class="lightbox"><img src="../images/crm-deals.png" alt="CRM Deals / Visual Board"></a>
+            <div class="carousel-caption">CRM Deals / Visual Board</div>
+          </div>
+          <div class="carousel-slide">
+            <a href="../images/invoices-page.png" class="lightbox"><img src="../images/invoices-page.png" alt="Invoices"></a>
+            <div class="carousel-caption">Invoices</div>
+          </div>
+          <div class="carousel-slide">
+            <a href="../images/hr-page.png" class="lightbox"><img src="../images/hr-page.png" alt="HR Operations"></a>
+            <div class="carousel-caption">HR Operations</div>
+          </div>
         </div>
-        <div class="screenshot-item reveal reveal-delay-1">
-          <a href="../images/crm-contacts.png" class="lightbox"><img src="../images/crm-contacts.png" alt="CRM Contacts"></a>
-          <div class="caption">CRM Contacts</div>
-        </div>
-        <div class="screenshot-item reveal reveal-delay-2">
-          <a href="../images/crm-deals.png" class="lightbox"><img src="../images/crm-deals.png" alt="CRM Deals / Visual Board"></a>
-          <div class="caption">CRM Deals / Visual Board</div>
-        </div>
-        <div class="screenshot-item reveal reveal-delay-3">
-          <a href="../images/invoices-page.png" class="lightbox"><img src="../images/invoices-page.png" alt="Invoices"></a>
-          <div class="caption">Invoices</div>
-        </div>
-        <div class="screenshot-item reveal reveal-delay-4">
-          <a href="../images/hr-page.png" class="lightbox"><img src="../images/hr-page.png" alt="HR Operations"></a>
-          <div class="caption">HR Operations</div>
-        </div>
+        <button class="carousel-arrow carousel-arrow-left" id="carousel-prev" aria-label="Previous">&#10094;</button>
+        <button class="carousel-arrow carousel-arrow-right" id="carousel-next" aria-label="Next">&#10095;</button>
+        <div class="carousel-dots" id="carousel-dots"></div>
       </div>
     </div>
   </section>
 
-  <section id="signup" class="bg-gradient-hero">
+  <section id="signup" class="bg-dark">
     <div class="container-sm">
       <h2><span class="gradient-text reveal">Get NovaStack</span></h2>
       <p class="section-subtitle reveal reveal-delay-1">Get early bird pricing, development updates, and be first to know when new features launch.</p>
@@ -327,16 +338,16 @@
     <div class="container-sm">
       <h2><span class="gradient-text reveal">Frequently Asked Questions</span></h2>
 
-      <details class="reveal reveal-delay-1"><summary>Can I really run this on my own computer?</summary><p>Yes! NovaStack runs on any computer — Windows, Mac, Linux, or even a Raspberry Pi. No cloud accounts required.</p></details>
+      <details class="reveal reveal-delay-1"><summary>Can I really run this on my own computer?</summary><p>Yes! NovaStack runs on any computer — Windows, Mac, or Linux. Even an old laptop or small dedicated machine works great. No cloud accounts required.</p></details>
       <details class="reveal reveal-delay-2"><summary>Can multiple people access it?</summary><p>Yes! Install it on a computer on your network and everyone connects to it. You control who sees what — admin, HR, or regular user. No per-user fees. Ever.</p></details>
       <details class="reveal reveal-delay-3"><summary>Can I migrate from my current tools?</summary><p>Yes! NovaStack includes import/export tools for contacts, deals, and invoices. Migration guides for popular platforms are in development.</p></details>
       <details class="reveal reveal-delay-5"><summary>What if my computer crashes?</summary><p>Everything is stored in a single database file. Back it up to anywhere (USB drive, external hard drive, or wherever you like). Restore takes 30 seconds. It's just a file.</p></details>
       <details class="reveal"><summary>What modules are included?</summary><p>Dashboard (Command Center), Companies Hub, CRM (contacts + deals + visual board), Invoices, Products, Intake Management, HR Operations, Tasks, Settings, and a built-in Help Center.</p></details>
-      <details class="reveal"><summary>What are the minimum system requirements?</summary><p>Any modern computer: 2GB RAM minimum (4GB recommended), 500MB disk space, any modern CPU. Yes, even a Raspberry Pi 4 works great.</p></details>
+      <details class="reveal"><summary>What are the minimum system requirements?</summary><p>Any modern computer: 2GB RAM minimum (4GB recommended), 500MB disk space, any modern CPU. Even an old laptop or small dedicated machine works great.</p></details>
     </div>
   </section>
 
-  <section class="bg-gradient-hero">
+  <section class="bg-dark">
     <div class="container-md text-center">
       <h2 style="font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1.5rem;" class="reveal">
         <span class="gradient-text">Stop Renting.<br>Start Owning.</span>
@@ -364,7 +375,7 @@
         <a href="/novastack/">NovaStack</a>
         <a href="/forms/">Forms</a>
         <a href="/automation/">Automation</a>
-        <a href="mailto:hello@flowmatica.ca">Contact</a>
+        <a href="mailto:hello@flowmatica.ca">hello@flowmatica.ca</a>
       </div>
     </div>
     <div class="footer-bottom">
