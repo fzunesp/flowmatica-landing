@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en" class="pillar-purple">
+<head>
+  <meta charset="UTF-8">
+  <title>Workflow Automation — Flowmatica</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Custom n8n workflow integrations and AI agents. We map, design, build, and deploy self-hosted or cloud automations to connect your business tools.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <nav id="nav">
+    <div class="nav-content">
+      <a href="/" class="logo">FLOWMATICA</a>
+      <div class="nav-links">
+        <a href="/novastack/">NovaStack</a>
+        <a href="/forms/">Forms</a>
+        <a href="/automation/" class="active">Automation</a>
+        <button class="btn btn-primary btn-shimmer" onclick="scrollToSignup()">Contact</button>
+      </div>
+      <button class="mobile-toggle" onclick="toggleMobile()">&#9776;</button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="/novastack/" onclick="toggleMobile()">NovaStack</a>
+      <a href="/forms/" onclick="toggleMobile()">Forms</a>
+      <a href="/automation/" class="active" onclick="toggleMobile()">Automation</a>
+      <button class="btn btn-primary btn-shimmer" style="width: 100%; margin-top: 1rem;" onclick="scrollToSignup(); toggleMobile();">Contact</button>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="floating-shapes parallax-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+      <div class="shape shape-5"></div>
+    </div>
+    <div class="hero-content">
+      <div class="badge reveal">Custom n8n Workflow &amp; AI Integration</div>
+      <h1 class="reveal reveal-delay-1">
+        <span class="gradient-text">Connect Your Tools.</span><br>
+        <span style="color: #94a3b8;">Automate Your Business.</span>
+      </h1>
+      <p class="hero-subtitle reveal reveal-delay-2">
+        We design, build, and maintain custom workflow automations and AI agents using <strong>n8n</strong>—the premier visual workflow engine. Connect all your apps, map database interactions, and run workflows locally or in the cloud.
+      </p>
+      <div class="hero-cta reveal reveal-delay-3">
+        <a href="#simulator" class="btn btn-primary btn-large btn-shimmer">Test Live Simulator</a>
+        <button class="btn btn-outline btn-large" onclick="scrollToSignup()">Get in Touch</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="what" class="bg-gradient-1">
+    <div class="container">
+      <h2><span class="gradient-text reveal">What We Automate</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">From simple data transfers to complex AI agent setups — if it's manual and repetitive, we can automate it.</p>
+
+      <div class="use-case-grid">
+        <div class="use-case-card reveal reveal-delay-1">
+          <div class="use-case-num">01</div>
+          <h3 style="color: #e2e8f0;">Limitless Integrations</h3>
+          <p style="color: #94a3b8;">Connect 500+ apps seamlessly. Google Sheets, Slack, Notion, Salesforce, HubSpot, PostgreSQL, Airtable, Gmail, Telegram, and more. Custom API connections for everything else.</p>
+        </div>
+        <div class="use-case-card reveal reveal-delay-2">
+          <div class="use-case-num">02</div>
+          <h3 style="color: #e2e8f0;">AI Agents &amp; RAG Systems</h3>
+          <p style="color: #94a3b8;">Build complex AI agents you can actually follow. Connect any model, inspect every decision, keep humans in the loop. Multi-agent setups and RAG systems with traceable reasoning.</p>
+        </div>
+        <div class="use-case-card reveal reveal-delay-3">
+          <div class="use-case-num">03</div>
+          <h3 style="color: #e2e8f0;">Lead &amp; CRM Automation</h3>
+          <p style="color: #94a3b8;">Automate lead management, enrich contacts from reviews, generate customer insights. Supercharge your CRM with automated data sync, notifications, and document generation.</p>
+        </div>
+        <div class="use-case-card reveal reveal-delay-4">
+          <div class="use-case-num">04</div>
+          <h3 style="color: #e2e8f0;">IT &amp; Security Operations</h3>
+          <p style="color: #94a3b8;">On-board new employees automatically, enrich security incident tickets, convert natural language into API calls. SOAR capability in a low-code model with complex workflow support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="simulator" class="bg-dark">
+    <div class="container">
+      <h2><span class="gradient-text reveal">Interactive Workflow Simulator</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">Run the simulator to visualize a live multi-node integration processing user data and triggering AI actions in real time.</p>
+
+      <!-- Interactive n8n Simulator Section -->
+      <div class="simulator-wrapper reveal reveal-delay-2">
+        <div class="simulator-canvas">
+          <div class="simulator-grid-bg"></div>
+          
+          <!-- SVG Connections -->
+          <svg class="simulator-svg" viewBox="0 0 800 240">
+            <!-- Defining arrows -->
+            <defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 2 L 8 5 L 0 8 z" fill="#8b5cf6" />
+              </marker>
+            </defs>
+            <!-- Paths -->
+            <path id="path-1" d="M 120 120 L 220 120" stroke="#334155" stroke-width="3" fill="none" marker-end="url(#arrow)" />
+            <path id="path-2" d="M 340 120 L 440 120" stroke="#334155" stroke-width="3" fill="none" marker-end="url(#arrow)" />
+            
+            <!-- Split Paths from DB -->
+            <path id="path-3" d="M 540 120 C 590 120, 570 60, 640 60" stroke="#334155" stroke-width="3" fill="none" marker-end="url(#arrow)" />
+            <path id="path-4" d="M 540 120 C 590 120, 570 180, 640 180" stroke="#334155" stroke-width="3" fill="none" marker-end="url(#arrow)" />
+
+            <!-- Beams that will animate -->
+            <path class="beam-path" id="beam-1" d="M 120 120 L 220 120" stroke="var(--pillar, #8b5cf6)" stroke-width="3" fill="none" stroke-dasharray="10 100" stroke-dashoffset="0" style="display: none;" />
+            <path class="beam-path" id="beam-2" d="M 340 120 L 440 120" stroke="var(--pillar, #8b5cf6)" stroke-width="3" fill="none" stroke-dasharray="10 100" stroke-dashoffset="0" style="display: none;" />
+            <path class="beam-path" id="beam-3" d="M 540 120 C 590 120, 570 60, 640 60" stroke="var(--pillar, #8b5cf6)" stroke-width="3" fill="none" stroke-dasharray="10 100" stroke-dashoffset="0" style="display: none;" />
+            <path class="beam-path" id="beam-4" d="M 540 120 C 590 120, 570 180, 640 180" stroke="var(--pillar, #8b5cf6)" stroke-width="3" fill="none" stroke-dasharray="10 100" stroke-dashoffset="0" style="display: none;" />
+          </svg>
+
+          <!-- Nodes -->
+          <!-- Node 1: Trigger -->
+          <div class="sim-node" style="left: 20px; top: 80px;" id="node-trigger">
+            <div class="sim-node-icon">📥</div>
+            <div class="sim-node-name">Fillout Form</div>
+            <div class="sim-node-desc">Webhook Trigger</div>
+            <div class="sim-node-status sim-status-idle">Idle</div>
+          </div>
+
+          <!-- Node 2: AI Agent Router -->
+          <div class="sim-node" style="left: 220px; top: 60px; width: 140px; height: 120px;" id="node-ai">
+            <div class="sim-node-icon">🧠</div>
+            <div class="sim-node-name" style="color: var(--pillar, #8b5cf6); font-weight: 700;">AI Agent</div>
+            <div class="sim-node-desc">n8n Classification</div>
+            <div class="sim-node-status sim-status-idle">Idle</div>
+          </div>
+
+          <!-- Node 3: Database (NovaStack) -->
+          <div class="sim-node" style="left: 440px; top: 80px;" id="node-db">
+            <div class="sim-node-icon">💾</div>
+            <div class="sim-node-name">NovaStack DB</div>
+            <div class="sim-node-desc">Create Profile</div>
+            <div class="sim-node-status sim-status-idle">Idle</div>
+          </div>
+
+          <!-- Node 4: Email Output -->
+          <div class="sim-node" style="left: 640px; top: 20px;" id="node-email">
+            <div class="sim-node-icon">✉️</div>
+            <div class="sim-node-name">Gmail API</div>
+            <div class="sim-node-desc">Send Proposal</div>
+            <div class="sim-node-status sim-status-idle">Idle</div>
+          </div>
+
+          <!-- Node 5: Slack Notification -->
+          <div class="sim-node" style="left: 640px; top: 140px;" id="node-slack">
+            <div class="sim-node-icon">💬</div>
+            <div class="sim-node-name">Slack Alert</div>
+            <div class="sim-node-desc">Ping Sales Team</div>
+            <div class="sim-node-status sim-status-idle">Idle</div>
+          </div>
+        </div>
+
+        <div class="simulator-controls">
+          <button class="btn btn-primary btn-large btn-shimmer" id="btn-run-sim" onclick="runWorkflowSimulation()">
+            ⚡ Run Workflow Simulator
+          </button>
+        </div>
+
+        <!-- CLI Console Log Output -->
+        <div class="sim-console">
+          <div class="console-header">
+            <div class="console-dots"><span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span></div>
+            <span class="console-title">n8n execution log terminal</span>
+          </div>
+          <div class="console-body" id="sim-log-terminal">
+            <div style="color: #64748b;">Ready. Click "Run Workflow Simulator" above to initiate the data integration.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function runWorkflowSimulation() {
+      const btn = document.getElementById('btn-run-sim');
+      const terminal = document.getElementById('sim-log-terminal');
+      
+      const nTrigger = document.getElementById('node-trigger');
+      const nAi = document.getElementById('node-ai');
+      const nDb = document.getElementById('node-db');
+      const nEmail = document.getElementById('node-email');
+      const nSlack = document.getElementById('node-slack');
+      
+      const sTrigger = nTrigger.querySelector('.sim-node-status');
+      const sAi = nAi.querySelector('.sim-node-status');
+      const sDb = nDb.querySelector('.sim-node-status');
+      const sEmail = nEmail.querySelector('.sim-node-status');
+      const sSlack = nSlack.querySelector('.sim-node-status');
+
+      const b1 = document.getElementById('beam-1');
+      const b2 = document.getElementById('beam-2');
+      const b3 = document.getElementById('beam-3');
+      const b4 = document.getElementById('beam-4');
+
+      btn.disabled = true;
+      btn.textContent = '⚡ Simulation Running...';
+      terminal.innerHTML = '<div style="color: #64748b;">Initializing workflow nodes...</div>';
+      
+      const statuses = [sTrigger, sAi, sDb, sEmail, sSlack];
+      statuses.forEach(s => {
+        s.className = 'sim-node-status sim-status-idle';
+        s.textContent = 'Idle';
+      });
+      
+      [b1, b2, b3, b4].forEach(b => b.style.display = 'none');
+
+      function log(message, color = '#a78bfa') {
+        const time = new Date().toLocaleTimeString();
+        const div = document.createElement('div');
+        div.className = 'console-line';
+        div.style.color = color;
+        div.innerHTML = `<span style="color: #64748b;">[${time}]</span> ${message}`;
+        terminal.appendChild(div);
+        terminal.scrollTop = terminal.scrollHeight;
+      }
+
+      setTimeout(() => {
+        sTrigger.className = 'sim-node-status sim-status-running';
+        sTrigger.textContent = 'Triggered';
+        log('📥 Webhook trigger received: Fillout form submission registered.', '#fbbf24');
+        
+        setTimeout(() => {
+          sTrigger.className = 'sim-node-status sim-status-success';
+          sTrigger.textContent = 'Success';
+          b1.style.display = 'block';
+          log('✓ Webhook validated. Payload forwarded to AI classification node.', '#10b981');
+          
+          setTimeout(() => {
+            sAi.className = 'sim-node-status sim-status-running';
+            sAi.textContent = 'Processing';
+            log('🧠 AI Router: Parsing client request with GPT-4o model...', '#fbbf24');
+            
+            setTimeout(() => {
+              sAi.className = 'sim-node-status sim-status-success';
+              sAi.textContent = 'Success';
+              b2.style.display = 'block';
+              log('✓ AI Router: Classified as "Enterprise Integration". Budget constraint checked: OK.', '#10b981');
+              
+              setTimeout(() => {
+                sDb.className = 'sim-node-status sim-status-running';
+                sDb.textContent = 'Writing';
+                log('💾 PocketBase: Creating client account profile and logging intake request...', '#fbbf24');
+                
+                setTimeout(() => {
+                  sDb.className = 'sim-node-status sim-status-success';
+                  sDb.textContent = 'Success';
+                  b3.style.display = 'block';
+                  b4.style.display = 'block';
+                  log('✓ PocketBase: Saved entry ID "ENT-4082". Firing notifications.', '#10b981');
+                  
+                  setTimeout(() => {
+                    sEmail.className = 'sim-node-status sim-status-running';
+                    sSlack.className = 'sim-node-status sim-status-running';
+                    log('✉️ Gmail: Rendering proposal template payload...', '#fbbf24');
+                    log('💬 Slack API: Preparing channel payload for #leads-alerts...', '#fbbf24');
+                    
+                    setTimeout(() => {
+                      sEmail.className = 'sim-node-status sim-status-success';
+                      sEmail.textContent = 'Success';
+                      log('✓ Gmail: Custom proposal email successfully sent to client.', '#10b981');
+                      
+                      sSlack.className = 'sim-node-status sim-status-success';
+                      sSlack.textContent = 'Success';
+                      log('✓ Slack: Notification dispatched to #leads channel.', '#10b981');
+                      
+                      log('🎉 Workflow execution completed successfully in 4.8s.', '#a78bfa');
+                      btn.disabled = false;
+                      btn.textContent = '⚡ Run Workflow Simulator';
+                    }, 1200);
+                  }, 1000);
+                }, 1000);
+              }, 1000);
+            }, 1500);
+          }, 800);
+        }, 800);
+      }, 500);
+    }
+  </script>
+
+  <section id="how" class="bg-gradient-2">
+    <div class="container-md">
+      <h2><span class="gradient-text reveal">How It Works</span></h2>
+
+      <div class="step-flow reveal reveal-delay-1">
+        <div class="step-item">
+          <div class="step-number">1</div>
+          <div class="step-label">&#x1f50d; We Audit</div>
+        </div>
+        <div class="step-arrow">&#x279c;</div>
+        <div class="step-item">
+          <div class="step-number">2</div>
+          <div class="step-label">&#x1f3d7;&#xfe0f; We Design</div>
+        </div>
+        <div class="step-arrow">&#x279c;</div>
+        <div class="step-item">
+          <div class="step-number">3</div>
+          <div class="step-label">&#x2699;&#xfe0f; We Build</div>
+        </div>
+        <div class="step-arrow">&#x279c;</div>
+        <div class="step-item">
+          <div class="step-number">4</div>
+          <div class="step-label">&#x1f680; You Run</div>
+        </div>
+      </div>
+
+      <div style="display: grid; gap: 2rem; margin-top: 2rem;">
+        <div class="card card-glow reveal reveal-delay-1">
+          <h3 style="color: var(--pillar, #fbbf24);">&#x1f50d; 1. We Audit</h3>
+          <p style="color: #cbd5e1;">We map out your current workflows. What tools do you use? What data moves where? Where are the bottlenecks? We identify every opportunity for automation across your entire stack.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-2">
+          <h3 style="color: var(--pillar, #fbbf24);">&#x1f3d7;&#xfe0f; 2. We Design</h3>
+          <p style="color: #cbd5e1;">We propose automation flows using n8n's visual canvas. Simple, clear diagrams showing how data moves from point A to point B. You approve before we build.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-3">
+          <h3 style="color: var(--pillar, #fbbf24);">&#x2699;&#xfe0f; 3. We Build &amp; Test</h3>
+          <p style="color: #cbd5e1;">Using n8n's 9,500+ templates as starting points or building from scratch. Write JavaScript or Python anywhere in the workflow. Test with real data. Re-run single steps, not entire workflows.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-4">
+          <h3 style="color: var(--pillar, #fbbf24);">&#x1f680; 4. You Run</h3>
+          <p style="color: #cbd5e1;">Deploy with Docker on your infrastructure or use n8n Cloud. Monitor from the canvas. Every step of your agents' reasoning is traceable. The boring stuff runs itself.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-darker">
+    <div class="container-md">
+      <h2><span class="gradient-text reveal">Code When You Need It, UI When You Don't</span></h2>
+
+      <div class="card-grid">
+        <div class="card card-glow reveal reveal-delay-1">
+          <h3 style="color: var(--pillar, #8b5cf6);">&#x1f3a8; Visual Builder</h3>
+          <p style="color: #cbd5e1;">Build workflows visually on the canvas. Drag, connect, configure. See inputs and outputs right next to every step's settings. No unnecessary clicks.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-2">
+          <h3 style="color: var(--pillar, #8b5cf6);">&#x1f4bb; Code Nodes</h3>
+          <p style="color: #cbd5e1;">Write JavaScript or Python anywhere in your workflow. Imagine it, then build it. No restrictions. Full access to npm packages and custom logic.</p>
+        </div>
+      </div>
+
+      <div class="card card-glow reveal" style="margin-top: 2rem; text-align: left;">
+        <h3 style="margin-bottom: 1rem; color: var(--pillar, #8b5cf6);">Why n8n?</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; color: #94a3b8;">
+          <p>&#x2713; 189k+ GitHub stars — Top 50 on GitHub</p>
+          <p>&#x2713; 4.9/5 stars on G2</p>
+          <p>&#x2713; 200k+ community members</p>
+          <p>&#x2713; 500+ pre-built integrations</p>
+          <p>&#x2713; 9,500+ workflow templates</p>
+          <p>&#x2713; Self-host with Docker or cloud</p>
+          <p>&#x2713; AI agents with human-in-the-loop</p>
+          <p>&#x2713; Enterprise: SSO, LDAP, RBAC, audit logs</p>
+          <p>&#x2713; SOC 2 Type 2 compliant</p>
+          <p>&#x2713; Open source (fair-code license)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gradient-1">
+    <div class="container-md">
+      <h2><span class="gradient-text reveal">Real Results</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">See what teams are achieving with n8n automation.</p>
+
+      <div class="card-grid">
+        <div class="card card-glow reveal reveal-delay-1">
+          <h3 style="color: var(--pillar, #8b5cf6);">&#x1f3e2; Huel</h3>
+          <p style="color: #cbd5e1;">Built an AI-first company culture and <strong style="color: #10b981;">saved 1,000 hours</strong> of manual work. "n8n is the thing that allows you to integrate AI into your work in a safe and controlled way."</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-2">
+          <h3 style="color: var(--pillar, #8b5cf6);">&#x1f512; Vodafone</h3>
+          <p style="color: #cbd5e1;">Revolutionized threat intelligence and <strong style="color: #10b981;">saved &#xa3;2.2 Million</strong>. "n8n provides SOAR capability and workflows in a low-code model, as well as the ability to code for more complex workflows."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="bg-gradient-2">
+    <div class="container">
+      <h2><span class="gradient-text reveal">Pricing</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">Pre-built flow templates for common needs, or fully custom automation built around your exact workflow.</p>
+
+      <div class="card-grid">
+        <div class="service-card reveal reveal-delay-1">
+          <div class="text-center">
+            <h3 style="color: #e2e8f0;">Flow Template</h3>
+            <p style="color: #94a3b8; font-size: 0.875rem;">Pre-built n8n workflows</p>
+            <div class="service-price">$149 – $399</div>
+            <p style="color: #64748b; font-size: 0.875rem;">One-time payment</p>
+          </div>
+          <ul class="service-features">
+            <li>Pre-configured n8n workflow</li>
+            <li>Standard tool connections (2-3 apps)</li>
+            <li>Basic error handling</li>
+            <li>Setup guide &amp; import instructions</li>
+            <li>Email support for 30 days</li>
+          </ul>
+          <button class="btn btn-secondary" style="width: 100%;" onclick="scrollToSignup()">Browse Templates</button>
+        </div>
+
+        <div class="service-card featured reveal reveal-delay-2">
+          <div class="text-center">
+            <span class="service-badge">Most Popular</span>
+            <h3 style="color: #e2e8f0;">Custom Automation</h3>
+            <p style="color: #94a3b8; font-size: 0.875rem;">Built for your exact workflow</p>
+            <div class="service-price">$500 – $3,000</div>
+            <p style="color: #64748b; font-size: 0.875rem;">Per project</p>
+          </div>
+          <ul class="service-features">
+            <li>Custom workflow design &amp; build on n8n</li>
+            <li>Multi-app integrations (5+ tools)</li>
+            <li>Complex conditional logic &amp; AI agents</li>
+            <li>JavaScript/Python code nodes where needed</li>
+            <li>Error handling, alerting &amp; monitoring</li>
+            <li>Docker deployment or cloud setup</li>
+            <li>Documentation &amp; training</li>
+          <button class="btn btn-primary btn-shimmer" style="width: 100%;" onclick="scrollToSignup()">Start Your Project</button>
+        </div>
+      </div>
+
+      <div class="text-center reveal" style="margin-top: 2rem; color: #94a3b8;">
+        <p>Complex multi-system integration? <a href="#signup" style="color: var(--pillar, #f59e0b); text-decoration: underline;">Contact us</a> for a custom quote.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-darker">
+    <div class="container-md text-center">
+      <h2><span class="gradient-text reveal">Why We Choose n8n</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">
+        n8n is the premier fair-code visual workflow platform, allowing businesses to integrate complex systems while maintaining full ownership of their data.<br>
+        <span style="font-size: 0.85rem; color: #64748b; display: block; margin-top: 1rem;"><em>Disclaimer: Flowmatica is an independent automation agency and is not directly affiliated with, endorsed by, or employed by n8n. We configure and deploy custom workflows using n8n engines.</em></span>
+      </p>
+
+      <div class="tech-grid">
+        <div class="tech-item reveal reveal-delay-1">
+          <div class="tech-icon">&#x2699;&#xfe0f;</div>
+          <div class="tech-name">n8n Engine</div>
+          <div class="tech-desc">Visual workflow builder</div>
+        </div>
+        <div class="tech-item reveal reveal-delay-2">
+          <div class="tech-icon">&#x1f517;</div>
+          <div class="tech-name">500+ System Nodes</div>
+          <div class="tech-desc">Native app integrations</div>
+        </div>
+        <div class="tech-item reveal reveal-delay-3">
+          <div class="tech-icon">&#x1f4bb;</div>
+          <div class="tech-name">Script Code Nodes</div>
+          <div class="tech-desc">JS / Python processing</div>
+        </div>
+        <div class="tech-item reveal reveal-delay-4">
+          <div class="tech-icon">&#x1f433;</div>
+          <div class="tech-name">Local Deployment</div>
+          <div class="tech-desc">Docker &amp; self-hosted</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="signup" class="bg-gradient-hero">
+    <div class="container-sm">
+      <h2><span class="gradient-text reveal">Ready to Automate?</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">Tell us about your workflow and we'll help you eliminate the busywork. Drop your email and we'll reach out.</p>
+
+      <form class="signup-form reveal reveal-delay-2" onsubmit="handleSignup(event)">
+        <input type="email" class="email-input" placeholder="your@email.com" required>
+        <button type="submit" class="btn btn-primary btn-large btn-shimmer">Get in Touch</button>
+      </form>
+
+      <div class="signup-benefits reveal reveal-delay-3">
+        <div class="benefit-item"><span style="color: #10b981;">&#x2713;</span> No spam, ever</div>
+        <div class="benefit-item"><span style="color: #10b981;">&#x2713;</span> Free consultation</div>
+        <div class="benefit-item"><span style="color: #10b981;">&#x2713;</span> No obligation quote</div>
+      </div>
+
+      <div class="success-message" id="success-message">
+        <p style="color: #10b981; font-weight: 700; margin-bottom: 0.5rem;">&#x1f389; Message sent!</p>
+        <p style="color: #cbd5e1;">Thanks for reaching out. We'll get back to you within 1-2 business days.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <a href="/" class="logo">FLOWMATICA</a>
+        <span style="color: #64748b; font-size: 0.875rem;">Software Solutions for SMBs</span>
+      </div>
+      <div class="footer-links">
+        <a href="/novastack/">NovaStack</a>
+        <a href="/forms/">Forms</a>
+        <a href="/automation/">Automation</a>
+        <a href="mailto:hello@flowmatica.ca">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Flowmatica. Software that respects your business.</p>
+      <p style="color: #334155;">Built for small &amp; medium businesses. Hosted on your terms.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

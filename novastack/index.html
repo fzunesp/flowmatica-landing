@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en" class="pillar-blue">
+<head>
+  <meta charset="UTF-8">
+  <title>NovaStack by Flowmatica — Business Operating System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="NovaStack: Business software that runs on your own computer — CRM, invoicing, HR, tasks, and more. One payment. Own forever.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <nav id="nav">
+    <div class="nav-content">
+      <a href="/" class="logo">FLOWMATICA</a>
+      <div class="nav-links">
+        <a href="/novastack/" class="active">NovaStack</a>
+        <a href="/forms/">Forms</a>
+        <a href="/automation/">Automation</a>
+        <button class="btn btn-primary btn-shimmer" onclick="scrollToSignup()">Contact</button>
+      </div>
+      <button class="mobile-toggle" onclick="toggleMobile()">&#9776;</button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="/novastack/" class="active" onclick="toggleMobile()">NovaStack</a>
+      <a href="/forms/" onclick="toggleMobile()">Forms</a>
+      <a href="/automation/" onclick="toggleMobile()">Automation</a>
+      <button class="btn btn-primary btn-shimmer" style="width: 100%; margin-top: 1rem;" onclick="scrollToSignup(); toggleMobile();">Contact</button>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="floating-shapes parallax-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+      <div class="shape shape-5"></div>
+    </div>
+    <div class="hero-content">
+      <div class="badge reveal">Runs on Your Hardware — No Cloud, No Subscriptions</div>
+      <h1 class="reveal reveal-delay-1">
+        <span class="gradient-text">Own Your Software.</span><br>
+        <span style="color: #94a3b8;">Pay Once. Keep Forever.</span>
+      </h1>
+      <p class="hero-subtitle reveal reveal-delay-2">
+        <strong>NovaStack</strong> is business software that runs on your own computer.
+        CRM, invoicing, HR, tasks, and more — all in one place.
+        No subscriptions. No cloud. No vendor lock-in.
+      </p>
+      <div class="hero-cta reveal reveal-delay-3">
+        <button class="btn btn-primary btn-large btn-shimmer" onclick="scrollToSignup()">Reserve Early Bird Pricing</button>
+        <a href="#modules" class="btn btn-outline btn-large">Explore Modules</a>
+      </div>
+      <div class="stats reveal reveal-delay-4">
+        <div class="stat-item">
+          <div class="stat-value">$0</div>
+          <div class="stat-label">Monthly fees</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">&#x221e;</div>
+          <div class="stat-label">Years of ownership</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">1&times;</div>
+          <div class="stat-label">Payment required</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gradient-1">
+    <div class="container">
+      <h2><span class="gradient-text reveal">How NovaStack Works</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">Eight modules. One unified database. Your hardware. Your rules.</p>
+
+      <div class="diagram-container reveal reveal-delay-2">
+        <svg viewBox="0 0 700 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g class="svg-node-pulse">
+            <circle cx="350" cy="160" r="50" fill="rgba(59,130,246,0.15)" stroke="#3b82f6" stroke-width="2.5"/>
+            <text x="350" y="155" text-anchor="middle" fill="#3b82f6" font-size="14" font-weight="700">Your Data</text>
+            <text x="350" y="175" text-anchor="middle" fill="#94a3b8" font-size="11">Unified Database</text>
+          </g>
+          <g class="arch-node"><rect x="50" y="30" width="120" height="50" rx="12" fill="rgba(59,130,246,0.1)" stroke="#3b82f6" stroke-width="1.5"/><text x="110" y="60" text-anchor="middle" fill="#3b82f6" font-size="14" font-weight="600">&#x1f9e0; CRM</text></g>
+          <g class="arch-node"><rect x="530" y="30" width="120" height="50" rx="12" fill="rgba(59,130,246,0.1)" stroke="#3b82f6" stroke-width="1.5"/><text x="590" y="60" text-anchor="middle" fill="#3b82f6" font-size="14" font-weight="600">&#x1f4c4; Invoices</text></g>
+          <g class="arch-node"><rect x="50" y="240" width="120" height="50" rx="12" fill="rgba(59,130,246,0.1)" stroke="#3b82f6" stroke-width="1.5"/><text x="110" y="270" text-anchor="middle" fill="#3b82f6" font-size="14" font-weight="600">&#x2696; HR Ops</text></g>
+          <g class="arch-node"><rect x="530" y="240" width="120" height="50" rx="12" fill="rgba(59,130,246,0.1)" stroke="#3b82f6" stroke-width="1.5"/><text x="590" y="270" text-anchor="middle" fill="#3b82f6" font-size="14" font-weight="600">&#x1f4cb; Intake</text></g>
+          <line x1="170" y1="55" x2="300" y2="140" class="arch-line"/>
+          <line x1="530" y1="55" x2="400" y2="140" class="arch-line"/>
+          <line x1="170" y1="265" x2="300" y2="180" class="arch-line"/>
+          <line x1="530" y1="265" x2="400" y2="180" class="arch-line"/>
+        </svg>
+      </div>
+
+      <div class="text-center reveal reveal-delay-3">
+        <p style="color: #94a3b8; font-size: 0.875rem;">One simple setup. All modules. One backup file.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="modules" class="bg-dark">
+    <div class="container">
+      <h2><span class="gradient-text reveal">Eight Modules. One System.</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">Everything your business needs, unified under one roof.</p>
+
+      <div class="card-grid">
+        <div class="card card-glow reveal reveal-delay-1">
+          <h3 style="color: var(--pillar, #3b82f6);">&#x1f4ca; Command Center Dashboard</h3>
+          <p style="color: #cbd5e1;">KPIs, work queue, radar signals, money at risk, activity feed, today strip, and scratchpad widget. Your entire business at a glance.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-2">
+          <h3 style="color: var(--pillar, #3b82f6);">&#x1f3e2; Companies Hub</h3>
+          <p style="color: #cbd5e1;">Company-centered view with chronological timelines, industry tracking, status management. All contacts, deals, invoices, and tasks linked to each company.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-3">
+          <h3 style="color: var(--pillar, #3b82f6);">&#x1f9e0; CRM</h3>
+          <p style="color: #cbd5e1;">Contact management with unified timelines, deal pipeline with 5 stages, visual drag-and-drop board, contact interaction logging (call/email/meeting/note/SMS/proposal).</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-4">
+          <h3 style="color: var(--pillar, #3b82f6);">&#x1f4c4; Invoices</h3>
+          <p style="color: #cbd5e1;">Full invoice lifecycle with line items, product catalog integration, PDF generation, email sending with templates, Deal-to-Invoice quick-create.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-1">
+          <h3 style="color: var(--pillar, #3b82f6);">&#x2696; HR Operations</h3>
+          <p style="color: #cbd5e1;">Dynamic form builder, vacation/expense/hardware request templates, approval workflows, decision queue, HR analytics dashboard with built-in charts.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-2">
+          <h3 style="color: var(--pillar, #3b82f6);">&#x1f4cb; Intake Management</h3>
+          <p style="color: #cbd5e1;">Internal/external submission intake with approval workflows, auto-generated IDs (VAC-001, EXP-003), status tracking, single-click conversion to deals.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-3">
+          <h3 style="color: var(--pillar, #3b82f6);">&#x2705; Tasks</h3>
+          <p style="color: #cbd5e1;">Assignable tasks with priority levels, due dates, status tracking. Linked to companies, contacts, and deals for full context.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-4">
+          <h3 style="color: var(--pillar, #3b82f6);">&#x1f4e6; Products</h3>
+          <p style="color: #cbd5e1;">Product catalog with name, SKU, price, description. Products feed directly into invoice line items for fast billing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gradient-2">
+    <div class="container">
+      <h2><span class="gradient-text reveal">Your Data Where It Belongs — In Your Hands</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">No tech degree required. Just business software that works for you.</p>
+
+      <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+        <div class="card card-glow reveal reveal-delay-1">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">⚡</div>
+          <h3 style="color: var(--pillar, #3b82f6);">One Command to Start</h3>
+          <p style="color: #cbd5e1;">If you can run a program, you can run NovaStack. No IT degree required.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-2">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🏠</div>
+          <h3 style="color: var(--pillar, #3b82f6);">Runs on Your Computer</h3>
+          <p style="color: #cbd5e1;">Windows, Mac, or Linux. Use the machine you already have.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-3">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔒</div>
+          <h3 style="color: var(--pillar, #3b82f6);">Your Data Stays Yours</h3>
+          <p style="color: #cbd5e1;">Everything lives on your machine. No cloud. No third-party servers.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-4">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">💾</div>
+          <h3 style="color: var(--pillar, #3b82f6);">Simple Backup</h3>
+          <p style="color: #cbd5e1;">Your entire database is one file. Copy it to a USB stick. Done.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-1">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">📡</div>
+          <h3 style="color: var(--pillar, #3b82f6);">Works Without Internet</h3>
+          <p style="color: #cbd5e1;">No internet? No problem. NovaStack runs on your local network.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-2">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">👥</div>
+          <h3 style="color: var(--pillar, #3b82f6);">Unlimited Users</h3>
+          <p style="color: #cbd5e1;">Add 5 users or 500. No per-seat fees. Ever.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-3">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🚀</div>
+          <h3 style="color: var(--pillar, #3b82f6);">Fast & Private</h3>
+          <p style="color: #cbd5e1;">Runs locally on your hardware. No waiting on cloud servers. No one else sees your data.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-4">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎯</div>
+          <h3 style="color: var(--pillar, #3b82f6);">Built for Small Business</h3>
+          <p style="color: #cbd5e1;">Not bloated enterprise software. Just what you need, nothing you don't.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-dark">
+    <div class="container-md">
+      <h2><span class="gradient-text reveal">Why NovaStack?</span></h2>
+
+      <div style="display: grid; gap: 2rem;">
+        <div class="card card-glow reveal reveal-delay-1">
+          <h3 style="color: var(--pillar, #fbbf24);">&#x1f4b0; Economics</h3>
+          <p style="color: #cbd5e1;">Stop paying rent. Typical CRM costs $50/user/month. For 10 users, that's $6,000/year. NovaStack is one payment. You save money by month 5.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-2">
+          <h3 style="color: var(--pillar, #fbbf24);">&#x1f512; Privacy</h3>
+          <p style="color: #cbd5e1;">Your client list, invoices, and HR data live on YOUR hardware. No third-party servers. No data mining. No "oops, we got hacked" emails.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-3">
+          <h3 style="color: var(--pillar, #fbbf24);">&#x1f3af; Control</h3>
+          <p style="color: #cbd5e1;">Install on an air-gapped machine. Run it on a Raspberry Pi. Update when YOU want. Export your data anytime. No vendor can hold you hostage.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-4">
+          <h3 style="color: var(--pillar, #fbbf24);">&#x26a1; Simplicity</h3>
+          <p style="color: #cbd5e1;">One simple setup and you're running. No IT degree required. No complex cloud configurations. No surprise bills.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-5">
+          <h3 style="color: var(--pillar, #fbbf24);">&#x1f30d; Compliance</h3>
+          <p style="color: #cbd5e1;">Privacy laws or industry rules? When data never leaves your premises, compliance becomes trivial.</p>
+        </div>
+        <div class="card card-glow reveal">
+          <h3 style="color: var(--pillar, #fbbf24);">&#x1f513; Freedom</h3>
+          <p style="color: #cbd5e1;">Your business. Your data. Your timeline. Cancel nothing. Export everything. Switch anytime. This is how software should be.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-darker">
+    <div class="container">
+      <h2><span class="gradient-text reveal">NovaStack vs. Traditional SaaS</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">See the difference for yourself</p>
+
+      <div style="overflow-x: auto;">
+        <table class="reveal reveal-delay-2">
+          <thead>
+            <tr>
+              <th style="color: #94a3b8;">Feature</th>
+              <th class="table-good">NovaStack</th>
+              <th style="color: #f87171;">Traditional SaaS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="color: #cbd5e1;">Pricing Model</td><td class="table-good">One-time payment</td><td class="table-neutral">Monthly forever</td></tr>
+            <tr><td style="color: #cbd5e1;">Data Location</td><td class="table-good">Your hardware</td><td class="table-neutral">Their servers</td></tr>
+            <tr><td style="color: #cbd5e1;">User Limits</td><td class="table-good">Unlimited</td><td class="table-neutral">Pay per user</td></tr>
+            <tr><td style="color: #cbd5e1;">Internet Required</td><td class="table-good">No</td><td class="table-neutral">Yes</td></tr>
+            <tr><td style="color: #cbd5e1;">Data Ownership</td><td class="table-good">100% yours</td><td class="table-neutral">Licensed to vendor</td></tr>
+            <tr><td style="color: #cbd5e1;">Vendor Lock-in</td><td class="table-good">None</td><td class="table-neutral">Total</td></tr>
+            <tr><td style="color: #cbd5e1;">Forced Updates</td><td class="table-good">Never</td><td class="table-neutral">Always</td></tr>
+            <tr><td style="color: #cbd5e1;">Price Increases</td><td class="table-good">Impossible</td><td class="table-neutral">Yearly</td></tr>
+            <tr><td style="color: #cbd5e1;">Export Data</td><td class="table-good">Anytime (spreadsheet or full backup)</td><td class="table-neutral">Limited formats</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gradient-hero">
+    <div class="container-sm text-center">
+      <h2><span class="gradient-text reveal">Early Bird Pricing</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">Lock in lifetime ownership before the price goes up.</p>
+
+      <div class="card card-glow reveal reveal-delay-2" style="max-width: 480px; margin: 2rem auto; padding: 3rem 2rem;">
+        <p style="color: #94a3b8; font-size: 1.125rem; margin-bottom: 0.5rem;">Regular Price</p>
+        <p style="color: #f87171; font-size: 2.5rem; font-weight: 900; text-decoration: line-through; margin-bottom: 1rem;">$1,599</p>
+        <div style="width: 80px; height: 3px; background: linear-gradient(90deg, #3b82f6, #8b5cf6); margin: 1.5rem auto; border-radius: 2px;"></div>
+        <p style="color: #10b981; font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Early Bird Price</p>
+        <p style="color: #ffffff; font-size: 4rem; font-weight: 900; line-height: 1; margin-bottom: 0.5rem;">$999</p>
+        <p style="color: #fbbf24; font-size: 0.875rem; font-weight: 600; margin-bottom: 2rem;">Save $600 — Limited Time</p>
+        <button class="btn btn-primary btn-large btn-shimmer" onclick="scrollToSignup()" style="width: 100%;">Reserve Early Bird Pricing</button>
+        <p style="color: #64748b; font-size: 0.75rem; margin-top: 1rem;">One-time payment. No subscriptions. Own forever.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="screenshots" class="bg-gradient-1">
+    <div class="container">
+      <h2><span class="gradient-text reveal">See It In Action</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">Real screenshots from the running NovaStack application.</p>
+
+      <div class="screenshot-grid">
+        <div class="screenshot-item reveal">
+          <a href="../images/companies-page.png" class="lightbox"><img src="../images/companies-page.png" alt="Companies Hub"></a>
+          <div class="caption">Companies Hub</div>
+        </div>
+        <div class="screenshot-item reveal reveal-delay-1">
+          <a href="../images/crm-contacts.png" class="lightbox"><img src="../images/crm-contacts.png" alt="CRM Contacts"></a>
+          <div class="caption">CRM Contacts</div>
+        </div>
+        <div class="screenshot-item reveal reveal-delay-2">
+          <a href="../images/crm-deals.png" class="lightbox"><img src="../images/crm-deals.png" alt="CRM Deals / Visual Board"></a>
+          <div class="caption">CRM Deals / Visual Board</div>
+        </div>
+        <div class="screenshot-item reveal reveal-delay-3">
+          <a href="../images/invoices-page.png" class="lightbox"><img src="../images/invoices-page.png" alt="Invoices"></a>
+          <div class="caption">Invoices</div>
+        </div>
+        <div class="screenshot-item reveal reveal-delay-4">
+          <a href="../images/hr-page.png" class="lightbox"><img src="../images/hr-page.png" alt="HR Operations"></a>
+          <div class="caption">HR Operations</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="signup" class="bg-gradient-hero">
+    <div class="container-sm">
+      <h2><span class="gradient-text reveal">Get NovaStack</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">Get early bird pricing, development updates, and be first to know when new features launch.</p>
+
+      <form class="signup-form reveal reveal-delay-2" onsubmit="handleSignup(event)">
+        <input type="email" class="email-input" placeholder="your@email.com" required>
+        <button type="submit" class="btn btn-primary btn-large btn-shimmer">Reserve Early Access</button>
+      </form>
+
+      <div class="signup-benefits reveal reveal-delay-3">
+        <div class="benefit-item"><span style="color: #10b981;">&#x2713;</span> No spam, ever</div>
+        <div class="benefit-item"><span style="color: #10b981;">&#x2713;</span> Unsubscribe anytime</div>
+        <div class="benefit-item"><span style="color: #10b981;">&#x2713;</span> Early bird discounts</div>
+      </div>
+
+      <div class="success-message" id="success-message">
+        <p style="color: #10b981; font-weight: 700; margin-bottom: 0.5rem;">&#x1f389; You're on the list!</p>
+        <p style="color: #cbd5e1;">Check your email for confirmation and your early bird discount code.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="bg-dark">
+    <div class="container-sm">
+      <h2><span class="gradient-text reveal">Frequently Asked Questions</span></h2>
+
+      <details class="reveal reveal-delay-1"><summary>Can I really run this on my own computer?</summary><p>Yes! NovaStack runs on any computer — Windows, Mac, Linux, or even a Raspberry Pi. No cloud accounts required.</p></details>
+      <details class="reveal reveal-delay-2"><summary>Can multiple people access it?</summary><p>Yes! Install it on a computer on your network and everyone connects to it. You control who sees what — admin, HR, or regular user. No per-user fees. Ever.</p></details>
+      <details class="reveal reveal-delay-3"><summary>Can I migrate from my current tools?</summary><p>Yes! NovaStack includes import/export tools for contacts, deals, and invoices. Migration guides for popular platforms are in development.</p></details>
+      <details class="reveal reveal-delay-5"><summary>What if my computer crashes?</summary><p>Everything is stored in a single database file. Back it up to anywhere (USB drive, external hard drive, or wherever you like). Restore takes 30 seconds. It's just a file.</p></details>
+      <details class="reveal"><summary>What modules are included?</summary><p>Dashboard (Command Center), Companies Hub, CRM (contacts + deals + visual board), Invoices, Products, Intake Management, HR Operations, Tasks, Settings, and a built-in Help Center.</p></details>
+      <details class="reveal"><summary>What are the minimum system requirements?</summary><p>Any modern computer: 2GB RAM minimum (4GB recommended), 500MB disk space, any modern CPU. Yes, even a Raspberry Pi 4 works great.</p></details>
+    </div>
+  </section>
+
+  <section class="bg-gradient-hero">
+    <div class="container-md text-center">
+      <h2 style="font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1.5rem;" class="reveal">
+        <span class="gradient-text">Stop Renting.<br>Start Owning.</span>
+      </h2>
+      <p style="font-size: clamp(1.25rem, 3vw, 1.5rem); color: #94a3b8; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;" class="reveal reveal-delay-1">
+        Join the zero-cloud revolution. Pay once. Own forever.
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem;" class="reveal reveal-delay-2">
+        <button class="btn btn-primary btn-large btn-shimmer" onclick="scrollToSignup()">Get Early Bird Pricing</button>
+        <a href="#modules" class="btn btn-outline btn-large">Explore Modules</a>
+      </div>
+      <div style="color: #94a3b8;" class="reveal reveal-delay-3">
+        <p style="margin-bottom: 0.75rem;">Questions? Email <a href="mailto:hello@flowmatica.ca" style="color: var(--pillar, #f59e0b); text-decoration: underline;">hello@flowmatica.ca</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <a href="/" class="logo">FLOWMATICA</a>
+        <span style="color: #64748b; font-size: 0.875rem;">NovaStack by Flowmatica</span>
+      </div>
+      <div class="footer-links">
+        <a href="/novastack/">NovaStack</a>
+        <a href="/forms/">Forms</a>
+        <a href="/automation/">Automation</a>
+        <a href="mailto:hello@flowmatica.ca">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Flowmatica. Built with honesty. Hosted on your terms.</p>
+      <p style="color: #334155;">8 modules — CRM, Invoicing, HR, Tasks, and more</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

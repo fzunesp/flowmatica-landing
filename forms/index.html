@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en" class="pillar-green">
+<head>
+  <meta charset="UTF-8">
+  <title>Forms &amp; Data Capture — Flowmatica</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="We design, build, and deploy custom web forms, scheduling systems, and electronic agreements using Fillout. Custom integrations for your business CRM and databases.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <nav id="nav">
+    <div class="nav-content">
+      <a href="/" class="logo">FLOWMATICA</a>
+      <div class="nav-links">
+        <a href="/novastack/">NovaStack</a>
+        <a href="/forms/" class="active">Forms</a>
+        <a href="/automation/">Automation</a>
+        <button class="btn btn-primary btn-shimmer" onclick="scrollToSignup()">Contact</button>
+      </div>
+      <button class="mobile-toggle" onclick="toggleMobile()">&#9776;</button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="/novastack/" onclick="toggleMobile()">NovaStack</a>
+      <a href="/forms/" class="active" onclick="toggleMobile()">Forms</a>
+      <a href="/automation/" onclick="toggleMobile()">Automation</a>
+      <button class="btn btn-primary btn-shimmer" style="width: 100%; margin-top: 1rem;" onclick="scrollToSignup(); toggleMobile();">Contact</button>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="floating-shapes parallax-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+      <div class="shape shape-5"></div>
+    </div>
+    <div class="hero-content">
+      <div class="badge reveal">Custom Fillout Forms &amp; Integrations</div>
+      <h1 class="reveal reveal-delay-1">
+        <span class="gradient-text">Capture Every Lead.</span><br>
+        <span style="color: #94a3b8;">Automate Every Form.</span>
+      </h1>
+      <p class="hero-subtitle reveal reveal-delay-2">
+        We design, build, and deploy custom web forms, scheduling systems, and electronic agreements using <strong>Fillout</strong>—the premier secure form builder. Connect your intake flows directly to your CRM, databases, and internal workflows.
+      </p>
+      <div class="hero-cta reveal reveal-delay-3">
+        <a href="#showcase" class="btn btn-primary btn-large btn-shimmer">See Interactive Showcase</a>
+        <button class="btn btn-outline btn-large" onclick="scrollToSignup()">Get in Touch</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gradient-1">
+    <div class="container-md">
+      <h2><span class="gradient-text reveal">The Transformation</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">From paper chaos to digital clarity.</p>
+
+      <div class="before-after reveal reveal-delay-2">
+        <div class="before-after-item">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="5" width="40" height="55" rx="3" stroke="#64748b" stroke-width="2" fill="rgba(100,116,139,0.1)"/>
+            <rect x="30" y="15" width="40" height="55" rx="3" stroke="#64748b" stroke-width="2" fill="rgba(100,116,139,0.05)"/>
+            <line x1="38" y1="28" x2="62" y2="28" stroke="#64748b" stroke-width="1.5" opacity="0.5"/>
+            <line x1="38" y1="36" x2="58" y2="36" stroke="#64748b" stroke-width="1.5" opacity="0.4"/>
+            <line x1="38" y1="44" x2="62" y2="44" stroke="#64748b" stroke-width="1.5" opacity="0.3"/>
+            <text x="50" y="75" text-anchor="middle" fill="#64748b" font-size="10" font-weight="600">BEFORE</text>
+          </svg>
+          <h3 style="color: #94a3b8; margin-top: 1rem;">Paper Forms</h3>
+          <p style="color: #64748b; font-size: 0.875rem;">Print, fill, scan, file, lose, repeat.</p>
+        </div>
+        <div class="before-after-arrow">&#x279c;</div>
+        <div class="before-after-item">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="15" y="5" width="50" height="55" rx="6" stroke="var(--pillar, #10b981)" stroke-width="2.5" fill="var(--pillar-bg, rgba(16,185,129,0.1))"/>
+            <line x1="25" y1="20" x2="55" y2="20" stroke="var(--pillar, #10b981)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="25" y1="30" x2="45" y2="30" stroke="var(--pillar, #10b981)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+            <line x1="25" y1="40" x2="55" y2="40" stroke="var(--pillar, #10b981)" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+            <circle cx="55" cy="50" r="8" fill="var(--pillar, #10b981)" opacity="0.2" stroke="var(--pillar, #10b981)" stroke-width="1.5"/>
+            <path d="M52 50 L54 52 L58 48" stroke="var(--pillar, #10b981)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="40" y="75" text-anchor="middle" fill="var(--pillar, #10b981)" font-size="10" font-weight="600">AFTER</text>
+          </svg>
+          <h3 style="color: var(--pillar, #10b981); margin-top: 1rem;">Digital Forms</h3>
+          <p style="color: #94a3b8; font-size: 0.875rem;">Fill online, auto-capture, instant access.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="what" class="bg-dark">
+    <div class="container">
+      <h2><span class="gradient-text reveal">Custom Forms &amp; Data Capture</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">Tailored solutions we build and integrate to streamline your business workflows.</p>
+
+      <div class="card-grid">
+        <div class="card card-glow reveal reveal-delay-1">
+          <h3 style="color: var(--pillar, #10b981);">&#x1f58a;&#xfe0f; Tailored Brand Design</h3>
+          <p style="color: #cbd5e1;">We design forms matching your exact corporate guidelines, incorporating custom fonts, logos, colors, and layouts tailored for high conversion rates.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-2">
+          <h3 style="color: var(--pillar, #10b981);">&#x1f916; Smart Logic &amp; Routing</h3>
+          <p style="color: #cbd5e1;">We configure complex conditional paths, dynamic show/hide fields, and automatic validations to ensure you collect only clean, relevant data.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-3">
+          <h3 style="color: var(--pillar, #10b981);">&#x1f4c5; Integrated Scheduling</h3>
+          <p style="color: #cbd5e1;">We set up calendar reservation fields, availability rules, automated time-zone conversions, and calendar reminder syncing for client bookings.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-4">
+          <h3 style="color: var(--pillar, #10b981);">&#x1f4c4; Auto-Generated PDFs</h3>
+          <p style="color: #cbd5e1;">We turn static PDF templates into digital workflows. Submissions automatically generate completed, high-resolution branded documents and receipts.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-1">
+          <h3 style="color: var(--pillar, #10b981);">&#x1f4b3; Secure Payment Intake</h3>
+          <p style="color: #cbd5e1;">We integrate Stripe, Square, and checkout elements directly into the form workflow to handle service deposits, registration fees, or invoices securely.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-2">
+          <h3 style="color: var(--pillar, #10b981);">&#x270d;&#xfe0f; Compliant E-Signatures</h3>
+          <p style="color: #cbd5e1;">We implement legally binding signature blocks for agreements, liability waivers, and employee onboarding packets, stored securely post-signature.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="bg-gradient-2">
+    <div class="container-md">
+      <h2><span class="gradient-text reveal">How It Works</span></h2>
+
+      <div class="step-flow reveal reveal-delay-1">
+        <div class="step-item">
+          <div class="step-number">1</div>
+          <div class="step-label">&#x1f4ac; We Talk</div>
+        </div>
+        <div class="step-arrow">&#x279c;</div>
+        <div class="step-item">
+          <div class="step-number">2</div>
+          <div class="step-label">&#x1f3d7;&#xfe0f; We Build</div>
+        </div>
+        <div class="step-arrow">&#x279c;</div>
+        <div class="step-item">
+          <div class="step-number">3</div>
+          <div class="step-label">&#x1f504; We Connect</div>
+        </div>
+        <div class="step-arrow">&#x279c;</div>
+        <div class="step-item">
+          <div class="step-number">4</div>
+          <div class="step-label">&#x1f680; You Launch</div>
+        </div>
+      </div>
+
+      <div style="display: grid; gap: 2rem; margin-top: 2rem;">
+        <div class="card card-glow reveal reveal-delay-1">
+          <h3 style="color: var(--pillar, #fbbf24);">&#x1f4ac; 1. We Talk</h3>
+          <p style="color: #cbd5e1;">Share your existing PDFs, spreadsheets, or sketches. Tell us about your process and pain points. We'll understand exactly what you need.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-2">
+          <h3 style="color: var(--pillar, #fbbf24);">&#x1f3d7;&#xfe0f; 2. We Build</h3>
+          <p style="color: #cbd5e1;">Using Fillout's powerful form builder, we create your forms with conditional logic, file uploads, e-signatures, and whatever your process requires.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-3">
+          <h3 style="color: var(--pillar, #fbbf24);">&#x1f504; 3. We Connect</h3>
+          <p style="color: #cbd5e1;">Forms connect to 50+ native integrations — Google Sheets, CRM, email, databases, payment processors. Data flows automatically.</p>
+        </div>
+        <div class="card card-glow reveal reveal-delay-4">
+          <h3 style="color: var(--pillar, #fbbf24);">&#x1f680; 4. You Launch</h3>
+          <p style="color: #cbd5e1;">Share via link, embed as popup/slider/side tab/fullscreen on your website, or send via email. Fully white-labeled with your custom domain and favicon.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Showcase Section -->
+  <section id="showcase" class="bg-dark">
+    <div class="container-md">
+      <h2><span class="gradient-text reveal">Interactive Showcase</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">Click the tabs below to explore simulated mockups of the form workflows we design and integrate for you.</p>
+
+      <div class="showcase-container reveal reveal-delay-2">
+        <div class="showcase-tabs">
+          <button class="showcase-tab active" onclick="switchShowcaseTab(event, 'tab-intake')">
+            <span class="showcase-tab-icon">📋</span>
+            <span class="showcase-tab-text">1. Smart Intake Form</span>
+          </button>
+          <button class="showcase-tab" onclick="switchShowcaseTab(event, 'tab-booking')">
+            <span class="showcase-tab-icon">📅</span>
+            <span class="showcase-tab-text">2. Appointment Scheduler</span>
+          </button>
+          <button class="showcase-tab" onclick="switchShowcaseTab(event, 'tab-esign')">
+            <span class="showcase-tab-icon">✍️</span>
+            <span class="showcase-tab-text">3. PDF &amp; E-Sign</span>
+          </button>
+        </div>
+
+        <div class="showcase-content">
+          <!-- Tab 1: Intake Form -->
+          <div id="tab-intake" class="showcase-panel active">
+            <div class="mockup-form">
+              <div class="mockup-header">
+                <span class="mockup-title">Custom Project Brief</span>
+                <span class="mockup-badge">Conditional Routing Active</span>
+              </div>
+              <div class="mockup-body">
+                <div class="form-group">
+                  <label for="mock-name">Full Name</label>
+                  <input type="text" id="mock-name" class="mock-input" placeholder="Jane Doe" value="Jane Doe" oninput="updateMockIntake()">
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="mock-project">Project Type</label>
+                    <select id="mock-project" class="mock-input" onchange="updateMockIntake()">
+                      <option value="workflow">Workflow Automation</option>
+                      <option value="crm">CRM Implementation</option>
+                      <option value="forms">Custom Form Suite</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="mock-budget">Estimated Budget</label>
+                    <input type="range" id="mock-budget" min="500" max="5000" step="500" value="1500" class="mock-slider" oninput="updateMockIntake()">
+                    <div class="slider-val" id="mock-budget-val">$1,500</div>
+                  </div>
+                </div>
+                
+                <!-- Dynamic Conditional Outcome Box -->
+                <div class="outcome-box" id="intake-outcome">
+                  <div class="outcome-title">⚡ Smart Routing Logic Output:</div>
+                  <p id="outcome-text">Hi Jane Doe, since your project is <strong>Workflow Automation</strong> with a budget of <strong>$1,500</strong>, we will auto-route this to our <strong>Integration Engineering Team</strong>. Estimated build time: <strong>2-3 weeks</strong>.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 2: Booking Scheduler -->
+          <div id="tab-booking" class="showcase-panel">
+            <div class="mockup-form">
+              <div class="mockup-header">
+                <span class="mockup-title">Schedule a Consultation</span>
+                <span class="mockup-badge">Live Google Calendar Sync</span>
+              </div>
+              <div class="mockup-body">
+                <p style="color: #94a3b8; font-size: 0.875rem; margin-bottom: 1rem;">Select a date and time to see the dynamic appointment validation in action:</p>
+                <div class="scheduler-grid">
+                  <div class="mini-calendar">
+                    <div class="calendar-header">May 2026</div>
+                    <div class="calendar-days">
+                      <span class="day-name">M</span><span class="day-name">T</span><span class="day-name">W</span><span class="day-name">T</span><span class="day-name">F</span><span class="day-name">S</span><span class="day-name">S</span>
+                      <span class="day empty"></span><span class="day empty"></span><span class="day empty"></span><span class="day empty"></span>
+                      <span class="day past">1</span><span class="day past">2</span><span class="day past">3</span>
+                      <span class="day past">4</span><span class="day past">5</span><span class="day past">6</span><span class="day past">7</span><span class="day past">8</span><span class="day disabled">9</span><span class="day disabled">10</span>
+                      <span class="day past">11</span><span class="day past">12</span><span class="day past">13</span><span class="day past">14</span><span class="day past">15</span><span class="day disabled">16</span><span class="day disabled">17</span>
+                      <span class="day past">18</span><span class="day past">19</span><span class="day past">20</span><span class="day past">21</span><span class="day past">22</span><span class="day disabled">23</span><span class="day disabled">24</span>
+                      <span class="day active" onclick="selectCalendarDate(25)">25</span>
+                      <span class="day" onclick="selectCalendarDate(26)">26</span>
+                      <span class="day" onclick="selectCalendarDate(27)">27</span>
+                      <span class="day" onclick="selectCalendarDate(28)">28</span>
+                      <span class="day" onclick="selectCalendarDate(29)">29</span>
+                      <span class="day disabled">30</span><span class="day disabled">31</span>
+                    </div>
+                  </div>
+                  <div class="time-picker">
+                    <div class="time-picker-title" id="selected-date-label">Available Slots for May 25:</div>
+                    <div class="time-slots">
+                      <button class="time-slot" onclick="selectTimeSlot(this, '09:00 AM')">09:00 AM</button>
+                      <button class="time-slot" onclick="selectTimeSlot(this, '11:30 AM')">11:30 AM</button>
+                      <button class="time-slot" onclick="selectTimeSlot(this, '02:00 PM')">02:00 PM</button>
+                      <button class="time-slot" onclick="selectTimeSlot(this, '04:15 PM')">04:15 PM</button>
+                    </div>
+                    <div class="booking-status" id="booking-confirmation">Select a time slot above.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 3: PDF & E-Sign -->
+          <div id="tab-esign" class="showcase-panel">
+            <div class="mockup-form">
+              <div class="mockup-header">
+                <span class="mockup-title">Contract Agreement &amp; Signature</span>
+                <span class="mockup-badge">Automated PDF Generator</span>
+              </div>
+              <div class="mockup-body esign-grid">
+                <div class="pdf-preview">
+                  <div class="pdf-header">
+                    <span style="font-weight: 700; color: #020617; font-size: 0.75rem;">AGREEMENT.pdf</span>
+                    <span style="font-size: 0.625rem; color: #64748b;">Page 1 of 1</span>
+                  </div>
+                  <div class="pdf-content">
+                    <h4 style="color: #0f172a; margin-bottom: 0.5rem; font-size: 0.875rem;">SERVICE AGREEMENT</h4>
+                    <p style="font-size: 0.625rem; color: #334155; margin-bottom: 0.5rem;">This agreement is entered into between Flowmatica client and Flowmatica solutions. All deliverables will be processed digitally upon e-signature execution.</p>
+                    <p style="font-size: 0.625rem; color: #334155; margin-bottom: 0.75rem;"><strong>Signed by Client:</strong></p>
+                    <!-- Signature Line -->
+                    <div class="pdf-sig-line">
+                      <svg class="sig-svg" viewBox="0 0 150 40">
+                        <path class="sig-path" d="M 10 30 Q 30 10 40 25 T 70 15 T 100 28 T 130 10 T 140 20" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <span class="sig-placeholder" id="pdf-sig-placeholder">Signature Pending</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="signature-box-container">
+                  <label>Draw Signature / Click to Sign</label>
+                  <div class="signature-canvas" onclick="triggerSignatureAnimation()">
+                    <span id="canvas-prompt">Click to Sign Agreement</span>
+                    <svg class="canvas-sig-svg" viewBox="0 0 200 80">
+                      <path class="canvas-sig-path" d="M 20 60 Q 50 20 70 50 T 110 30 T 150 55 T 180 20 T 190 35" fill="none" stroke="var(--pillar, #10b981)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                  <button class="btn btn-primary" id="sign-btn" onclick="triggerSignatureAnimation()" style="width: 100%;">Sign Agreement</button>
+                  <div class="booking-status" id="esign-status" style="margin-top: 0.5rem; font-size: 0.75rem;">Waiting for client signature...</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function switchShowcaseTab(event, tabId) {
+      const tabs = event.currentTarget.parentNode.querySelectorAll('.showcase-tab');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      
+      const panels = event.currentTarget.parentNode.parentNode.querySelectorAll('.showcase-panel');
+      panels.forEach(panel => panel.classList.remove('active'));
+      
+      event.currentTarget.classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    }
+
+    function updateMockIntake() {
+      const name = document.getElementById('mock-name').value || 'Jane Doe';
+      const project = document.getElementById('mock-project');
+      const projectText = project.options[project.selectedIndex].text;
+      const budgetVal = document.getElementById('mock-budget').value;
+      
+      document.getElementById('mock-budget-val').textContent = '$' + parseInt(budgetVal).toLocaleString();
+      
+      let route = 'Integration Engineering Team';
+      let time = '2-3 weeks';
+      
+      if (project.value === 'crm') {
+        route = 'CRM Solutions Unit';
+        time = '3-4 weeks';
+      } else if (project.value === 'forms') {
+        route = 'Product Experience Team';
+        time = '1-2 weeks';
+      }
+      
+      if (budgetVal >= 4000) {
+        route = 'Senior Architecture Lead &amp; Priority Desk';
+      }
+      
+      document.getElementById('outcome-text').innerHTML = `Hi <strong>${name}</strong>, since your project is <strong>${projectText}</strong> with a budget of <strong>$${parseInt(budgetVal).toLocaleString()}</strong>, we will auto-route this to our <strong>${route}</strong>. Estimated build time: <strong>${time}</strong>.`;
+    }
+
+    let selectedDate = 'May 25';
+    function selectCalendarDate(dayNum) {
+      const days = document.querySelectorAll('.mini-calendar .day');
+      days.forEach(day => {
+        if (day.textContent == dayNum && !day.classList.contains('disabled') && !day.classList.contains('past') && !day.classList.contains('empty')) {
+          days.forEach(d => d.classList.remove('active'));
+          day.classList.add('active');
+          selectedDate = `May ${dayNum}`;
+          document.getElementById('selected-date-label').textContent = `Available Slots for May ${dayNum}:`;
+          
+          const slots = document.querySelectorAll('.time-slot');
+          slots.forEach(s => s.classList.remove('active'));
+          document.getElementById('booking-confirmation').innerHTML = `Select a time slot for May ${dayNum}.`;
+        }
+      });
+    }
+
+    function selectTimeSlot(btn, time) {
+      const slots = document.querySelectorAll('.time-slot');
+      slots.forEach(s => s.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('booking-confirmation').innerHTML = `<span style="color: var(--pillar, #10b981); font-weight: 700;">✓ Appt Selected:</span> May ${selectedDate.replace('May ', '')} at <strong>${time}</strong>. Confirmation link synced to database.`;
+    }
+
+    function triggerSignatureAnimation() {
+      const canvas = document.querySelector('.signature-canvas');
+      const pdfSig = document.querySelector('.pdf-sig-line');
+      const btn = document.getElementById('sign-btn');
+      const status = document.getElementById('esign-status');
+      const placeholder = document.getElementById('pdf-sig-placeholder');
+      
+      canvas.classList.add('signed');
+      pdfSig.classList.add('signed');
+      
+      btn.disabled = true;
+      btn.textContent = 'Agreement Signed';
+      status.innerHTML = `<span style="color: var(--pillar, #10b981); font-weight: 700;">✓ Document Signed!</span> Generated PDF saved to server and webhook fired.`;
+      placeholder.style.display = 'none';
+    }
+  </script>
+
+  <section class="bg-darker">
+    <div class="container">
+      <h2><span class="gradient-text reveal">The Data Flow</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">See how your data moves from form to destination.</p>
+
+      <div class="diagram-container reveal reveal-delay-2">
+        <svg viewBox="0 0 700 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g class="workflow-node"><rect x="30" y="50" width="120" height="80" rx="12" fill="rgba(16,185,129,0.1)" stroke="var(--pillar, #10b981)" stroke-width="2"/><text x="90" y="85" text-anchor="middle" fill="var(--pillar, #10b981)" font-size="24">&#x1f4dd;</text><text x="90" y="115" text-anchor="middle" fill="#cbd5e1" font-size="11" font-weight="600">User Fills Form</text></g>
+          <line x1="150" y1="90" x2="230" y2="90" class="workflow-line"/><circle cx="190" cy="90" r="4" class="workflow-dot"/>
+          <g class="workflow-node"><rect x="230" y="50" width="120" height="80" rx="12" fill="rgba(16,185,129,0.1)" stroke="var(--pillar, #10b981)" stroke-width="2"/><text x="290" y="85" text-anchor="middle" fill="var(--pillar, #10b981)" font-size="24">&#x1f4cb;</text><text x="290" y="115" text-anchor="middle" fill="#cbd5e1" font-size="11" font-weight="600">Fillout Processes</text></g>
+          <line x1="350" y1="90" x2="430" y2="90" class="workflow-line"/><circle cx="390" cy="90" r="4" class="workflow-dot"/>
+          <g class="workflow-node"><rect x="430" y="50" width="120" height="80" rx="12" fill="rgba(16,185,129,0.1)" stroke="var(--pillar, #10b981)" stroke-width="2"/><text x="490" y="85" text-anchor="middle" fill="var(--pillar, #10b981)" font-size="24">&#x1f5c4;&#xfe0f;</text><text x="490" y="115" text-anchor="middle" fill="#cbd5e1" font-size="11" font-weight="600">Data Stored</text></g>
+          <line x1="550" y1="90" x2="630" y2="90" class="workflow-line"/><circle cx="590" cy="90" r="4" class="workflow-dot"/>
+          <g class="workflow-node"><rect x="630" y="50" width="40" height="80" rx="12" fill="rgba(16,185,129,0.1)" stroke="var(--pillar, #10b981)" stroke-width="2"/><text x="650" y="85" text-anchor="middle" fill="var(--pillar, #10b981)" font-size="24">&#x1f4e7;</text><text x="650" y="115" text-anchor="middle" fill="#cbd5e1" font-size="11" font-weight="600">Alert</text></g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="bg-gradient-1">
+    <div class="container">
+      <h2><span class="gradient-text reveal">Pricing</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">Choose from pre-built templates or let us build something custom for your business.</p>
+
+      <div class="card-grid">
+        <div class="service-card reveal reveal-delay-1">
+          <div class="text-center">
+            <h3 style="color: #e2e8f0;">Template Package</h3>
+            <p style="color: #94a3b8; font-size: 0.875rem;">Pre-built Fillout solutions</p>
+            <div class="service-price">$99 – $299</div>
+            <p style="color: #64748b; font-size: 0.875rem;">One-time payment</p>
+          </div>
+          <ul class="service-features">
+            <li>Pre-configured Fillout form template</li>
+            <li>Branded with your colors and logo</li>
+            <li>Standard integrations (email, sheets)</li>
+            <li>Setup guide included</li>
+            <li>Email support for 30 days</li>
+          </ul>
+          <button class="btn btn-secondary" style="width: 100%;" onclick="scrollToSignup()">Get Started</button>
+        </div>
+
+        <div class="service-card featured reveal reveal-delay-2">
+          <div class="text-center">
+            <span class="service-badge">Most Popular</span>
+            <h3 style="color: #e2e8f0;">Custom Build</h3>
+            <p style="color: #94a3b8; font-size: 0.875rem;">Tailored to your workflow</p>
+            <div class="service-price">$500 – $2,000</div>
+            <p style="color: #64748b; font-size: 0.875rem;">Per project</p>
+          </div>
+          <ul class="service-features">
+            <li>Custom form design with conditional logic</li>
+            <li>Full brand styling with custom domain</li>
+            <li>Complex workflows and intelligent routing</li>
+            <li>Custom integrations (CRM, database, payments)</li>
+            <li>Appointment scheduling setup</li>
+            <li>PDF generation and e-signature workflows</li>
+            <li>Training &amp; documentation</li>
+            <li>Email support for 90 days</li>
+          </ul>
+          <button class="btn btn-primary btn-shimmer" style="width: 100%;" onclick="scrollToSignup()">Start Your Project</button>
+        </div>
+      </div>
+
+      <div class="text-center reveal" style="margin-top: 2rem; color: #94a3b8;">
+        <p>Need something outside these ranges? <a href="#signup" style="color: var(--pillar, #f59e0b); text-decoration: underline;">Contact us</a> for a custom quote.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-darker">
+    <div class="container-md text-center">
+      <h2><span class="gradient-text reveal">Why We Recommend Fillout</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">
+        We utilize Fillout as our primary platform for form development. It is an enterprise-grade solution trusted by over 100,000 organizations, offering advanced security and rich integrations.<br>
+        <span style="font-size: 0.85rem; color: #64748b; display: block; margin-top: 1rem;"><em>Disclaimer: Flowmatica is an independent services partner and is not directly affiliated with, endorsed by, or employed by Fillout. We build custom solutions using their platform.</em></span>
+      </p>
+
+      <div class="tech-grid">
+        <div class="tech-item reveal reveal-delay-1">
+          <div class="tech-icon">&#x1f4cb;</div>
+          <div class="tech-name">Fillout Engine</div>
+          <div class="tech-desc">Smart forms &amp; scheduling</div>
+        </div>
+        <div class="tech-item reveal reveal-delay-2">
+          <div class="tech-icon">&#x1f517;</div>
+          <div class="tech-name">50+ Connections</div>
+          <div class="tech-desc">Native app integrations</div>
+        </div>
+        <div class="tech-item reveal reveal-delay-3">
+          <div class="tech-icon">&#x1f916;</div>
+          <div class="tech-name">AI Capabilities</div>
+          <div class="tech-desc">Dynamic generation tools</div>
+        </div>
+        <div class="tech-item reveal reveal-delay-4">
+          <div class="tech-icon">&#x1f512;</div>
+          <div class="tech-name">Enterprise Security</div>
+          <div class="tech-desc">SOC II Type 2 &amp; AES-256</div>
+        </div>
+      </div>
+
+      <div class="card card-glow reveal" style="margin-top: 2rem; text-align: left;">
+        <h3 style="margin-bottom: 1rem; color: var(--pillar, #10b981);">Supported Platform Capabilities</h3>
+        <p style="color: #94a3b8; font-size: 0.875rem; margin-bottom: 1.5rem;">These are the native Fillout capabilities we can configure, program, and integrate for your team:</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; color: #94a3b8;">
+          <p>&#x2713; Visual drag-and-drop layouts</p>
+          <p>&#x2713; Pre-built templates &amp; custom CSS styling</p>
+          <p>&#x2713; Multi-page conditional routing</p>
+          <p>&#x2713; Secure client login portals</p>
+          <p>&#x2713; Real-time submission analytics</p>
+          <p>&#x2713; Fully white-labeled custom domains</p>
+          <p>&#x2713; Embeds (popup, slider, tab, inline)</p>
+          <p>&#x2713; Legacy form migration (Google Forms)</p>
+          <p>&#x2713; Fillable PDF conversions</p>
+          <p>&#x2713; Payment processing (Stripe, Square)</p>
+          <p>&#x2713; Secure, compliant e-signatures</p>
+          <p>&#x2713; QR code sharing &amp; scanning links</p>
+        </div>
+      </div>
+    </div>
+  </section>v>
+    </div>
+  </section>
+
+  <section id="signup" class="bg-gradient-hero">
+    <div class="container-sm">
+      <h2><span class="gradient-text reveal">Ready to Go Digital?</span></h2>
+      <p class="section-subtitle reveal reveal-delay-1">Tell us about your forms and we'll help you build the right solution. Drop your email and we'll reach out.</p>
+
+      <form class="signup-form reveal reveal-delay-2" onsubmit="handleSignup(event)">
+        <input type="email" class="email-input" placeholder="your@email.com" required>
+        <button type="submit" class="btn btn-primary btn-large btn-shimmer">Get in Touch</button>
+      </form>
+
+      <div class="signup-benefits reveal reveal-delay-3">
+        <div class="benefit-item"><span style="color: #10b981;">&#x2713;</span> No spam, ever</div>
+        <div class="benefit-item"><span style="color: #10b981;">&#x2713;</span> Free consultation</div>
+        <div class="benefit-item"><span style="color: #10b981;">&#x2713;</span> No obligation quote</div>
+      </div>
+
+      <div class="success-message" id="success-message">
+        <p style="color: #10b981; font-weight: 700; margin-bottom: 0.5rem;">&#x1f389; Message sent!</p>
+        <p style="color: #cbd5e1;">Thanks for reaching out. We'll get back to you within 1-2 business days.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <a href="/" class="logo">FLOWMATICA</a>
+        <span style="color: #64748b; font-size: 0.875rem;">Software Solutions for SMBs</span>
+      </div>
+      <div class="footer-links">
+        <a href="/novastack/">NovaStack</a>
+        <a href="/forms/">Forms</a>
+        <a href="/automation/">Automation</a>
+        <a href="mailto:hello@flowmatica.ca">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Flowmatica. Software that respects your business.</p>
+      <p style="color: #334155;">Built for small &amp; medium businesses. Hosted on your terms.</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
