@@ -43,19 +43,20 @@
       <div class="shape shape-5"></div>
     </div>
     <div class="hero-content">
-      <div class="badge reveal">Early Bird Pricing — $999 Limited Time</div>
+      <div class="badge reveal">Early Bird Pricing: $999 (closes August 31, 2026)</div>
       <h1 class="reveal reveal-delay-1">
-        <span class="gradient-text">Own Your Software.</span><br>
-        <span style="color: #94a3b8;">Pay Once. Keep Forever.</span>
+        <span class="gradient-text">Stop Paying Rent for Software.</span>
+        <span style="color: #94a3b8; display: block; margin-top: 1.25rem;">Own It Instead.</span>
       </h1>
-      <p class="hero-subtitle reveal reveal-delay-2">
-        <strong>NovaStack</strong> is business software that runs on your own computer.
-        CRM, invoicing, HR, tasks, and more — all in one place.
-        No subscriptions. No cloud. No vendor lock-in.
+      <p class="hero-subtitle reveal reveal-delay-2" style="line-height: 2; margin-top: 3rem; margin-bottom: 2.5rem;">
+        <strong>You know the feeling:</strong> That moment when Salesforce announces new pricing. When HubSpot's per-seat fees climb another 30%. When you're locked into a platform but need to escape—and can't because your data's held hostage.
+      </p>
+      <p class="hero-subtitle reveal reveal-delay-2" style="line-height: 2;">
+        <strong>NovaStack</strong> is the business OS you buy once and own forever. CRM, invoicing, HR, and everything else in one system. No monthly fees. No price hikes. No vendor trying to upsell you every quarter.
       </p>
       <div class="hero-cta reveal reveal-delay-3">
-        <button class="btn btn-primary btn-large btn-shimmer" onclick="scrollToSignup()">Reserve Early Bird Pricing</button>
-        <a href="#modules" class="btn btn-outline btn-large">Explore Modules</a>
+        <button class="btn btn-primary btn-large btn-shimmer" onclick="scrollToSignup()">Claim Early Bird Pricing</button>
+        <a href="#modules" class="btn btn-outline btn-large">See a Live Demo</a>
       </div>
       <div class="stats reveal reveal-delay-4">
         <div class="stat-item">
@@ -77,24 +78,177 @@
   <section class="bg-gradient-1">
     <div class="container">
       <h2><span class="gradient-text reveal">How NovaStack Works</span></h2>
-      <p class="section-subtitle reveal reveal-delay-1">Eight modules. One unified database. Your hardware. Your rules.</p>
+      <p class="section-subtitle reveal reveal-delay-1">Eight integrated tools. One unified database. Unlimited users. One price forever.</p>
 
-      <div class="diagram-container reveal reveal-delay-2">
-        <svg viewBox="0 0 700 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g class="svg-node-pulse">
-            <circle cx="350" cy="160" r="50" fill="rgba(59,130,246,0.15)" stroke="#3b82f6" stroke-width="2.5"/>
-            <text x="350" y="155" text-anchor="middle" fill="#3b82f6" font-size="14" font-weight="700">Your Data</text>
-            <text x="350" y="175" text-anchor="middle" fill="#94a3b8" font-size="11">Unified Database</text>
+      <div class="diagram-container reveal reveal-delay-2" style="position: relative;">
+        <style>
+          .arch-node {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+          .arch-node:hover {
+            transform: translate(var(--hover-dx, 0px), var(--hover-dy, 0px)) scale(1.03);
+          }
+          #node-dash:hover { --hover-dx: 0px; --hover-dy: -6px; }
+          #node-crm:hover { --hover-dx: 4px; --hover-dy: -4px; }
+          #node-inv:hover { --hover-dx: 6px; --hover-dy: 0px; }
+          #node-int:hover { --hover-dx: 4px; --hover-dy: 4px; }
+          #node-hr:hover { --hover-dx: 0px; --hover-dy: 6px; }
+          #node-tasks:hover { --hover-dx: -4px; --hover-dy: 4px; }
+          #node-prod:hover { --hover-dx: -6px; --hover-dy: 0px; }
+          #node-comp:hover { --hover-dx: -4px; --hover-dy: -4px; }
+
+          .arch-node-rect {
+            fill: #1e293b;
+            stroke: #334155;
+            stroke-width: 1.5px;
+            transition: all 0.3s ease;
+          }
+          .arch-node:hover .arch-node-rect {
+            stroke: var(--pillar, #3b82f6);
+            stroke-width: 2px;
+            fill: #0f172a;
+            filter: drop-shadow(0 0 12px var(--pillar-glow, rgba(59,130,246,0.35)));
+          }
+          .arch-node text {
+            fill: #94a3b8;
+            font-weight: 600;
+            transition: fill 0.3s ease;
+          }
+          .arch-node:hover text {
+            fill: #ffffff;
+          }
+          .arch-line-bg {
+            stroke: #1e293b;
+            stroke-width: 2;
+            opacity: 0.5;
+          }
+          .arch-line {
+            stroke: var(--pillar, #3b82f6);
+            stroke-width: 2;
+            stroke-dasharray: 6 4;
+            animation: flowDash 2s linear infinite;
+            opacity: 0.4;
+            transition: all 0.3s ease;
+          }
+          .arch-node-active-line {
+            stroke: var(--pillar, #3b82f6) !important;
+            stroke-width: 3.5px !important;
+            opacity: 1 !important;
+            filter: drop-shadow(0 0 6px var(--pillar, #3b82f6)) !important;
+          }
+          .diagram-info-panel {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid #1e293b;
+            border-radius: 1rem;
+            padding: 1.25rem 2rem;
+            max-width: 600px;
+            margin: 2rem auto 0;
+            min-height: 90px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: all 0.3s ease;
+          }
+          .diagram-info-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--pillar, #3b82f6);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.4rem;
+          }
+          .diagram-info-desc {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            line-height: 1.5;
+          }
+        </style>
+        <svg viewBox="0 0 900 550" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="dbGradient" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#1e293b" />
+              <stop offset="100%" stop-color="#0f172a" />
+            </radialGradient>
+          </defs>
+
+          <!-- Connections -->
+          <g class="arch-lines">
+            <line x1="450" y1="275" x2="450" y2="65" class="arch-line-bg" />
+            <line x1="450" y1="275" x2="599" y2="126" class="arch-line-bg" />
+            <line x1="450" y1="275" x2="660" y2="275" class="arch-line-bg" />
+            <line x1="450" y1="275" x2="599" y2="423" class="arch-line-bg" />
+            <line x1="450" y1="275" x2="450" y2="485" class="arch-line-bg" />
+            <line x1="450" y1="275" x2="301" y2="423" class="arch-line-bg" />
+            <line x1="450" y1="275" x2="240" y2="275" class="arch-line-bg" />
+            <line x1="450" y1="275" x2="301" y2="126" class="arch-line-bg" />
+
+            <line x1="450" y1="275" x2="450" y2="65" id="line-dash" class="arch-line" />
+            <line x1="450" y1="275" x2="599" y2="126" id="line-crm" class="arch-line" />
+            <line x1="450" y1="275" x2="660" y2="275" id="line-inv" class="arch-line" />
+            <line x1="450" y1="275" x2="599" y2="423" id="line-int" class="arch-line" />
+            <line x1="450" y1="275" x2="450" y2="485" id="line-hr" class="arch-line" />
+            <line x1="450" y1="275" x2="301" y2="423" id="line-tasks" class="arch-line" />
+            <line x1="450" y1="275" x2="240" y2="275" id="line-prod" class="arch-line" />
+            <line x1="450" y1="275" x2="301" y2="126" id="line-comp" class="arch-line" />
           </g>
-          <g class="arch-node"><rect x="50" y="30" width="120" height="50" rx="12" fill="rgba(59,130,246,0.1)" stroke="#3b82f6" stroke-width="1.5"/><text x="110" y="60" text-anchor="middle" fill="#3b82f6" font-size="14" font-weight="600">&#x1f9e0; CRM</text></g>
-          <g class="arch-node"><rect x="530" y="30" width="120" height="50" rx="12" fill="rgba(59,130,246,0.1)" stroke="#3b82f6" stroke-width="1.5"/><text x="590" y="60" text-anchor="middle" fill="#3b82f6" font-size="14" font-weight="600">&#x1f4c4; Invoices</text></g>
-          <g class="arch-node"><rect x="50" y="240" width="120" height="50" rx="12" fill="rgba(59,130,246,0.1)" stroke="#3b82f6" stroke-width="1.5"/><text x="110" y="270" text-anchor="middle" fill="#3b82f6" font-size="14" font-weight="600">&#x2696; HR Ops</text></g>
-          <g class="arch-node"><rect x="530" y="240" width="120" height="50" rx="12" fill="rgba(59,130,246,0.1)" stroke="#3b82f6" stroke-width="1.5"/><text x="590" y="270" text-anchor="middle" fill="#3b82f6" font-size="14" font-weight="600">&#x1f4cb; Intake</text></g>
-          <line x1="170" y1="55" x2="300" y2="140" class="arch-line"/>
-          <line x1="530" y1="55" x2="400" y2="140" class="arch-line"/>
-          <line x1="170" y1="265" x2="300" y2="180" class="arch-line"/>
-          <line x1="530" y1="265" x2="400" y2="180" class="arch-line"/>
+
+          <!-- Center Database Node -->
+          <g class="svg-node-pulse">
+            <circle cx="450" cy="275" r="55" fill="rgba(59, 130, 246, 0.08)" stroke="rgba(59, 130, 246, 0.25)" stroke-width="1.5" />
+            <circle cx="450" cy="275" r="45" fill="url(#dbGradient)" stroke="#3b82f6" stroke-width="2" />
+            <path d="M438 263c0-3.3 5.4-6 12-6s12 2.7 12 6-5.4 6-12 6-12-2.7-12-6zm0 6c0 3.3 5.4 6 12 6s12-2.7 12-6v4c0 3.3-5.4 6-12 6s-12-2.7-12-6v-4zm0 6c0 3.3 5.4 6 12 6s12-2.7 12-6v4c0 3.3-5.4 6-12 6s-12-2.7-12-6v-4z" fill="#3b82f6" stroke="#3b82f6" stroke-width="1" />
+            <text x="450" y="293" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="700" letter-spacing="0.05em">LOCAL DB</text>
+          </g>
+
+          <!-- Modules -->
+          <g class="arch-node" id="node-dash" style="cursor: pointer;">
+            <rect x="375" y="40" width="150" height="50" rx="12" class="arch-node-rect" />
+            <text x="450" y="70" text-anchor="middle" font-size="13">📊 Dashboard</text>
+          </g>
+
+          <g class="arch-node" id="node-crm" style="cursor: pointer;">
+            <rect x="524" y="101" width="150" height="50" rx="12" class="arch-node-rect" />
+            <text x="599" y="131" text-anchor="middle" font-size="13">🧠 CRM</text>
+          </g>
+
+          <g class="arch-node" id="node-inv" style="cursor: pointer;">
+            <rect x="585" y="250" width="150" height="50" rx="12" class="arch-node-rect" />
+            <text x="660" y="280" text-anchor="middle" font-size="13">📄 Invoices</text>
+          </g>
+
+          <g class="arch-node" id="node-int" style="cursor: pointer;">
+            <rect x="524" y="398" width="150" height="50" rx="12" class="arch-node-rect" />
+            <text x="599" y="428" text-anchor="middle" font-size="13">📋 Intake</text>
+          </g>
+
+          <g class="arch-node" id="node-hr" style="cursor: pointer;">
+            <rect x="375" y="460" width="150" height="50" rx="12" class="arch-node-rect" />
+            <text x="450" y="490" text-anchor="middle" font-size="13">⚖️ HR Ops</text>
+          </g>
+
+          <g class="arch-node" id="node-tasks" style="cursor: pointer;">
+            <rect x="226" y="398" width="150" height="50" rx="12" class="arch-node-rect" />
+            <text x="301" y="428" text-anchor="middle" font-size="13">✅ Tasks</text>
+          </g>
+
+          <g class="arch-node" id="node-prod" style="cursor: pointer;">
+            <rect x="165" y="250" width="150" height="50" rx="12" class="arch-node-rect" />
+            <text x="240" y="280" text-anchor="middle" font-size="13">📦 Products</text>
+          </g>
+
+          <g class="arch-node" id="node-comp" style="cursor: pointer;">
+            <rect x="226" y="101" width="150" height="50" rx="12" class="arch-node-rect" />
+            <text x="301" y="131" text-anchor="middle" font-size="13">🏢 Companies</text>
+          </g>
         </svg>
+
+        <!-- Interactive Info Box -->
+        <div class="diagram-info-panel">
+          <div class="diagram-info-title" id="diag-info-title">💡 Unified Operating System</div>
+          <div class="diagram-info-desc" id="diag-info-desc">Hover over any module to see how it writes to and reads from the shared, local SQLite database.</div>
+        </div>
       </div>
 
       <div class="text-center reveal reveal-delay-3">
@@ -111,27 +265,27 @@
       <div class="card-grid">
         <div class="card card-glow reveal reveal-delay-1">
           <h3 style="color: var(--pillar, #3b82f6);">&#x1f4ca; Command Center Dashboard</h3>
-          <p style="color: #cbd5e1;">KPIs, work queue, radar signals, money at risk, activity feed, today strip, and scratchpad widget. Your entire business at a glance.</p>
+          <p style="color: #cbd5e1;">See your entire business in one glance: revenue pipeline, overdue tasks, team workload, and cash at risk. No more context-switching between apps to answer "What's happening today?"</p>
         </div>
         <div class="card card-glow reveal reveal-delay-2">
           <h3 style="color: var(--pillar, #3b82f6);">&#x1f3e2; Companies Hub</h3>
-          <p style="color: #cbd5e1;">Company-centered view with chronological timelines, industry tracking, status management. All contacts, deals, invoices, and tasks linked to each company.</p>
+          <p style="color: #cbd5e1;">Company-centered view. Every deal, contact, invoice, and task linked in one place. Know everything about each relationship at a glance.</p>
         </div>
         <div class="card card-glow reveal reveal-delay-3">
           <h3 style="color: var(--pillar, #3b82f6);">&#x1f9e0; CRM</h3>
-          <p style="color: #cbd5e1;">Contact management with unified timelines, deal pipeline with 5 stages, visual drag-and-drop board, contact interaction logging (call/email/meeting/note/SMS/proposal).</p>
+          <p style="color: #cbd5e1;">Manage deals without Salesforce's complexity. Visual board, auto-logged interactions, deal pipeline with clear stages. That's it. No bloat.</p>
         </div>
         <div class="card card-glow reveal reveal-delay-4">
           <h3 style="color: var(--pillar, #3b82f6);">&#x1f4c4; Invoices</h3>
-          <p style="color: #cbd5e1;">Full invoice lifecycle with line items, product catalog integration, PDF generation, email sending with templates, Deal-to-Invoice quick-create.</p>
+          <p style="color: #cbd5e1;">Create and send invoices in seconds. Product catalog integration. Email templates. Deal-to-invoice in one click.</p>
         </div>
         <div class="card card-glow reveal reveal-delay-1">
           <h3 style="color: var(--pillar, #3b82f6);">&#x2696; HR Operations</h3>
-          <p style="color: #cbd5e1;">Dynamic form builder, vacation/expense/hardware request templates, approval workflows, decision queue, HR analytics dashboard with built-in charts.</p>
+          <p style="color: #cbd5e1;">PTO, expenses, hardware requests—all through custom forms. Auto-routing approvals. Built-in analytics dashboard. Stop hunting through Slack threads.</p>
         </div>
         <div class="card card-glow reveal reveal-delay-2">
           <h3 style="color: var(--pillar, #3b82f6);">&#x1f4cb; Intake Management</h3>
-          <p style="color: #cbd5e1;">Internal/external submission intake with approval workflows, auto-generated IDs (VAC-001, EXP-003), status tracking, single-click conversion to deals.</p>
+          <p style="color: #cbd5e1;">Internal/external forms. Auto-approval workflows. One-click conversion to deals. Stop hunting through email for submissions.</p>
         </div>
         <div class="card card-glow reveal reveal-delay-3">
           <h3 style="color: var(--pillar, #3b82f6);">&#x2705; Tasks</h3>
@@ -139,7 +293,7 @@
         </div>
         <div class="card card-glow reveal reveal-delay-4">
           <h3 style="color: var(--pillar, #3b82f6);">&#x1f4e6; Products</h3>
-          <p style="color: #cbd5e1;">Product catalog with name, SKU, price, description. Products feed directly into invoice line items for fast billing.</p>
+          <p style="color: #cbd5e1;">Product catalog with name, SKU, price, description. Feeds directly into invoices. One source of truth.</p>
         </div>
       </div>
     </div>
@@ -202,7 +356,7 @@
       <div style="display: grid; gap: 2rem;">
         <div class="card card-glow reveal reveal-delay-1">
           <h3 style="color: var(--pillar, #fbbf24);">&#x1f4b0; Economics</h3>
-          <p style="color: #cbd5e1;">Stop paying rent. Typical CRM costs $50/user/month. For 10 users, that's $6,000/year. NovaStack is one payment. Pays for itself in under 2 months<br><small style="color: #64748b; font-style: italic;">Based on Early Bird pricing</small></p>
+          <p style="color: #cbd5e1;">A 15-person team on Salesforce + HubSpot + Asana typically spends $850/month ($10,200/year). NovaStack is $999 one time. That's payback in 1.2 months. Then every month after is pure margin. For 10 years.</p>
         </div>
         <div class="card card-glow reveal reveal-delay-2">
           <h3 style="color: var(--pillar, #fbbf24);">&#x1f512; Privacy</h3>
@@ -261,17 +415,81 @@
 <section class="bg-darker">
     <div class="container-md">
       <h2><span class="gradient-text reveal">Early Bird Pricing</span></h2>
-      <p class="section-subtitle reveal reveal-delay-1">Lock in lifetime ownership before the price goes up.</p>
+      <p class="section-subtitle reveal reveal-delay-1">Lock in this price before August 31, 2026.</p>
 
-      <div class="card card-glow reveal reveal-delay-2" style="max-width: 480px; margin: 2rem auto; padding: 3rem 2rem;">
-        <p style="color: #94a3b8; font-size: 1.125rem; margin-bottom: 0.5rem;">Regular Price</p>
-        <p style="color: #f87171; font-size: 2.5rem; font-weight: 900; text-decoration: line-through; margin-bottom: 1rem;">$1,599</p>
-        <div style="width: 80px; height: 3px; background: linear-gradient(90deg, #3b82f6, #8b5cf6); margin: 1.5rem auto; border-radius: 2px;"></div>
-        <p style="color: #10b981; font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Early Bird Price</p>
-        <p style="color: #ffffff; font-size: 4rem; font-weight: 900; line-height: 1; margin-bottom: 0.5rem;">$999</p>
-        <p style="color: #fbbf24; font-size: 0.875rem; font-weight: 600; margin-bottom: 2rem;">Save $600 — Limited Time</p>
-        <button class="btn btn-primary btn-large btn-shimmer" onclick="scrollToSignup()" style="width: 100%;">Reserve Early Bird Pricing</button>
-        <p style="color: #64748b; font-size: 0.75rem; margin-top: 1rem;">One-time payment. No subscriptions. Own forever.</p>
+      <div class="reveal reveal-delay-2" style="
+          max-width: 480px;
+          margin: 2rem auto;
+          padding: 3rem 2.5rem;
+          background: linear-gradient(145deg, rgba(15,23,42,0.95), rgba(30,41,59,0.8));
+          border: 1px solid rgba(59,130,246,0.25);
+          border-radius: 1.5rem;
+          box-shadow: 0 0 60px rgba(59,130,246,0.1), 0 25px 50px rgba(0,0,0,0.5);
+          position: relative;
+          overflow: hidden;
+          text-align: center;
+        ">
+        <!-- Decorative glow blob -->
+        <div style="
+          position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
+          width: 300px; height: 200px;
+          background: radial-gradient(ellipse, rgba(59,130,246,0.15) 0%, transparent 70%);
+          pointer-events: none;
+        "></div>
+
+        <!-- Regular price label -->
+        <p style="color: #64748b; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem;">Regular Price After Aug 31, 2026</p>
+        <p style="color: #f87171; font-size: 2rem; font-weight: 800; text-decoration: line-through; opacity: 0.8; margin-bottom: 0;">$1,599</p>
+
+        <!-- Divider -->
+        <div style="
+          display: flex; align-items: center; gap: 1rem;
+          margin: 1.5rem 0;
+        ">
+          <div style="flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(99,102,241,0.4));"></div>
+          <span style="color: #6366f1; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;">Early Bird</span>
+          <div style="flex: 1; height: 1px; background: linear-gradient(90deg, rgba(99,102,241,0.4), transparent);"></div>
+        </div>
+
+        <!-- Claim now badge -->
+        <div style="
+          display: inline-flex; align-items: center; gap: 0.4rem;
+          background: rgba(16,185,129,0.1);
+          border: 1px solid rgba(16,185,129,0.3);
+          border-radius: 999px;
+          padding: 0.3rem 1rem;
+          margin-bottom: 1.25rem;
+        ">
+          <span style="width: 7px; height: 7px; background: #10b981; border-radius: 50%; display: inline-block; animation: pulse 1.5s ease-in-out infinite;"></span>
+          <span style="color: #10b981; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">Claim Now</span>
+        </div>
+
+        <!-- Price -->
+        <p style="
+          font-size: 5rem;
+          font-weight: 900;
+          line-height: 1;
+          margin-bottom: 0.25rem;
+          background: linear-gradient(135deg, #ffffff 30%, #93c5fd 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          filter: drop-shadow(0 0 20px rgba(59,130,246,0.3));
+        ">$999</p>
+
+        <!-- Savings tag -->
+        <p style="color: #fbbf24; font-size: 0.9rem; font-weight: 700; margin-bottom: 2.5rem; letter-spacing: 0.02em;">
+          🏷️ Save $600 — Limited Time Only
+        </p>
+
+        <button class="btn btn-primary btn-large btn-shimmer" onclick="scrollToSignup()" style="width: 100%;">Claim Early Bird Pricing</button>
+
+        <!-- Footer note -->
+        <div style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+          <span style="color: #475569; font-size: 0.75rem;">✓ One-time payment</span>
+          <span style="color: #475569; font-size: 0.75rem;">✓ No subscriptions</span>
+          <span style="color: #475569; font-size: 0.75rem;">✓ Own forever</span>
+        </div>
       </div>
     </div>
   </section>
@@ -314,11 +532,11 @@
   <section id="signup" class="bg-dark">
     <div class="container-sm">
       <h2><span class="gradient-text reveal">Get NovaStack</span></h2>
-      <p class="section-subtitle reveal reveal-delay-1">Your software. Your data. Your rules. Reserve early bird pricing — take back control.</p>
+      <p class="section-subtitle reveal reveal-delay-1">You've built something real. Stop paying rent to tools that don't respect that. Lock in early bird pricing now—$999 forever. After August 31, it's $1,599.</p>
 
       <form class="signup-form reveal reveal-delay-2" onsubmit="handleSignup(event)">
         <input type="email" class="email-input" placeholder="your@email.com" required>
-        <button type="submit" class="btn btn-primary btn-large btn-shimmer">Reserve Early Access</button>
+        <button type="submit" class="btn btn-primary btn-large btn-shimmer">Claim Early Bird Pricing</button>
       </form>
 
       <div class="signup-benefits reveal reveal-delay-3">
@@ -350,14 +568,14 @@
   <section class="bg-dark">
     <div class="container-md text-center">
       <h2 style="font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1.5rem;" class="reveal">
-        <span class="gradient-text">Stop Renting.<br>Start Owning.</span>
+        <span class="gradient-text">Your Software. Your Rules.<br>Your Timeline.</span>
       </h2>
       <p style="font-size: clamp(1.25rem, 3vw, 1.5rem); color: #94a3b8; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;" class="reveal reveal-delay-1">
-        Join the zero-cloud revolution. Pay once. Own forever.
+        You've built something real. Stop paying rent to platforms that don't respect that.
       </p>
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem;" class="reveal reveal-delay-2">
-        <button class="btn btn-primary btn-large btn-shimmer" onclick="scrollToSignup()">Get Early Bird Pricing</button>
-        <a href="#modules" class="btn btn-outline btn-large">Explore Modules</a>
+        <button class="btn btn-primary btn-large btn-shimmer" onclick="scrollToSignup()">Claim Early Bird Pricing</button>
+        <a href="#modules" class="btn btn-outline btn-large">See What's Included</a>
       </div>
       <div style="color: #94a3b8;" class="reveal reveal-delay-3">
         <p style="margin-bottom: 0.75rem;">Questions? Email <a href="mailto:hello@flowmatica.ca" style="color: var(--pillar, #f59e0b); text-decoration: underline;">hello@flowmatica.ca</a></p>
@@ -379,11 +597,73 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Flowmatica. Built with honesty. Hosted on your terms.</p>
+      <p>&copy; 2026 Flowmatica. Built with honesty. Hosted on your terms.</p>
       <p style="color: #334155;">8 modules — CRM, Invoicing, HR, Tasks, and more</p>
     </div>
   </footer>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const nodes = document.querySelectorAll('.arch-node');
+      const infoTitle = document.getElementById('diag-info-title');
+      const infoDesc = document.getElementById('diag-info-desc');
+      
+      const descriptions = {
+        'node-dash': {
+          title: '📊 Command Center Dashboard',
+          desc: 'Aggregates real-time KPIs, tasks, HR operations, and pipeline metrics directly from the unified SQLite database.'
+        },
+        'node-crm': {
+          title: '🧠 CRM Module',
+          desc: 'Saves pipelines, deal logs, and customer interactions to the database, ensuring single-source deal management.'
+        },
+        'node-inv': {
+          title: '📄 Invoices Engine',
+          desc: 'Links to Products catalog and Companies hub, issuing bills and updating financial status instantly.'
+        },
+        'node-int': {
+          title: '📋 Intake Management',
+          desc: 'Captures external leads and requests via local forms, auto-creating entries in the core database.'
+        },
+        'node-hr': {
+          title: '⚖️ HR Operations',
+          desc: 'Manages PTO balances, expense approvals, and staff records securely within your local encrypted volume.'
+        },
+        'node-tasks': {
+          title: '✅ Tasks Planner',
+          desc: 'Maintains assignable, contextual tasks linked directly to companies, contacts, and invoices.'
+        },
+        'node-prod': {
+          title: '📦 Products Catalog',
+          desc: 'Serves standard SKUs, descriptions, and pricing directly into deal boards and invoice builders.'
+        },
+        'node-comp': {
+          title: '🏢 Companies Hub',
+          desc: 'The master relational node connecting deals, invoices, and communication history to specific clients.'
+        }
+      };
+
+      nodes.forEach(node => {
+        const id = node.id;
+        const lineId = 'line-' + id.split('-')[1];
+        const line = document.getElementById(lineId);
+        
+        node.addEventListener('mouseenter', () => {
+          if (line) line.classList.add('arch-node-active-line');
+          if (descriptions[id]) {
+            infoTitle.textContent = descriptions[id].title;
+            infoDesc.textContent = descriptions[id].desc;
+          }
+        });
+        
+        node.addEventListener('mouseleave', () => {
+          if (line) line.classList.remove('arch-node-active-line');
+          infoTitle.textContent = '💡 Unified Operating System';
+          infoDesc.textContent = 'Hover over any module to see how it writes to and reads from the shared, local SQLite database.';
+        });
+      });
+    });
+  </script>
   <script src="../js/main.js"></script>
 </body>
 </html>
