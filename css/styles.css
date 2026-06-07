@@ -106,13 +106,15 @@ nav.scrolled {
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: 900;
-  background: linear-gradient(135deg, #f59e0b 0%, #dc2626 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  display: flex;
+  align-items: center;
   text-decoration: none;
+}
+
+.logo img {
+  height: 56px;
+  width: auto;
+  display: block;
 }
 
 .nav-links {
